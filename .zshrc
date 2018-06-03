@@ -106,7 +106,7 @@ AGNOSTER_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 
-# Meus alias:
+# Meus aliases:
 alias vimrc='vim ~/.vimrc'
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
