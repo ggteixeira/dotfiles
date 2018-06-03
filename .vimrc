@@ -1,3 +1,4 @@
+" Isto é um teste. (Apagar)
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
