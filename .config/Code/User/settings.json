@@ -20,7 +20,7 @@
     "code-runner.runInTerminal": true,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
     "workbench.activityBar.visible": false,
     "editor.cursorWidth": 3,
     "editor.fontSize": 16,
