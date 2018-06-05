@@ -22,7 +22,7 @@ _k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Alternar tela
 
 [khotkeys]
-_k_friendly_name=Configurações do Sistema
+_k_friendly_name=KDE Daemon
 {25a721de-4175-4217-8655-6e5d5f470bfe}=Ctrl+Alt+T,none,Terminal
 {2a56605c-7d35-4254-b7a7-0fba95004da2}=Print,none,Iniciar a ferramenta de captura de tela
 {2afd8bea-1d26-4744-8456-f257cb610d13}=Meta+Shift+Print,none,Capturar a imagem de uma região retangular
