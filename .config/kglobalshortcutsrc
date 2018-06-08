@@ -198,7 +198,7 @@ Window to Screen 4=none,none,Janela para a tela 4
 Window to Screen 5=none,none,Janela para a tela 5
 Window to Screen 6=none,none,Janela para a tela 6
 Window to Screen 7=none,none,Janela para a tela 7
-_k_friendly_name=Módulo das Configurações do Sistema
+_k_friendly_name=KWin
 view_actual_size=,Meta+0,Tamanho real
 view_zoom_in=Meta+=,Meta+=,Ampliar
 view_zoom_out=Meta+-,Meta+-,Reduzir

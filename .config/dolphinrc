@@ -10,8 +10,8 @@ PreviewSize=22
 
 [DetailsMode]
 FontWeight=50
-IconSize=48
-PreviewSize=32
+IconSize=22
+PreviewSize=22
 
 [General]
 ShowSelectionToggle=false
@@ -20,20 +20,22 @@ ViewPropsTimestamp=2018,5,9,22,32,2
 
 [IconsMode]
 FontWeight=50
-IconSize=48
-PreviewSize=96
+IconSize=32
 
 [KPropertiesDialog]
 Height 768=478
-Width 1366=588
+Width 1366=587
 
 [MainWindow]
-Height 768=574
+Height 768=606
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAwAAAAAAAADRAAACqPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAmAAACqAAAAFoBAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAAEhAAAAqgAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+State=AAAA/wAAAAD9AAAAAwAAAAAAAADJAAACovwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAmAAACogAAAFoBAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAAEjAAAAqIAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
 ToolBarsMovable=Disabled
-Width 1366=1134
+Width 1366=1094
 Window-Maximized 768x1366=true
+
+[Notification Messages]
+ConfirmTrash=true
 
 [Open-with settings]
 CompletionMode=1
@@ -43,8 +45,8 @@ History=ty
 Plugins=djvuthumbnail,htmlthumbnail,gsthumbnail,rawthumbnail,fontthumbnail,ffmpegthumbs,audiothumbnail,comicbookthumbnail,kraorathumbnail,windowsexethumbnail,imagethumbnail,exrthumbnail,jpegthumbnail,svgthumbnail,windowsimagethumbnail,directorythumbnail
 
 [SettingsDialog]
-Height 768=493
-Width 1366=641
+Height 768=555
+Width 1366=912
 
 [VersionControl]
 enabledPlugins=Dropbox
