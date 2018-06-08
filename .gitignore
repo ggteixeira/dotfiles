@@ -1,0 +1,4 @@
+# GitIgnore dos Dotfiles:
+
+*.directory
+*.dotfiles.git
