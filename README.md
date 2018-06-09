@@ -1,6 +1,6 @@
 **Isto é um README do meu dotfiles em construção.**
 
-****Lista de extensões usadas no Visual Studio Code:
+Lista de extensões usadas no Visual Studio Code:
 
 - Atom Keymap (*Microsoft*)
 - Beautify (*HookyQR*)
