@@ -15,3 +15,14 @@
 
   - dark-plus-syntax (*duostontc*)
   - One Dark Pro (*zhuangtongfa*)
+
+# Lista de Extensões usadas no Vim (GVim)
+
+- VundleVim
+- AutoPairs
+- NerdTree
+- Syntastic
+- Vim-Airline
+- Vim-Airline-Themes
+- Python-Mode
+- Python-Syntax
