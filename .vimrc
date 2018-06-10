@@ -109,3 +109,9 @@ let NERDTreeDirArrows = 1
 nmap <C-h> :NERDTreeToggle<CR>
 map <C-\> :NERDTreeToggle<CR>
 
+" Atalhos personalizados
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
