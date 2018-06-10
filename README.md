@@ -1,9 +1,5 @@
 # Isto é um README do meu dotfiles (em construção)
 
-![](/home/guiemi/Dropbox/Capturas de tela/Screenshot_20180609_204857.png)
-
-
-
 ## 1 - Lista de extensões usadas no Visual Studio Code:
 
 - ### Extensões:
