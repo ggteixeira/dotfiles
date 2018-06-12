@@ -2,3 +2,4 @@
 
 *.directory
 *.dotfiles.git
+.config/kwinrulesrc
