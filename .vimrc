@@ -2,13 +2,14 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set number
+" set relativenumber!
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 syntax enable                               " syntax highlight
 set t_Co=256                                " set 256 colors
-colorscheme atom-dark-256                   " set color scheme
+colorscheme atom-dark-256                            " set color scheme
 set showmatch                               " shows matching part of bracket pairs (), [], {}
 set enc=utf-8	                            " utf-8 by default
 set hlsearch
@@ -22,7 +23,7 @@ call vundle#begin()
 " ==== plugin manager
 Plugin 'VundleVim/Vundle.vim'
 
-" Autopair
+" ==== Autopair
 
 Plugin 'jiangmiao/auto-pairs'
 
@@ -41,6 +42,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" ==== Color Schemes for Vim
+
+Plugin 'gosukiwi/vim-atom-dark'
 
 " ==== snippets
 
