@@ -62,7 +62,8 @@
     "workbench.colorTheme": "One Dark Pro Vivid",
     "update.channel": "none",
     "python.venvPath": "/home/guiemi/Dropbox/programacao/python/python-exercises/django/venv/bin/python3",
-    "python.pythonPath": "",    
+    "python.pythonPath": "",
+    "explorer.confirmDragAndDrop": false,    
     
     
 }
