@@ -234,6 +234,7 @@ activate task manager entry 7=Meta+7,Meta+7,Ativar entrada 7 do gerenciador de t
 activate task manager entry 8=Meta+8,Meta+8,Ativar entrada 8 do gerenciador de tarefas
 activate task manager entry 9=Meta+9,Meta+9,Ativar entrada 9 do gerenciador de tarefas
 activate widget 148=Meta+C,none,Ativar o widget Event Calendar
+activate widget 149=Alt+Shift+F,none,Ativar o widget Redshift Control
 activate widget 48=none,none,Ativar o widget Gerenciador de tarefas apenas com ícones
 clear-history=none,none,Limpar histórico da área de transferência
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Habilitar ações da área de transferência
