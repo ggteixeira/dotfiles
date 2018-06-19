@@ -9,14 +9,17 @@ set shiftwidth=4
 set expandtab
 syntax enable                               " syntax highlight
 set t_Co=256                                " set 256 colors
-colorscheme atom-dark-256                            " set color scheme
+colorscheme industry  " set color scheme
 set showmatch                               " shows matching part of bracket pairs (), [], {}
 set enc=utf-8	                            " utf-8 by default
 set hlsearch
-set syntax=python
+set syntax=python3
+filetype indent plugin on
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -58,9 +61,6 @@ let g:airline_powerline_fonts = 1
 
 " lints
 let g:pymode_lint=0
-
-
-
 
 " ==== * ==== Python ==== * ==== * ====
 Plugin 'klen/python-mode'
