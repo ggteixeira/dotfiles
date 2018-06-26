@@ -9,7 +9,7 @@ set shiftwidth=4
 set expandtab
 syntax enable                               " syntax highlight
 set t_Co=256                                " set 256 colors
-colorscheme industry  " set color scheme
+colorscheme atom-dark-256                   " set color scheme
 set showmatch                               " shows matching part of bracket pairs (), [], {}
 set enc=utf-8	                            " utf-8 by default
 set hlsearch
