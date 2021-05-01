@@ -1,0 +1,27 @@
+[includeIf "gitdir:~/GitHub/"]
+  	path = .gitconfig-github
+[includeIf "gitdir:~/Printi/"]
+  	path = .gitconfig-printi
+
+[alias]
+	l = "log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+	st = status
+	com = commit
+	diffcom = git diff HEAD~1
+	git = !git
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	editor = /usr/bin/nvim
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
+[user]
+	email = 24235344+vibraniumdev@users.noreply.github.com
+	name = Guilherme Teixeira
