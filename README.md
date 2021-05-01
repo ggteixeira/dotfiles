@@ -1,6 +1,5 @@
 # My Dotfiles
 
-How to install: [Install.md](https://github.com/vibraniumdev/dotfiles/wiki/Instala%C3%A7%C3%A3o)
+How to install: [Install.md](https://github.com/vibraniumdev/dotfiles/wiki/Instala%C3%A7%C3%A3o) (under construction).
 
-Se você estiver procurando os dotfiles do meu Manjaro i3wm Community Edition ou do meu macOS, eles estão [aqui](https://github.com/vibraniumdev/i3wm-dotfiles) (Manjaro i3wm) e [aqui](https://github.com/vibraniumdev/mac-dotfiles) (macOS)
-
+If you are looking for my dotfiles for Manjaro i3wm or macOS, they [here](https://github.com/vibraniumdev/i3wm-dotfiles) (Manjaro i3wm) and [here](https://github.com/vibraniumdev/mac-dotfiles) (macOS).
