@@ -1,4 +1,4 @@
-# My dotfiles
+# My Dotfiles
 
 How to install: [Install.md](https://github.com/vibraniumdev/dotfiles/wiki/Instala%C3%A7%C3%A3o)
 
