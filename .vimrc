@@ -1,4 +1,4 @@
-" My Vimrc
+" My Vimrc!
 " URL: https://github.com/guiemi/mac-dotfiles/blob/master/.vimrc
 " Author: Guilherme Teixeira
 " Description: My personal VIMRC, built along the years in order to fulfill my
