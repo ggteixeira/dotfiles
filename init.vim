@@ -133,6 +133,7 @@ let g:airline_skip_empty_sections = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 nmap <C-n> :NERDTreeToggle<CR>
+set splitright
 
 " Close Vim if only NerdTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  
