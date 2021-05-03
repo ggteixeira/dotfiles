@@ -68,15 +68,6 @@ set shiftwidth=2
 set expandtab
 
 " =====================================================
-" OTHER options
-" =====================================================
-set t_Co=256
-set showmatch
-set enc=utf-8
-
-set wildmenu " Better command-line completion
-
-" =====================================================
 " MAPPINGS
 " C => Control | S => Shift
 " =====================================================
@@ -93,6 +84,14 @@ inoremap <silent><c-s> <c-o>:update<cr>
 
 inoremap <S-Tab> <C-d> " o que este faz?
 
+" =====================================================
+" OTHER options
+" =====================================================
+set t_Co=256
+set showmatch
+set enc=utf-8
+
+set wildmenu " Better command-line completion
 
 " =====================================================
 " VIM-PLUG plugins
@@ -139,5 +138,5 @@ set splitright
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  
 
 """ DRACULA settings
-syntax on
 colorscheme dracula
+syntax on
