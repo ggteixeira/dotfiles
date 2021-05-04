@@ -10,8 +10,8 @@
     cursor_shape = ibeam
     cursor_color = "#aaaaaa"
     font = MesloLGS NF 9
-    use_system_font = False
     scrollbar_position = disabled
+    use_system_font = False
 [layouts]
   [[default]]
     [[[window0]]]
