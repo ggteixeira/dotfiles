@@ -101,6 +101,12 @@ inoremap <S-Tab> <C-d> " o que este faz?
 
 " Use <cr> to confirm completion
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Just type ; to enter command mode when in normal mode
+nnoremap ; :
+
+" Paste last thing yanked, not the last thing deleted:
+nmap ,p "0p
+
 
 " OTHER options
 " =====================================================
@@ -133,7 +139,8 @@ let g:airline_skip_empty_sections = 1
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-nmap <C-n> :NERDTreeToggle<CR>
+" nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-\> :NERDTreeToggle<CR>
 set splitright
 
 " Close Vim if only NerdTree is open
