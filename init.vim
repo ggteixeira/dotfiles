@@ -1,8 +1,22 @@
+"
 " My NEOVIM configs
 " URL: https://github.com/vibraniumdev/macOS-Dotfiles/blob/master/.config/nvim/init.vim
 " Author: Guilherme Teixeira
 " Description: My personal NEOVIMRC, built along the years in order to fulfill my
 " needs. 
+
+" =====================================================
+" VIM-PLUG 
+" =====================================================
+call plug#begin('~/.vim/nvim_plugins')
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "Nerdtree
+  Plug 'vim-airline/vim-airline'  " Status bar on bottom (Powerline/Airline)
+  Plug 'vim-airline/vim-airline-themes' " Airline themes
+  Plug 'jiangmiao/auto-pairs' "Auto add brackets etc.
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'gko/vim-coloresque'
+call plug#end()
 
 " =====================================================
 " FEATURES
@@ -15,6 +29,7 @@ set cursorline
 set encoding=utf-8 "Set encoding
 set linebreak " Wraps lines without trimming words in the middle; breaks line instead
 filetype indent plugin on
+set signcolumn=yes
 
 " =====================================================
 " MUST HAVE options 
@@ -84,7 +99,9 @@ inoremap <silent><c-s> <c-o>:update<cr>
 
 inoremap <S-Tab> <C-d> " o que este faz?
 
-" =====================================================
+" Use <cr> to confirm completion
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 " OTHER options
 " =====================================================
 set t_Co=256
@@ -92,21 +109,6 @@ set showmatch
 set enc=utf-8
 
 set wildmenu " Better command-line completion
-
-" =====================================================
-" VIM-PLUG plugins
-" =====================================================
-
-call plug#begin('~/.vim/nvim_plugins')
-
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "Nerdtree
-Plug 'vim-airline/vim-airline'  " Status bar on bottom (Powerline/Airline)
-Plug 'vim-airline/vim-airline-themes' " Airline themes
-Plug 'jiangmiao/auto-pairs' "Auto add brackets etc.
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'gko/vim-coloresque'
-call plug#end()
 
 " =====================================================
 " VIM-PLUG settings
