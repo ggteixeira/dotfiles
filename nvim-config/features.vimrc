@@ -1,7 +1,3 @@
-" =====================================================
-" FEATURES
-" =====================================================
-
 set nocompatible " Avoid unexpected things that the OS may have made
 set clipboard=unnamed " Copy to clipboard
 set termguicolors

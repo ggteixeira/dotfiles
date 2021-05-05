@@ -1,6 +1,3 @@
-" =====================================================
-" VIM-PLUG 
-" =====================================================
 call plug#begin('~/.vim/nvim_plugins')
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "Nerdtree
   Plug 'vim-airline/vim-airline'  " Status bar on bottom (Powerline/Airline)

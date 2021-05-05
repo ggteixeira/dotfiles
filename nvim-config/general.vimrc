@@ -1,7 +1,3 @@
-" =====================================================
-" MUST HAVE options 
-" =====================================================
-
 set incsearch " Highlight search when entering a pattern
 set hlsearch " Highlight searches
 set showmatch
