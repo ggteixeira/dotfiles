@@ -3,8 +3,7 @@
 # =====================================================
 
 
-# GENERAL aliases
-
+### GENERAL aliases
 alias li='ls -l'
 alias -s md=typora  # Markdown files
 alias weather='curl http://wttr.in/'
@@ -12,25 +11,20 @@ alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias please='sudo'
 alias dedoff='shutdown now'
 
-### DOTFILES aliases (Bare Repository)
+# DOTFILES aliases (Bare Repository)
 # alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 
 ### MOVEMENT aliases
-
 alias gotovimcolors='cd /usr/share/vim/vim*/colors'
-alias gotoreact='cd ~/github/learning-center/React && clear && ls'
-alias gotoprinti='cd ~/Printi && clear && ls'
-alias gotodotfiles="~/.dotfiles"
-alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias nvimrc='cd ~/.dotfiles/nvim-config && ls && vim'
 alias zshrc="vim ~/.zshrc"
-alias vimrc='vim ~/.vimrc'
+alias vimrc='vim ~/.dotfiles/nvim-config/general.vimrc'
+alias gotoaliases='vim ~/.zsh_aliases'
 
 ### REPLACEMENT aliases
-
 alias vim='nvim'
 
 ### GIT aliases
-
 alias g='git'
 alias ga='git add'
 alias gc='git commit -v'
