@@ -18,6 +18,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 " nmap <C-n> :NERDTreeToggle<CR>
 nmap <C-\> :NERDTreeToggle<CR>
+nnoremap <A-S-e> :NERDTreeFocus<CR>
 set splitright
 
 " Close Vim if only NERDTree is open
