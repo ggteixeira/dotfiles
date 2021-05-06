@@ -1,9 +1,12 @@
 [global_config]
+  handle_size = 1
   extra_styling = False
-  title_transmit_bg_color = "#204a87"
+  title_transmit_bg_color = "#2f2f2f"
+  title_receive_bg_color = "#729fcf"
+  title_inactive_bg_color = "#000000"
   inactive_color_offset = 0.7532467532467533
   title_font = Fira Mono for Powerline 9
-  scrollbar_position = disabled
+  smart_copy = False
 [keybindings]
 [profiles]
   [[default]]
