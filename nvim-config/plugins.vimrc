@@ -17,10 +17,7 @@ let g:airline_skip_empty_sections = 1
 let NERDTreeIgnore=['\~$', '\.pyc$', '^\.DS_Store$', '^node_modules$', '.git', '.ropeproject', '__pycache__']
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-" nmap <C-n> :NERDTreeToggle<CR>
-" nmap <C-\> :NERDTreeToggle<CR>
-nmap <C-n> :NERDTreeToggle<CR>
-nnoremap <A-S-e> :NERDTreeFocus<CR>
+set splitbelow
 set splitright
 
 " Close Vim if only NERDTree is open
