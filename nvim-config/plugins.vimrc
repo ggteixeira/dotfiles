@@ -23,10 +23,6 @@ set splitright
 " Close Vim if only NERDTree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  
 
-""" DRACULA settings
-colorscheme dracula
-syntax on
-
 """" AUTOPAIRS settings
 " Turn of this plugin ability of handling backspace,
 " which caused interference with the ctrl+backspace function in insert mode
@@ -42,3 +38,9 @@ let g:rainbow_conf = {
 	\		'nerdtree': 0,
 	\	}
 	\}
+
+" One Dark Theme settings
+let g:onedark_termcolors=256
+syntax on
+colorscheme onedark
+set termguicolors
