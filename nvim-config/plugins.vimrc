@@ -33,4 +33,12 @@ syntax on
 let g:AutoPairsMapBS = 0
 
 """ COC settings
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-git']
+
+""" Rainbow Brackets settings
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+let g:rainbow_conf = {
+	\	'separately': {
+	\		'nerdtree': 0,
+	\	}
+	\}
