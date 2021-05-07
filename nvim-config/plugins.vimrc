@@ -14,6 +14,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_skip_empty_sections = 1
 
 """ NERDTREE settings
+let NERDTreeIgnore=['\~$', '\.pyc$', '^\.DS_Store$', '^node_modules$', '.git', '.ropeproject', '__pycache__']
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 " nmap <C-n> :NERDTreeToggle<CR>
@@ -28,3 +29,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """ DRACULA settings
 colorscheme dracula
 syntax on
+
+"""" AUTOPAIRS settings
+" Turn of this plugin ability of handling backspace,
+" which caused interference with the ctrl+backspace function in insert mode
+let g:AutoPairsMapBS = 0
+
+""" COC settings
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier']
