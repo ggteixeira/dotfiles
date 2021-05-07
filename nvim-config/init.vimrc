@@ -6,4 +6,9 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'gko/vim-coloresque'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'yuezk/vim-js'
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 call plug#end()
