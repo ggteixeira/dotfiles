@@ -1,5 +1,6 @@
 " Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start 
+" set backspace=indent,eol,start 
+set backspace=indent,start,eol
 
 " Keeps the same indent as the line you're currently on
 set autoindent 
