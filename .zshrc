@@ -29,3 +29,8 @@ fi
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)" 
+
+
+# zsh-autosuggestions settings
+bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
+bindkey '^H' backward-kill-word
