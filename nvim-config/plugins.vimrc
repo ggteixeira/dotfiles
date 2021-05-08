@@ -34,7 +34,6 @@ let g:coc_global_extensions = [
       \'coc-git'
 \]
 
-""" Rainbow Brackets settings
 " One Dark Theme settings
 
 set termguicolors

@@ -36,3 +36,6 @@ map <silent><leader>h :vertical resize -5<cr>
 
 " COC Prettier mappings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Source current file using leader+r
+nmap <leader>r :w<CR>:so %<CR>
