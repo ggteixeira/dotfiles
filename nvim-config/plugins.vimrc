@@ -1,5 +1,12 @@
 """ NERDTREE settings
-let NERDTreeIgnore=['\~$', '\.pyc$', '^\.DS_Store$', '^node_modules$', '.git', '.ropeproject', '__pycache__']
+let NERDTreeIgnore=[
+      \'\~$', '\.pyc$', 
+      \'^\.DS_Store$', 
+      \'^node_modules$', 
+      \'.git', 
+      \'.ropeproject', 
+      \'__pycache__'
+\]
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 set splitbelow
@@ -14,7 +21,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:AutoPairsMapBS = 0
 
 """ COC settings
-let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-git']
+let g:coc_global_extensions = [
+      \'coc-tslint-plugin', 
+      \'coc-tsserver', 
+      \'coc-css', 
+      \'coc-html', 
+      \'coc-json', 
+      \'coc-prettier', 
+      \'coc-git'
+\]
 
 """ Rainbow Brackets settings
 " One Dark Theme settings
@@ -27,4 +42,4 @@ colorscheme onedark
 set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'onedark',
-      \ }
+\ }
