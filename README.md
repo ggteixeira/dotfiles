@@ -12,7 +12,21 @@ Se você está procurando meus dotfiles para o Manjaro i3wm ou para macOS, eles 
 
 ![nvim-configs](https://github.com/vibraniumdev/dotfiles/blob/main/media/nvim-config.png)
 
-## Introdução
+## Introdução: O que são Dotfiles e por que eles são importantes?
 
-Dotfiles é uma técnica usada para preservar e reaver arquivos de configuração, geralmente ocultados na pasta principal de um sistema através de um ponto (".") antes de seu nome. Alguns exemplos são o `.bashrc`, `.vimrc` e `.gitconfig`. 
+Como o nome já sugere, dotfiles são **arquivos** que têm como característica principal serem precedidos por um ponto  (**dot** em inglês) em seus nomes. O ponto faz com que esses arquivos fiquem  escondidos, evitando, assim, alterações ou exclusões acidentais. Outra  característica deles é que eles geralmente são criados na pasta **home** do seu sistema de arquivos. O `.bashrc` é certamente o dotfile mais popular atualmente, pois ele é responsável pelas configurações do Bash (*Bourne-again shell*).
+
+Usuários de sistemas *Unix-like* utilizam dotfiles organizados em repositórios (como no GitHub, GitLab ou BitBucket) para manterem um  esquema de versionamento de seus arquivos de configuração e um backup  simples de ser ativado em caso de acidentes ou em máquinas novas. Outra  utilidade de disponibilizar em repositórios públicos esses arquivos e  screenshots é inspirar outros usuários a fazerem o mesmo e ampliar o  conhecimento sobre essa técnica simples mas que poupa tempo e dor de  cabeça.
+
+Uma terceira utilidade seria majoritariamente estética, já que, nessa toada de personalização de configurações, existe um nicho de usuários  que gostam de mostrar as personalizações feitas nos temas de seus  terminais, editores de texto, *desktop environments*. Nas comunidades [r/vimporn](https://www.reddit.com/r/vimporn/) e [r/unixporn](https://www.reddit.com/r/unixporn/) você encontrará screenshots de usuários orgulhosos de terem transformado seu Vim e seu *desktop environment* em verdadeiras obras de arte. Se quiser saber mais sobre esse tópico -- denominado *ricing* --, tem um texto meu [aqui](https://medium.com/blacktech/introdução-ao-ricing-60243fab4275), postado no Medium, escrito em português.
+
+## Processo de migração do Visual Studio Code para o Neovim
+
+## Coisas que não deram certo/workarounds/gambiarras
+
+## Referências Bibliográficas (em construção)
+
+* Dotfiles do Juliano (frontendwizard) & Dotfiles do Kent Dodds (Vim)
+* Dotfiles do Otavio Pace (Neovim)
+* Dotfiles do GregJS (Neovim)
 
