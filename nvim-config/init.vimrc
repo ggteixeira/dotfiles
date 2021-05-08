@@ -10,4 +10,6 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'yuezk/vim-js'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()

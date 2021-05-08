@@ -45,3 +45,12 @@ set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'onedark',
 \ }
+
+" FZF settings
+source /usr/share/doc/fzf/examples/fzf.vim
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-i': 'split',
+  \ 'ctrl-s': 'vsplit' }

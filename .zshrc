@@ -28,3 +28,9 @@ eval "$(pyenv virtualenv-init -)"
 # zsh-autosuggestions settings
 bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
 bindkey '^H' backward-kill-word
+
+# FZF settings
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

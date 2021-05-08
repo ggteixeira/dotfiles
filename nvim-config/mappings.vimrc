@@ -39,3 +39,6 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Source current file using leader+r
 nmap <leader>r :w<CR>:so %<CR>
+
+" Activate FZF using ctrl+p
+nnoremap <C-P> :FZF<CR>
