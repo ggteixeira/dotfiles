@@ -12,10 +12,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <silent><c-s> :<c-u>update<cr> 
 vnoremap <silent><c-s> <c-c>:update<cr>gv
 inoremap <silent><c-s> <c-o>:update<cr> 
-
-" O que este faz?
-inoremap <S-Tab> <C-d> 
-
+ 
 " Use <cr> (Enter/Return) to confirm completion
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 

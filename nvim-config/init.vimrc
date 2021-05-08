@@ -10,5 +10,4 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'yuezk/vim-js'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'luochen1990/rainbow'
 call plug#end()
