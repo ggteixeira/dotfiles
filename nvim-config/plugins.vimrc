@@ -12,10 +12,13 @@ let NERDTreeDirArrows = 1
 set splitbelow
 set splitright
 
-" Close Vim if only NERDTree is open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif  
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
 
-"""" AUTOPAIRS settings
+" Exit Vim if NERDTree is the only window left
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
 " Turn of this plugin ability of handling backspace,
 " which caused interference with the ctrl+backspace function in insert mode
 let g:AutoPairsMapBS = 0
