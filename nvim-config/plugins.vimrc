@@ -1,18 +1,3 @@
-""" AIRLINE settings
-let g:airline_powerline_fonts = 1
-
-let g:airline_section_warning = ''
-let g:airline_section_error = ''
-
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_toggle_whitespace=0
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_skip_empty_sections = 1
-
 """ NERDTREE settings
 let NERDTreeIgnore=['\~$', '\.pyc$', '^\.DS_Store$', '^node_modules$', '.git', '.ropeproject', '__pycache__']
 let NERDTreeMinimalUI = 1
@@ -32,15 +17,14 @@ let g:AutoPairsMapBS = 0
 let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-git']
 
 """ Rainbow Brackets settings
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-let g:rainbow_conf = {
-	\	'separately': {
-	\		'nerdtree': 0,
-	\	}
-	\}
-
 " One Dark Theme settings
-let g:onedark_termcolors=256
+
+set termguicolors
 syntax on
 colorscheme onedark
-set termguicolors
+
+" Lightline settings
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \ }
