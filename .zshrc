@@ -17,12 +17,6 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
-
-# TILIX settings
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
-
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # PYENV settings
