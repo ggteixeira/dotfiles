@@ -14,3 +14,4 @@ set number " Show line numbers
 set relativenumber " Show line numbers relatively
 set noswapfile " Disables creating swap files
 set colorcolumn=79 " Column limit
+set shortmess=I " Read :help shortmess for everything else.
