@@ -1,6 +1,6 @@
-# My Dotfiles
+# Dotfiles
 
-![desktop-screenshot](https://github.com/vibraniumdev/dotfiles/blob/main/media/desktop-screenshot.png)
+![desktop-screenshot](https://github.com/vibraniumdev/dotfiles/blob/main/media/desktop.png)
 
 ## Instalação
 
@@ -9,8 +9,6 @@ Como instalar: [Install.md](https://github.com/vibraniumdev/dotfiles/wiki/Instal
 ## Disclaimer
 
 Se você está procurando meus dotfiles para o Manjaro i3wm ou para macOS, eles estão [aqui](https://github.com/vibraniumdev/i3wm-dotfiles) (Manjaro i3wm) e [aqui](https://github.com/vibraniumdev/macOS-Dotfiles) (macOS).
-
-![nvim-configs](https://github.com/vibraniumdev/dotfiles/blob/main/media/nvim-config.png)
 
 ## Introdução: O que são Dotfiles e por que eles são importantes?
 
