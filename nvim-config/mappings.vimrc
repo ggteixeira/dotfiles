@@ -42,3 +42,7 @@ nmap <leader>r :w<CR>:so %<CR>
 
 " Activate FZF using ctrl+p
 nnoremap <C-P> :FZF<CR>
+
+" Run prettier
+nnoremap <leader>b :Prettier <CR>
+
