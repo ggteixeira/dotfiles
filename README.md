@@ -21,8 +21,8 @@ Uma terceira utilidade seria majoritariamente estética, já que, nessa toada de
 ## Processo de migração do Visual Studio Code para o Neovim
 
 ## Detalhes para lembrar de fazer
-
 * Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
+* Descobrir como fazer o coc-styled-components funcionar
 
 ## Coisas que não deram certo/workarounds/gambiarras
 
