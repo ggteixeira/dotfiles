@@ -30,9 +30,9 @@ nnoremap <leader>; A;<esc>
 nmap <silent><C-\> :NERDTreeToggle<CR>
 nnoremap <A-S-e> :NERDTreeFocus<CR>
 
-"Resizes NERDTree (and other panes too)
-map <silent><leader>l :vertical resize +5<cr>
-map <silent><leader>h :vertical resize -5<cr>
+" Resizes NERDTree 
+map <silent><leader>l :NERDTreeFocus <CR> :vertical resize +5<cr>
+map <silent><leader>h :NERDTreeFocus <CR> :vertical resize -5<cr>
 
 " COC Prettier mappings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
