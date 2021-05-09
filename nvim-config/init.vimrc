@@ -11,4 +11,5 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'preservim/nerdcommenter'
 call plug#end()

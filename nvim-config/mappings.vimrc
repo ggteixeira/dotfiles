@@ -46,3 +46,6 @@ nnoremap <silent> <expr> <C-P> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : ''
 " Run prettier
 nnoremap <leader>b :Prettier <CR>
 
+" Toggle Nerdcommenter
+" For some cryptic reason, Nvim registers ctrl+/ as ctrl+/.
+nmap <C-_> <plug>NERDCommenterToggle 
