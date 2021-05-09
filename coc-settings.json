@@ -1,3 +1,20 @@
 {
-  "eslint.probe": ["javascript","javascriptreact","typescript","typescriptreact","html","vue","markdown"]
+  "eslint.probe": 
+    [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html",
+      "vue",
+      "markdown"
+  ],
+  "styled-components.tags": 
+    [
+      "styled",
+      "css",
+      "sty",
+      "createGlobalStyle"
+  ]
 }
+
