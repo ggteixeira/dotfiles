@@ -41,7 +41,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nmap <leader>r :w<CR>:so %<CR>
 
 " Activate FZF using ctrl+p
-nnoremap <C-P> :FZF<CR>
+nnoremap <silent> <expr> <C-P> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
 
 " Run prettier
 nnoremap <leader>b :Prettier <CR>
