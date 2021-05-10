@@ -33,7 +33,8 @@ let g:coc_global_extensions = [
       \'coc-prettier', 
       \'coc-git',
       \'coc-eslint',
-      \'coc-styled-components' 
+      \'coc-styled-components',
+      \'coc-emmet' 
 \]
 
 " One Dark Theme settings
