@@ -36,6 +36,9 @@ Usar o Vim no terminal – que é o meu caso – dispensa o conceito de workspac
 
 No Code você pode editar mais de uma linha por vez usando `ctrl+shift+seta`.  No Vim, o [vim-visual-multi](https://github.com/mg979/vim-visual-multi) dá conta não só de editar várias linha de uma vez como de fazer o `ctrl+d`, que é editar vários pontos do texto através de correspondência. Por exemplo, se você quer transformar todos os `border: 1rem solid blue;` de um arquivo para `red`, basta colocar o cursor em cima da palavra e ativar a função usando `ctrl+n`.
 
+### Auto Close Tag
+Foi adicionada ao NeoVim uma funcionalidade que não está presente no VsCode, mas está no WebStorm. Quando você insere uma tag HTML, como por exemplo um `<h1>`, o plugin automaticamente insere o `</h1>`. Simples e poderoso.
+
 ## Detalhes para lembrar de fazer
 * Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
 * Descobrir como fazer o coc-styled-components funcionar
