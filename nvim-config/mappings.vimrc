@@ -26,7 +26,6 @@ nmap ,p "0p
 nnoremap <leader>; A;<esc>
 
 " NERDTREE mappings
-" nmap <C-n> :NERDTreeToggle<CR>
 nmap <silent><C-\> :NERDTreeToggle<CR>
 nnoremap <A-S-e> :NERDTreeFocus<CR>
 
