@@ -1,35 +1,44 @@
 [global_config]
   handle_size = 1
-  extra_styling = False
-  title_transmit_bg_color = "#204a87"
-  title_receive_bg_color = "#729fcf"
-  title_inactive_bg_color = "#2f2f2f"
+  title_transmit_fg_color = "#2E3440"
+  title_transmit_bg_color = "#88c0d0"
+  title_receive_fg_color = "#2E3440"
+  title_receive_bg_color = "#8FBCBB"
+  title_inactive_fg_color = "#D8DEE9"
+  title_inactive_bg_color = "#4C566A"
   inactive_color_offset = 0.7532467532467533
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
   always_split_with_profile = True
+  title_use_system_font = False
   title_font = Fira Mono for Powerline 9
   smart_copy = False
-  title_inactive_bg_color = "#4C566A"
-  title_inactive_fg_color = "#D8DEE9"
-  title_receive_bg_color = "#8FBCBB"
-  title_receive_fg_color = "#2E3440"
-  title_transmit_bg_color = "#88C0D0"
-  title_transmit_fg_color = "#2E3440"
 [keybindings]
 [profiles]
   [[default]]
-    background_color = "#282828"
+    background_color = "#2e3440"
     cursor_shape = ibeam
     cursor_color = "#aaaaaa"
-    font = MesloLGS NF 9
-    foreground_color = "#ebdbb2"
+    font = Meslo LG S DZ for Powerline 9
+    foreground_color = "#d8dee9"
     scrollbar_position = hidden
     palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
     use_system_font = False
   [[nord]]
-    background_color = "#2E3440"
+    background_color = "#2e3440"
     cursor_color = "#D8DEE9"
+    font = Meslo LG S DZ for Powerline 9
+    foreground_color = "#d8dee9"
+    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8F  BCBB:#ECEFF4"
+    use_system_font = False
+  [[Nord]]
+    background_color = "#2E3440"
+    cursor_shape = ibeam
+    cursor_color = "#D8DEE9"
+    font = Meslo LG S DZ for Powerline 9
     foreground_color = "#D8DEE9"
-    palette =    "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8F  BCBB:#ECEFF4"
+    scrollbar_position = hidden
+    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"
+    use_system_font = False
 [layouts]
   [[default]]
     [[[window0]]]
