@@ -9,7 +9,7 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'ryanoasis/vim-devicons'
   Plug 'yuezk/vim-js'
   Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'terryma/vim-multiple-cursors'
+  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'preservim/nerdcommenter'
 call plug#end()
