@@ -12,4 +12,5 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'preservim/nerdcommenter'
+  Plug 'alvan/vim-closetag'
 call plug#end()
