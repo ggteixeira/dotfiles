@@ -46,8 +46,15 @@ colorscheme onedark
 " Lightline settings
 set noshowmode
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
-\ }
+\  'colorscheme': 'onedark',
+\  'active': {
+\    'left': [ [ 'mode', 'paste' ],
+\              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+\  },
+\   'component_function': {
+\   'gitbranch': 'gitbranch#name'
+\  },
+\  }
 
 " FZF settings
 source /usr/share/doc/fzf/examples/fzf.vim

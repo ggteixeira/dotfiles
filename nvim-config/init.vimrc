@@ -2,6 +2,7 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'jiangmiao/auto-pairs' "Auto add brackets etc.
   Plug 'itchyny/lightline.vim'
+  Plug 'itchyny/vim-gitbranch'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'joshdick/onedark.vim'
