@@ -30,7 +30,7 @@ Lista de features essenciais presentes no VSCode
 
 Usar o Vim no terminal – que é o meu caso – dispensa o conceito de workspace porque é mais direto ao ponto dar um `cd` na pasta de trabalho raiz e abrir o Vim lá. Há inclusive alguns aliases de navegação que facilitam ainda mais esse processo quando ele se torna repetitivo, como os meus `goto`: [.zsh_aliases](https://github.com/vibraniumdev/dotfiles/blob/main/.zsh_aliases).
 
-### Command+P e Busca Global
+### Ctrl+P/Command+P e Busca Global
 
 ### Multi-Cursores
 
