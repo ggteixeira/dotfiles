@@ -48,3 +48,9 @@ nnoremap <leader>b :Prettier <CR>
 " Toggle Nerdcommenter
 " For some cryptic reason, Nvim registers ctrl+/ as ctrl+_.
 nmap <C-_> <plug>NERDCommenterToggle 
+
+" for command mode
+nnoremap <S-Tab> <<
+" for insert mode
+inoremap <S-Tab> <C-d>
+
