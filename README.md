@@ -34,8 +34,6 @@ Foi adicionada ao NeoVim uma funcionalidade que não está presente no VsCode, m
 A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizado o plugin vim-gitbranch.
 
 ### COC: Conquer of Completion
-
-* coc-pairs
 * coc-tslint-plugin
 * coc-tsserver
 * coc-css
@@ -46,7 +44,6 @@ A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizad
 * coc-eslint
 * coc-styled-components
 * coc-emmet
-* coc-pair
 
 ## Detalhes para lembrar de fazer
 * Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
