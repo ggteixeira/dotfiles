@@ -39,6 +39,9 @@ No Code você pode editar mais de uma linha por vez usando `ctrl+shift+seta`.  N
 ### Auto Close Tag
 Foi adicionada ao NeoVim uma funcionalidade que não está presente no VsCode, mas está no WebStorm. Quando você insere uma tag HTML, como por exemplo um `<h1>`, o plugin automaticamente insere o `</h1>`. Simples e poderoso.
 
+### Informações na barra de status (statusline)
+A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizado o plugin vim-gitbranch.
+
 ## Detalhes para lembrar de fazer
 * Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
 * Descobrir como fazer o coc-styled-components funcionar
