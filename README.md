@@ -30,6 +30,10 @@ No Code você pode editar mais de uma linha por vez usando `ctrl+shift+seta`.  N
 ### Auto Close Tag
 Foi adicionada ao NeoVim uma funcionalidade que não está presente no VsCode, mas está no WebStorm. Quando você insere uma tag HTML, como por exemplo um `<h1>`, o plugin automaticamente insere o `</h1>`. Simples e poderoso.
 
+### NERDTree
+
+A NERDTree (árvore de arquivos) mostra dinamicamente o arquivo aberto, assim como o VSCode faz por padrão. A função que faz isso não é minha, copiei do [Bob Zimmermann](https://stackoverflow.com/a/59977029). Thanks!
+
 ### Informações na barra de status (statusline)
 A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizado o plugin vim-gitbranch.
 
@@ -48,6 +52,7 @@ A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizad
 ## Detalhes para lembrar de fazer
 * Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
 * Descobrir como fazer o `coc-styled-components` funcionar
+* ~~Fazer a NERDTree pular para o diretório/arquivo atual automaticamente~~
 
 ## Coisas que não deram certo/workarounds/gambiarras
 
