@@ -38,16 +38,16 @@ A NERDTree (árvore de arquivos) mostra dinamicamente o arquivo aberto, assim co
 A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizado o plugin vim-gitbranch.
 
 ### COC: Conquer of Completion
-* coc-tslint-plugin
-* coc-tsserver
-* coc-css
-* coc-html
-* coc-json
-* coc-prettier
-* coc-git
-* coc-eslint
-* coc-styled-components
-* coc-emmet
+* `coc-tslint-plugin`
+* `coc-tsserver`
+* `coc-css`
+* `coc-html`
+* `coc-json`
+* `coc-prettier`
+* `coc-git`
+* `coc-eslint`
+* `coc-styled-components`
+* `coc-emmet`
 
 ## Detalhes para lembrar de fazer
 * Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
