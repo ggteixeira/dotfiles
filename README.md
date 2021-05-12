@@ -54,7 +54,9 @@ A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizad
 * Descobrir como fazer o `coc-styled-components` funcionar
 * ~~Fazer a NERDTree pular para o diretório/arquivo atual automaticamente~~
 
-## Coisas que não deram certo/workarounds/gambiarras
+## Coisas que deram certo por meio de workarounds e adaptações
+
+## Coisas que não deram certo
 
 ## Referências Bibliográficas (em construção)
 
