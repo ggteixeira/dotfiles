@@ -44,8 +44,6 @@ function! ToggleNerdTree()
   set eventignore=
 endfunction
 
-nmap <C-\> :call ToggleNerdTree()<CR>
-
 "nmap <si\ent><C-\> :NERDTreeToggle<CR>
 
 " Turn of this plugin ability of handling backspace,

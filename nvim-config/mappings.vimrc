@@ -26,12 +26,16 @@ nmap ,p "0p
 nnoremap <leader>; A;<esc>
 
 " NERDTREE mappings
-nmap <silent><C-\> :NERDTreeToggle<CR>
+"nmap <silent><C-\> :NERDTreeToggle<CR>
 nnoremap <A-S-e> :NERDTreeFocus<CR>
 
 " Resizes NERDTree 
 map <silent><leader>l :NERDTreeFocus <CR> :vertical resize +5<cr>
 map <silent><leader>h :NERDTreeFocus <CR> :vertical resize -5<cr>
+
+" Opens NERDTree and keeps the focus in the file
+"nmap <silent><C-\> :call ToggleNerdTree()<CR>
+nnoremap <silent><C-\> :call ToggleNerdTree() <Bar> if &filetype ==# 'nerdtree' <Bar> wincmd p <Bar> endif<CR>
 
 " COC Prettier mappings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
