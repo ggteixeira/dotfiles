@@ -54,6 +54,7 @@ A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizad
 * Descobrir como fazer o `coc-styled-components` funcionar
 * ~~Fazer a NERDTree pular para o diretório/arquivo atual automaticamente~~
 * Fazer o space+hjkl funcionar direito para redimensionar a NERDTree
+* Fazer o plugin das cores pintar as palavras apenas dentro de certos arquivos. Ele está pintando "Silver" de cinza dentro de arquivos .md e .vimrc
 
 ## Coisas que deram certo por meio de workarounds e adaptações
 
