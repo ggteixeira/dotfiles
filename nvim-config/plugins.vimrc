@@ -87,6 +87,10 @@ let g:lightline = {
 " FZF settings
 source /usr/share/doc/fzf/examples/fzf.vim
 
+" Sets The Silver Searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:Ag = 'ag --nogroup --nocolor --column'
+
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
