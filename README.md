@@ -53,6 +53,7 @@ A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizad
 * Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
 * Descobrir como fazer o `coc-styled-components` funcionar
 * ~~Fazer a NERDTree pular para o diretório/arquivo atual automaticamente~~
+* Fazer o space+hjkl funcionar direito para redimensionar a NERDTree
 
 ## Coisas que deram certo por meio de workarounds e adaptações
 
