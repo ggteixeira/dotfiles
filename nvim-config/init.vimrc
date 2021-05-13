@@ -11,7 +11,7 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
   Plug 'preservim/nerdcommenter'
   Plug 'alvan/vim-closetag'
   Plug 'mileszs/ack.vim'
