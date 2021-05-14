@@ -84,15 +84,37 @@ let g:lightline = {
 \  },
 \  }
 
-" FZF settings
-source /usr/share/doc/fzf/examples/fzf.vim
 
 " Sets The Silver Searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:Ag = 'ag --nogroup --nocolor --column'
 
-" This is the default extra key bindings
+" NERDCommenter settings
+let g:NERDSpaceDelims = 1
+
+" FZF settings
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-i': 'split',
   \ 'ctrl-s': 'vsplit' }
+
+" let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+let g:fzf_layout = {'down': '40%'}
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+
+" let g:fzf_colors =
+" \ { 'fg':      ['fg', 'Normal'],
+  " \ 'bg':      ['bg', 'Normal'],
+  " \ 'hl':      ['fg', 'Comment'],
+  " \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  " \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  " \ 'hl+':     ['fg', 'Statement'],
+  " \ 'info':    ['fg', 'PreProc'],
+  " \ 'border':  ['fg', 'Ignore'],
+  " \ 'prompt':  ['fg', 'Conditional'],
+  " \ 'pointer': ['fg', 'Exception'],
+  " \ 'marker':  ['fg', 'Keyword'],
+  " \ 'spinner': ['fg', 'Label'],
+  " \ 'header':  ['fg', 'Comment'] }
