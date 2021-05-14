@@ -19,6 +19,8 @@ Lista de features essenciais presentes no VSCode
 
 ### Features básicas
 
+### Atalhos de teclado, Keybindings e Mappings
+
 ### Workspaces
 Usar o Vim no terminal – que é o meu caso – dispensa o conceito de workspace porque é mais direto ao ponto dar um `cd` na pasta de trabalho raiz e abrir o Vim lá. Há inclusive alguns aliases de navegação que facilitam ainda mais esse processo quando ele se torna repetitivo, como os meus `goto`: [.zsh_aliases](https://github.com/vibraniumdev/dotfiles/blob/main/.zsh_aliases).
 
@@ -50,11 +52,12 @@ A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizad
 * `coc-emmet`
 
 ## Detalhes para lembrar de fazer
-* Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
-* Descobrir como fazer o `coc-styled-components` funcionar
-* ~~Fazer a NERDTree pular para o diretório/arquivo atual automaticamente~~
-* Fazer o space+hjkl funcionar direito para redimensionar a NERDTree
-* Fazer o plugin das cores pintar as palavras apenas dentro de certos arquivos. Ele está pintando "Silver" de cinza dentro de arquivos .md e .vimrc
+- [ ] Descobrir como fazer o `coc-styled-components` funcionar
+- [ ] Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
+- [x] Fazer a NERDTree pular para o diretório/arquivo atual automaticamente
+- [ ] Fazer o space+hjkl funcionar direito para redimensionar a NERDTree
+- [ ] Fazer o plugin das cores pintar as palavras apenas dentro de certos arquivos. Ele está pintando "Silver" de cinza dentro de arquivos .md e .vimrc
+- [ ] Configurar o autocomplete pra aceitar a sugestão no ctrl+space, assim como é no terminal
 
 ## Coisas que deram certo por meio de workarounds e adaptações
 
@@ -62,7 +65,21 @@ A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizad
 
 ## Referências Bibliográficas (em construção)
 
-* Dotfiles do Juliano (frontendwizard) & Dotfiles do Kent Dodds (Vim)
-* Dotfiles do Otavio Pace (Neovim)
-* Dotfiles do GregJS (Neovim)
+### Dotfiles
+
+* Dotfiles do Kent C. Dodds (@kentcdodds): https://github.com/kentcdodds/dotfiles
+* Dotfiles do Juliano Faria (@frontendwizard): https://github.com/frontendwizard/dotfiles
+* Dotfiles do Otavio Pace (@otaviopace): https://github.com/otaviopace/dotfiles
+* Dotfiles do Greg Scheerlinck (@greg-js): https://github.com/greg-js
+
+### Tutoriais
+
+* [Do Yourself a favor and modularize your .vimrc/init.vim](https://www.gregjs.com/vim/2016/do-yourself-a-favor-and-modularize-your-vimrc-init-vim/) (Greg Scheerlinck)
+
+### YouTube
+
+* [Vim Plugin Highlight: fzf.vim! Fuzzy File Finding Fun!](https://www.youtube.com/watch?v=DpURGnb4Fyk) (Codevion)
+* [How to Configure Vim Like VSCode](https://www.youtube.com/watch?v=gnupOrSEikQ) (Ben Awad)
+
+### Reddit
 
