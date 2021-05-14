@@ -13,8 +13,9 @@ nnoremap <silent><c-s> :<c-u>update<cr>
 vnoremap <silent><c-s> <c-c>:update<cr>gv
 inoremap <silent><c-s> <c-o>:update<cr> 
  
-" Use <cr> (Enter/Return) to confirm completion
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Use <cr> (Enter/Return) to confirm/accept completion
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <c-space> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Just type ; to enter command mode when in normal mode
 nnoremap ; :
@@ -26,7 +27,6 @@ nmap ,p "0p
 nnoremap <leader>; A;<esc>
 
 " NERDTREE mappings
-"nmap <silent><C-\> :NERDTreeToggle<CR>
 nnoremap <A-S-e> :NERDTreeFocus<CR>
 
 " Resizes NERDTree 
@@ -34,7 +34,6 @@ map <silent><leader>l :NERDTreeFocus <CR> :vertical resize +5<cr>
 map <silent><leader>h :NERDTreeFocus <CR> :vertical resize -5<cr>
 
 " Opens NERDTree and keeps the focus in the file
-"nmap <silent><C-\> :call ToggleNerdTree()<CR>
 nnoremap <silent><C-\> :call ToggleNerdTree() <Bar> if &filetype ==# 'nerdtree' <Bar> wincmd p <Bar> endif<CR>
 
 " COC Prettier mappings
@@ -44,7 +43,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nmap <leader>r :w<CR>:so %<CR>
 
 " Activate FZF using ctrl+p
-nnoremap <silent> <expr> <C-P> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":FZF\<cr>"
+nnoremap <silent> <expr> <C-P> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 
 " Run prettier
 nnoremap <leader>b :Prettier <CR>
