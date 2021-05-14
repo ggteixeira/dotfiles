@@ -10,9 +10,11 @@
   enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
   always_split_with_profile = True
   title_use_system_font = False
-  title_font = Fira Mono for Powerline 9
+  title_font = Meslo LG M for Powerline 9
   smart_copy = False
 [keybindings]
+  next_tab = <Primary>bracketright
+  prev_tab = <Primary>bracketleft
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
