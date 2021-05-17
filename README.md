@@ -53,12 +53,8 @@ A statusline escolhida é a Lightline. Para mostrar a branch atual, foi utilizad
 * `coc-emmet`
 
 ## Detalhes para lembrar de fazer
-- [ ] Descobrir como fazer o `coc-styled-components` funcionar
-- [ ] Descobrir como buscar uma ocorrência de palavra em todo o projeto, como o ctrl+shift+f faz no Code
-- [x] Fazer a NERDTree pular para o diretório/arquivo atual automaticamente
-- [ ] Fazer o space+hjkl funcionar direito para redimensionar a NERDTree
-- [ ] Fazer o plugin das cores pintar as palavras apenas dentro de certos arquivos. Ele está pintando "Silver" de cinza dentro de arquivos .md e .vimrc
-- [ ] Configurar o autocomplete pra aceitar a sugestão no ctrl+space, assim como é no terminal
+
+A lista completa de coisas ainda por fazer/consertar está [nas issues deste repositório](https://github.com/vibraniumdev/dotfiles/issues).
 
 ## Coisas que deram certo por meio de workarounds e adaptações
 
