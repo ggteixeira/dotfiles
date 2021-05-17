@@ -20,7 +20,7 @@ alias nvimrc='cd ~/.dotfiles/nvim-config && ls && vim'
 alias zshrc="vim ~/.zshrc"
 alias vimrc='cd ~/.dotfiles/nvim-config && vim mappings.vimrc'
 alias nvimrc='cd ~/.dotfiles/nvim-config && vim mappings.vimrc'
-alias gotoaliases='vim ~/.zsh_aliases'
+alias gotoalias='vim ~/.alias'
 
 ### REPLACEMENT aliases
 alias vim='nvim'
