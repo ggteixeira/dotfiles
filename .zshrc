@@ -6,7 +6,8 @@ fi
 export ZSH="/home/gui/.oh-my-zsh"
 export EDITOR="nvim" # Sets Neovim as default editor
 
-. ~/.zsh_aliases
+# . ~/.alias
+source ~/.alias
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
