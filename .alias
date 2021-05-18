@@ -20,6 +20,7 @@ alias gotoalias='vim ~/.alias'
 
 # REPLACEMENT aliases
 alias vim='nvim'
+alias v='nvim'
 
 # GIT aliases
 alias g='git'
