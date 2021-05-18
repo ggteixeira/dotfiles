@@ -1,9 +1,4 @@
-# =====================================================
-##################### ALIASES #########################
-# =====================================================
-
-
-### GENERAL aliases
+# GENERAL aliases
 alias li='ls -l'
 alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
@@ -15,7 +10,7 @@ alias dedoff='shutdown now'
 # DOTFILES aliases (Bare Repository)
 # alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 
-### MOVEMENT aliases
+# MOVEMENT aliases
 alias gotovimcolors='cd /usr/share/vim/vim*/colors'
 alias nvimrc='cd ~/.dotfiles/nvim-config && ls && vim'
 alias zshrc="vim ~/.zshrc"
@@ -23,10 +18,10 @@ alias vimrc='cd ~/.dotfiles/nvim-config && vim mappings.vimrc'
 alias nvimrc='cd ~/.dotfiles/nvim-config && vim mappings.vimrc'
 alias gotoalias='vim ~/.alias'
 
-### REPLACEMENT aliases
+# REPLACEMENT aliases
 alias vim='nvim'
 
-### GIT aliases
+# GIT aliases
 alias g='git'
 alias ga='git add'
 alias gc='git commit -v'
@@ -44,8 +39,8 @@ alias gpoma="git push origin master"
 alias grmc='git rm --cached'
 alias gst='git status'
 
-### PYTHON aliases:
+# PYTHON aliases:
 alias pipi='pip install --upgrade pip && pip install -r requirements.txt && pip freeze — local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U && pip freeze > requirements.txt && git add requirements.txt && git commit -m "Atualiza pacotes" && git push'
 
-### RUBY aliases
+# RUBY aliases
 alias beijos='bundle exec jekyll serve'
