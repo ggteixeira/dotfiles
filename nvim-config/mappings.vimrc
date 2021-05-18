@@ -45,6 +45,8 @@ nmap <leader>r :w<CR>:so %<CR>
 " Activate FZF using ctrl+p
 nnoremap <silent> <expr> <C-P> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
 
+nnoremap <leader><Tab> :Buffers <CR>
+
 " Run prettier
 nnoremap <leader>b :Prettier <CR>
 
