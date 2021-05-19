@@ -3,7 +3,9 @@
 
 ## Instalação
 Como instalar: [INSTALL.md](https://github.com/vibraniumdev/dotfiles/wiki/Instala%C3%A7%C3%A3o) (em construção).
-Clone este repositório para a pasta `~/.dotfiles` `mkdir ~/.dotfiles && git clone git@github.com:vibraniumdev/dotfiles.git ~/.dotfiles`
+Clone este repositório para a pasta `~/.dotfiles`: 
+
+`mkdir ~/.dotfiles && git clone git@github.com:vibraniumdev/dotfiles.git ~/.dotfiles`
 
 ## Disclaimer
 Se você está procurando meus dotfiles para o Manjaro i3wm ou para macOS, eles estão [aqui](https://github.com/vibraniumdev/i3wm-dotfiles) (Manjaro i3wm) e [aqui](https://github.com/vibraniumdev/macOS-Dotfiles) (macOS).
