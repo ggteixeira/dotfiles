@@ -7,6 +7,10 @@ Clone este repositório para a pasta `~/.dotfiles`:
 
 `mkdir ~/.dotfiles && git clone git@github.com:vibraniumdev/dotfiles.git ~/.dotfiles`
 
+rm ~/.config/nvim/init.vim && ln -s ~/.dotfiles/init.vim ~/.config/nvim
+
+mkdir ~/.config/nvim/config && ln -s ~/.dotfiles/nvim-config/* ~/.config/nvim/config
+
 ## Disclaimer
 Se você está procurando meus dotfiles para o Manjaro i3wm ou para macOS, eles estão [aqui](https://github.com/vibraniumdev/i3wm-dotfiles) (Manjaro i3wm) e [aqui](https://github.com/vibraniumdev/macOS-Dotfiles) (macOS).
 
