@@ -11,6 +11,20 @@ rm ~/.config/nvim/init.vim && ln -s ~/.dotfiles/init.vim ~/.config/nvim
 
 mkdir ~/.config/nvim/config && ln -s ~/.dotfiles/nvim-config/* ~/.config/nvim/config
 
+brew install pyenv (Mac) (qual o passo a passo pro Linux?)
+
+rm ~/.zshrc && ln -s ~/.dotfiles/.zshrc ~/
+
+ln -s ~/.dotfiles/.alias ~/
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+echo 'source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
+Colocar o "export ZSH" dependente de sistema operacional (ou usar sempre o mesmo nome de usuário?)
+
 ## Disclaimer
 Se você está procurando meus dotfiles para o Manjaro i3wm ou para macOS, eles estão [aqui](https://github.com/vibraniumdev/i3wm-dotfiles) (Manjaro i3wm) e [aqui](https://github.com/vibraniumdev/macOS-Dotfiles) (macOS).
 
