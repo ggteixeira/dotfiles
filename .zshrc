@@ -4,7 +4,7 @@ fi
 
 source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
-export ZSH="$PWD/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 export EDITOR="nvim" # Sets Neovim as default editor
 
 # . ~/.alias
