@@ -3,3 +3,4 @@
 *.directory
 *.dotfiles.git
 .config/kwinrulesrc
+.DS_Store
