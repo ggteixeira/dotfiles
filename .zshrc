@@ -2,8 +2,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
-export ZSH="/home/gui/.oh-my-zsh"
+export ZSH="$PWD/.oh-my-zsh"
 export EDITOR="nvim" # Sets Neovim as default editor
 
 # . ~/.alias
@@ -16,14 +17,15 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
-source $ZSH/oh-my-zsh.sh
+
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # PYENV settings
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)" 
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)" 
 
 
 # zsh-autosuggestions settings
