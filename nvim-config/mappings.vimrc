@@ -60,9 +60,5 @@ nnoremap <S-Tab> <<
 " for insert mode
 inoremap <S-Tab> <C-d>
 
- " COMFORTABLE-MOTION 
-let g:comfortable_motion_scroll_down_key = "j"
-let g:comfortable_motion_scroll_up_key = "k"
-
 " Center cursor with scrolloff
 nnoremap <leader>c :set scrolloff=999 <CR>
