@@ -15,5 +15,6 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'preservim/nerdcommenter'
   Plug 'alvan/vim-closetag'
   Plug 'mileszs/ack.vim'
+  Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 call plug#end()
 
