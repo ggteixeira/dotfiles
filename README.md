@@ -105,3 +105,14 @@ A lista completa de coisas ainda por fazer/consertar está [nas issues deste rep
 
 ### Reddit
 
+***
+
+# Arch Linux
+
+* Dar um `chmod +x` no script da polybar
+
+* Instalar a fonte vim-devicons para habilitar os ícones na NERDTree
+
+* Criar o alias `gotopolybar='vim $HOME/.config/polybar/config'`
+
+  
