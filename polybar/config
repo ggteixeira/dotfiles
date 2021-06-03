@@ -43,12 +43,11 @@ bottom = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
+; line-size = 3;
+; line-color = #f00
 
-border-bottom-size = 4
 
-padding-left = 0
+padding-left = 1
 padding-right = 2
 
 module-margin-left = 1
@@ -241,32 +240,39 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 100
+full-at = 100 
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging> <animation-charging> 
 ; format-charging-underline = ${colors.underline}
 
-format-discharging = <ramp-capacity><label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = <ramp-capacity> 
 
-format-full-prefix = ""
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full = <ramp-capacity>
+; format-full-prefix = "";
+format-full-prefix-foreground = ${colors.foreground}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-foreground = ${colors.foreground}
 
 ; Only applies if <animation-charging> is used
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
+
 animation-charging-framerate = 750
 animation-charging-foreground = ${colors.foreground}
 
@@ -317,6 +323,10 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+menu-3-0 = Suspend
+menu-3-0-exec = menu-open-0
+menu-3-1-exec = systemctl suspend
 
 [settings]
 screenchange-reload = true
