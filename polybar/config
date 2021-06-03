@@ -28,7 +28,7 @@ red = #FF5250
 green = #43a047
 yellow = #fdd835
 underline = #0a6cf5
-
+highlight = #268BD2
 
 [bar/main]
 monitor = ${env:MONITOR:HDMI-1}
@@ -47,7 +47,6 @@ line-size = 3
 line-color = #f00
 
 border-bottom-size = 4
-border-color = #00000000
 
 padding-left = 0
 padding-right = 2
@@ -55,14 +54,17 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+
+font-0 = "Noto Sans:style:Regular:pixelsize=9.5;3"
+font-1 = "Iosevka:style:Regular:pixelsize=9;3"
+font-2 = "siji:style=Medium:pixelsize=16;3"
+font-3 = "Ionicons:style=Regular:pixelsize=16;4"
+font-4 = "icomoon\-feather:style=Regular:pixelsize=10;4"
+font-5 = "Material Icons:style=Regular"
 
 modules-left = i3
 modules-center = mpd
-modules-right = pulseaudio memory wlan eth battery temperature date powermenu
-
+modules-right = pulseaudio memory battery date powermenu
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
@@ -113,27 +115,27 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+format = <label-state><label-mode>
 index-sort = true
 wrapping-scroll = false
+strip-wsnumbers = true
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = ${colors.secondary}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-; label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.underline}
 label-focused-underline= ${colors.underline}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = 2
-
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -162,43 +164,13 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.underline}
-label = %percentage:2%%
-
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.underline}
-label = RAM: %percentage_used%%
+; format-underline = ${colors.underline};
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -226,15 +198,14 @@ ramp-signal-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date =
+date = %a
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.underline}
+; format-underline = ${colors.underline}
 
 label = %date% %time%
 
@@ -242,11 +213,12 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = Sound 
-label-volume-foreground = ${root.foreground}
+label-volume =  
+; label-volume-foreground = ${colors.foreground}
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+format-muted = <label-muted> 
+label-muted = 
+label-muted-foreground = ${colors.alert}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -265,66 +237,38 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 100
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.underline}
+; format-charging-underline = ${colors.underline}
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity><label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = ""
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
 animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+animation-charging-foreground = ${colors.foreground}
 
 [module/temperature]
 type = internal/temperature
@@ -341,7 +285,7 @@ label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
-ramp-1 = 
+ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
@@ -352,8 +296,8 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
-label-open-foreground = ${colors.secondary}
+label-open = 
+label-open-foreground = ${colors.primary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
