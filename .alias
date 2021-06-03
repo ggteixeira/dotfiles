@@ -6,6 +6,7 @@ alias weather='curl http://wttr.in/'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias please='sudo'
 alias dedoff='shutdown now'
+alias rm='rm -i'
 
 # DOTFILES aliases (Bare Repository)
 # alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
