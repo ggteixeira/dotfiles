@@ -8,8 +8,8 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 5 
-new_float pixel 5
+new_window pixel 6 
+new_float pixel 6 
 
 # Set inner/outer gaps
 
@@ -241,7 +241,7 @@ bindsym $mod+r mode "resize"
 # exec --no-startup-id tlp-start
 exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
-exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh --blocks
+exec_always --no-startup-id $HOME/.dotfiles/polybar/
 exec --no-startup-id dunst
 
 #Tempo até que a tela tranque:
@@ -257,8 +257,8 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-bindsym $mod+space exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.dotfiles/polybar/blocks/scripts/rofi/launcher.rasi
-bindsym $mod+Tab exec --no-startup-id rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.dotfiles/polybar/blocks/scripts/rofi/launcher.rasi
+bindsym $mod+space exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.dotfiles/polybar/scripts/rofi/launcher.rasi
+bindsym $mod+Tab exec --no-startup-id rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.dotfiles/polybar/scripts/rofi/launcher.rasi
 
 
 floating_minimum_size 0 x 0
