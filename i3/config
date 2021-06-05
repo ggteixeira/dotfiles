@@ -241,7 +241,7 @@ bindsym $mod+r mode "resize"
 # exec --no-startup-id tlp-start
 exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
-exec_always --no-startup-id $HOME/.dotfiles/polybar/
+exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
 exec --no-startup-id dunst
 
 #Tempo até que a tela tranque:
