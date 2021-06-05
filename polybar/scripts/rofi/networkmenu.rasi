@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Terminus 9";
+	font:							"Iosevka Nerd Font 10";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
@@ -47,7 +47,7 @@ textbox-prompt-colon {
 	text-color: 					@fg;
 	expand: false;
 	str: "";
-	font:							"feather 8";
+	font:							"feather 12";
 }
 
 entry {
