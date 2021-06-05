@@ -14,7 +14,7 @@ new_float pixel 5
 # Set inner/outer gaps
 
 gaps inner 5
-gaps outer 2
+gaps outer 5
 
 # Hide borders
 hide_edge_borders none
@@ -29,7 +29,7 @@ font pango:DejaVu Sans Mono 8
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Blueman
 exec --no-startup-id blueman-applet
@@ -199,7 +199,8 @@ for_window [urgent=latest] focus
 # bindsym $mod+Shift+c reload
 
 # Lock Screen
-bindsym $mod+0 exec i3lock
+exec --no-startup-id betterlockscreen 
+bindsym $mod+0 exec --no-startup-id betterlockscreen -l dimblur
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -220,10 +221,10 @@ mode "resize" {
         bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 15 px or 15 ppt
-        bindsym Down resize grow height 15 px or 15 ppt
-        bindsym Up resize shrink height 15 px or 15 ppt
-        bindsym Right resize grow width 15 px or 15 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -240,14 +241,15 @@ bindsym $mod+r mode "resize"
 # exec --no-startup-id tlp-start
 exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
-exec_always --no-startup-id $HOME/.config/polybar/scripts/launch.sh
+exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh --blocks
+exec --no-startup-id dunst
 
 #Tempo até que a tela tranque:
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 
 # Theme colors
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #76b947  #6272A4
+client.focused          #6272A4 #6272A4 #F8F8F2 #F8F8F2   #6272A4
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
@@ -255,8 +257,8 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-bindsym $mod+space exec --no-startup-id rofi -show run
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+space exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.dotfiles/polybar/blocks/scripts/rofi/launcher.rasi
+bindsym $mod+Tab exec --no-startup-id rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.dotfiles/polybar/blocks/scripts/rofi/launcher.rasi
 
 
 floating_minimum_size 0 x 0
