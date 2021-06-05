@@ -166,10 +166,10 @@ label-song-ellipsis = true
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+; format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ; format-underline = ${colors.underline};
-label = %percentage_used%%
+label =   %gb_used%
 
 [module/wlan]
 type = internal/network
