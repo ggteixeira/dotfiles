@@ -24,6 +24,7 @@ alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
 # REPLACEMENT aliases
 alias vim='nvim'
 alias v='nvim'
+alias htop='bpytop'
 
 # GIT aliases
 alias g='git'
