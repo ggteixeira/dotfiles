@@ -25,10 +25,10 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px 0px 0px 0px;
+	border:							0px 0px 4px 0px;
 	border-color:					@ac;
     border-radius:                  0px;
-	width:							550px;
+	width:							600px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -36,8 +36,8 @@ window {
 
 prompt {
     enabled: 						true;
-	padding: 						6px 7px 4px 7px;
-	background-color: 				@ac;
+	padding: 						2px 0px 0px 4px;
+	background-color: 				@al;
 	text-color: 					@fg;
 	font:							"feather 12";
 }
@@ -49,7 +49,7 @@ entry {
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
-	padding: 						6px;
+	padding: 						2px 0px 0px 6px;
     blink:                          true;
 }
 
@@ -62,14 +62,14 @@ inputbar {
     border-radius:                  0px;
 	border-color:					@ac;
     margin:                         0px;
-    padding:                        0px;
+    padding:                        8px;
 }
 
 listview {
     background-color:               @al;
     padding:                        0px;
     columns:                        2;
-    lines:                          8;
+    lines:                          7;
     spacing:                        6px;
     cycle:                          true;
     dynamic:                        true;
@@ -91,7 +91,7 @@ element {
     text-color:                     @fga;
     orientation:                    horizontal;
     border-radius:                  0px;
-	padding: 						3px;
+    padding:                        8px;
 }
 
 element-icon {
@@ -107,8 +107,8 @@ element-text {
 }
 
 element selected {
-    background-color:               @se;
-    text-color:                     @fga;
+    background-color:               @bga;
+    text-color:                     @fg;
 	border:							0px 0px 0px 0px;
     border-radius:                  0px;
     border-color:                  	@ac;

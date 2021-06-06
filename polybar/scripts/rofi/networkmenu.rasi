@@ -25,7 +25,7 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px 0px 0px 0px;
+	border:							0px 0px 4px 0px;
 	border-color:					@ac;
     border-radius:                  0px;
 	width:							400px;
@@ -36,14 +36,14 @@ window {
 
 prompt {
     enabled: 						true;
-	padding: 						6px 7px 4px 7px;
-	background-color: 				@bga;
+	padding: 						2px 0px 0px 10px;
+	background-color: 				@al;
 	text-color: 					@fg;
 }
 
 textbox-prompt-colon {
-	padding: 						6px 7px 4px 7px;
-	background-color: 				@ac;
+	padding: 						2px 0px 0px 5px;
+	background-color: 				@al;
 	text-color: 					@fg;
 	expand: false;
 	str: "";
@@ -57,7 +57,7 @@ entry {
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
-	padding: 						6px;
+	padding: 						2px 0px 0px 6px;
     blink:                          true;
 }
 
@@ -70,7 +70,7 @@ inputbar {
     border-radius:                  0px;
 	border-color:					@ac;
     margin:                         0px;
-    padding:                        0px;
+    padding:                        8px;
 }
 
 listview {
@@ -99,7 +99,7 @@ element {
     text-color:                     @fga;
     orientation:                    horizontal;
     border-radius:                  0px;
-	padding: 						3px 3px 3px -12px;
+    padding:                        8px 8px 8px -10px;
 }
 
 element-icon {
@@ -115,8 +115,8 @@ element-text {
 }
 
 element selected {
-    background-color:               @se;
-    text-color:                     @fga;
+    background-color:               @bga;
+    text-color:                     @fg;
 	border:							0px 0px 0px 0px;
     border-radius:                  0px;
     border-color:                  	@ac;
