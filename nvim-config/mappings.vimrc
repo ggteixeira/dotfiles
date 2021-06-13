@@ -20,7 +20,7 @@ nnoremap ; :
 nmap ,p "0p
 
 " Append semicolon to the EOL
-nnoremap <leader>; A;<esc>
+" nnoremap <leader>; A;<esc>
 
 " TABS mappings
 nnoremap <leader>h :tabprevious <CR>
