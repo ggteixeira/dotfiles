@@ -41,8 +41,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -s sysfs/backlight/auto
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle  
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 
  
@@ -98,9 +98,9 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stackng
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -196,7 +196,7 @@ for_window [class="Font-manager"] floating enable
 for_window [urgent=latest] focus
 
 # reload the configuration file
-# bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload
 
 # Lock Screen
 exec --no-startup-id betterlockscreen 
@@ -241,11 +241,14 @@ bindsym $mod+r mode "resize"
 # exec --no-startup-id tlp-start
 exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
-exec xrandr --output HDMI-1 --primary;
+exec --no-startup-id xrandr --output HDMI-1 --primary;
 exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
 exec --no-startup-id dunst
 #Tempo até que a tela tranque:
 # exec --no-startup-id xautolock -time 10 -locker blurlock
+# exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
+# exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
+
 
 # Theme colors
 # class                 border  bground text    indicator child_border
@@ -262,4 +265,4 @@ bindsym $mod+Tab exec --no-startup-id rofi -no-config -no-lazy-grab -show window
 
 
 floating_minimum_size 0 x 0
-floating_maximum_size 1078 x 650
+floating_maximum_size 1440 x 900
