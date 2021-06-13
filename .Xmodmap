@@ -1,0 +1,3 @@
+! keycode 64 = ISO_Level3_Latch
+keycode 64 = ISO_Level3_Latch NoSymbol ISO_Level3_Latch
+clear mod1
