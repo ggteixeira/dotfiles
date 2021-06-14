@@ -13,8 +13,8 @@ new_float pixel 6
 
 # Set inner/outer gaps
 
-# gaps inner 6
-# gaps outer 5
+gaps inner 6
+gaps outer 5
 
 # Hide borders
 hide_edge_borders none
