@@ -21,7 +21,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 3
+bindsym $mod+y border pixel 6
 bindsym $mod+n border normal
 
 font xft:Noto Sans 10
@@ -193,7 +193,8 @@ for_window [class="Simple-scan"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="Font-manager"] floating enable
+# for_window [class="Font-manager"] floating enable
+for_window [class="feh"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
