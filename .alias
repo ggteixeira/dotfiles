@@ -24,7 +24,6 @@ alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
 # REPLACEMENT aliases
 alias vim='nvim'
 alias v='nvim'
-alias htop='bpytop'
 xevv(){
   xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
