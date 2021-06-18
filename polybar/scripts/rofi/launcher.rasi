@@ -19,7 +19,7 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "~/.cache/wal/colors-rofi-light"
+@import "~/.cache/wal/colors-rofi-dark"
 
 window {
     transparency:                   "real";
@@ -35,17 +35,17 @@ window {
 }
 
 prompt {
-    enabled: 						true;
+  enabled: 						true;
 	padding: 						2px 0px 0px 4px;
 	background-color: 				@al;
-	text-color: 					@fg;
+	text-color: 					@foreground;
 	font:							"feather 12";
 }
 
 entry {
-    background-color:               @al;
-    text-color:                     #FFF;
-    placeholder-color:              @bga;
+    background-color:               @background;
+    text-color:                     @foreground;
+    placeholder-color:              @foreground;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
@@ -56,7 +56,7 @@ entry {
 inputbar {
 	children: 						[ prompt, entry ];
     background-color:               @bga;
-    text-color:                     @fg;
+    text-color:                     @bg;
     expand:                         false;
 	border:							0px;
     border-radius:                  0px;
