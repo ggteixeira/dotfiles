@@ -67,14 +67,14 @@ let g:coc_global_extensions = [
 
 " One Dark Theme settings
 
-set termguicolors
+" set termguicolors
 syntax on
-colorscheme onedark
+colorscheme wal
 
 " Lightline settings
 set noshowmode
 let g:lightline = {
-\  'colorscheme': 'onedark',
+\  'colorscheme': 'wal',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
