@@ -8,20 +8,20 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 6 
-new_float pixel 6 
+new_window pixel 5 
+new_float pixel 5 
 
 # Set inner/outer gaps
 
-gaps inner 6
-gaps outer 5
+gaps inner 8
+gaps outer 8
 
 # Hide borders
 hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 6
+bindsym $mod+y border pixel 5
 bindsym $mod+n border normal
 
 font xft:Noto Sans 10
@@ -206,6 +206,9 @@ bindsym $mod+Shift+c reload
 exec --no-startup-id betterlockscreen 
 bindsym $mod+0 exec --no-startup-id betterlockscreen -l dimblur
 
+# Take Screenshots With Flameshot (Print Screens)
+# bindsym $mod+shift+4 exec --no-startup-id flameshot screen -n 0 -p ~/Pictures/Screenshots
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -253,17 +256,36 @@ exec --no-startup-id dunst
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 # exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
 # exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
+exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
+
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $cg i3wm.color0 #f0f0f0
+# 
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  #F8F8F2   $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $cg
+client.unfocused        $bg     $bg     $fg  $bg       $cg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
 
 
-# Theme colors
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #F8F8F2   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
-client.background       #F8F8F2
+# # Theme colors
+# # class                 border  bground text    indicator child_border
+# client.focused          #6272A4 #6272A4 #F8F8F2 #F8F8F2   #6272A4
+# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# 
+# client.background       #F8F8F2
 
 bindsym $mod+space exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.dotfiles/polybar/scripts/rofi/launcher.rasi
 bindsym $mod+Tab exec --no-startup-id rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.dotfiles/polybar/scripts/rofi/launcher.rasi
