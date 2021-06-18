@@ -19,7 +19,7 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "colors.rasi"
+@import "~/.cache/wal/colors-rofi-light"
 
 window {
     transparency:                   "real";
@@ -44,8 +44,8 @@ prompt {
 
 entry {
     background-color:               @al;
-    text-color:                     @fg;
-    placeholder-color:              @fg;
+    text-color:                     #FFF;
+    placeholder-color:              @bga;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
