@@ -55,3 +55,4 @@ cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"
