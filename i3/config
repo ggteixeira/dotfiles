@@ -8,8 +8,8 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 5 
-new_float pixel 5 
+new_window pixel 7 
+new_float pixel 7 
 
 # Set inner/outer gaps
 
@@ -21,7 +21,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 5
+bindsym $mod+y border pixel 7
 bindsym $mod+n border normal
 
 font xft:Noto Sans 10
