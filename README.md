@@ -40,6 +40,9 @@ Usuários de sistemas *Unix-like* utilizam dotfiles organizados em repositórios
 Uma terceira utilidade seria majoritariamente estética, já que, nessa toada de personalização de configurações, existe um nicho de usuários  que gostam de mostrar as personalizações feitas nos temas de seus  terminais, editores de texto, *desktop environments*. Nas comunidades [r/vimporn](https://www.reddit.com/r/vimporn/) e [r/unixporn](https://www.reddit.com/r/unixporn/) você encontrará screenshots de usuários orgulhosos de terem transformado seu Vim e seu *desktop environment* em verdadeiras obras de arte. Se quiser saber mais sobre esse tópico -- denominado *ricing* --, tem um texto meu [aqui](https://medium.com/blacktech/introdução-ao-ricing-60243fab4275), postado no Medium, escrito em português.
 
 ## Processo de migração do Visual Studio Code para o Neovim
+
+![nvim-screenshot](https://github.com/vibraniumdev/dotfiles/blob/main/media/nvim.png)
+
 Lista de features essenciais presentes no VSCode
 
 ### Features básicas
