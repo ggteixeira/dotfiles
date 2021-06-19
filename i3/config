@@ -8,13 +8,13 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 7 
-new_float pixel 7 
+new_window pixel 6 
+new_float pixel 6 
 
 # Set inner/outer gaps
 
-gaps inner 8
-gaps outer 8
+gaps inner 8 
+gaps outer 0
 
 # Hide borders
 hide_edge_borders none
@@ -203,8 +203,8 @@ for_window [urgent=latest] focus
 bindsym $mod+Shift+c reload
 
 # Lock Screen
-exec --no-startup-id betterlockscreen 
-bindsym $mod+0 exec --no-startup-id betterlockscreen -l dimblur
+exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
+bindsym $mod+0 exec --no-startup-id betterlockscreen -l dimblur 
 
 # Take Screenshots With Flameshot (Print Screens)
 # bindsym $mod+shift+4 exec --no-startup-id flameshot screen -n 0 -p ~/Pictures/Screenshots
@@ -257,7 +257,7 @@ exec --no-startup-id dunst
 # exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
 # exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
 exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
-exec --no-startup-id "xrandr --dpi 96"
+exec --no-startup-id xrandr --dpi "96"
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
