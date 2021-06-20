@@ -248,7 +248,7 @@ exec --no-startup-id dunst
 # exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
 # exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
 exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
-exec --no-startup-id xrandr --dpi 96
+# exec --no-startup-id xrandr --dpi 96
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
