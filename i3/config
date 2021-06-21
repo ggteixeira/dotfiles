@@ -48,12 +48,22 @@ bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @D
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle  
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 
+
+# Spotify Media Keys Controls
+bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
+bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
+bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
  
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+
+# change wallpaper (random pywal)
+bindsym $mod+p exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/
+bindsym $mod+Shift+p exec --no-startup-id flameshot screen -n 0 -p $HOME/Pictures/Screenshots/
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
