@@ -8,20 +8,20 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 6 
-new_float pixel 6 
+new_window pixel 4 
+new_float pixel 4 
 
 # Set inner/outer gaps
 
-gaps inner 8 
-gaps outer 0
+gaps inner 10
+gaps outer 10
 
 # Hide borders
 hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 7
+bindsym $mod+y border pixel 4
 bindsym $mod+n border normal
 
 font xft:Noto Sans 10
@@ -189,8 +189,11 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
+# Assign apps to specific workspaces
+assign [class="Spotify"] $ws9
+
 # Open specific applications in floating mode
-for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="Galculator"] floating enable sticky enable border 
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="octopi"] floating enable
@@ -258,7 +261,7 @@ exec --no-startup-id dunst
 # exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
 # exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
 exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
-# exec --no-startup-id xrandr --dpi 96
+exec --no-startup-id xrandr --dpi 96
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
