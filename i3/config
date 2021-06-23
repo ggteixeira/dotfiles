@@ -13,8 +13,8 @@ new_float pixel 4
 
 # Set inner/outer gaps
 
-gaps inner 10
-gaps outer 10
+gaps inner 4
+gaps outer 4
 
 # Hide borders
 hide_edge_borders none
