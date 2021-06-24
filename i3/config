@@ -8,12 +8,12 @@
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 4 
-new_float pixel 4 
+new_window pixel 6 
+new_float pixel 6 
 
 # Set inner/outer gaps
 
-gaps inner 4
+gaps inner 6
 gaps outer 4
 
 # Hide borders
@@ -21,7 +21,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 4
+bindsym $mod+y border pixel 6
 bindsym $mod+n border normal
 
 font xft:Noto Sans 10
@@ -208,10 +208,6 @@ for_window [urgent=latest] focus
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# Lock Screen
-exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
-bindsym $mod+0 exec --no-startup-id betterlockscreen -l dimblur 
-
 # Take Screenshots With Flameshot (Print Screens)
 # bindsym $mod+shift+4 exec --no-startup-id flameshot screen -n 0 -p ~/Pictures/Screenshots
 
@@ -250,6 +246,12 @@ bindsym $mod+r mode "resize"
 # Autostart applications
  # exec --no-startup-id redshift
 exec --no-startup-id wal -R
+# Lock Screen
+# exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
+exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -u
+bindsym $mod+0 exec --no-startup-id betterlockscreen -l dimblur 
+exec --no-startup-id betterlockscreen -l dimblur -time 10 
+
 # exec --no-startup-id compton -b
 exec --no-startup-id picom -b
 # exec --no-startup-id tlp-start
