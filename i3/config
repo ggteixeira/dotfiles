@@ -250,7 +250,7 @@ exec --no-startup-id wal -R
 # exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
 exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -u
 bindsym $mod+0 exec --no-startup-id betterlockscreen -l dimblur 
-exec --no-startup-id betterlockscreen -l dimblur -time 10 
+# exec --no-startup-id betterlockscreen -l dimblur -time 10 
 
 # exec --no-startup-id compton -b
 exec --no-startup-id picom -b
