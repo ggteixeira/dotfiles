@@ -4,7 +4,7 @@
 
 # Settings básicas:
 
-# Tela de modificação: (Mod1=<Alt>, Mod4=<Super>)
+# Tecla de modificação: (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
