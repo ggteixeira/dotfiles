@@ -1,5 +1,6 @@
 set nocompatible " Avoid unexpected things that the OS may have made
-set clipboard=unnamed " Copy to clipboard
+" set clipboard=unnamed " Copy to clipboard
+set clipboard=unnamed,unnamedplus
 " set cursorline
 " set encoding=utf-8 "Set encoding
 set linebreak " Wraps lines without trimming words in the middle; breaks line instead
