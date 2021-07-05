@@ -201,6 +201,7 @@ for_window [class="Timeset-gui"] floating enable border normal
 # for_window [class="Font-manager"] floating enable
 for_window [instance="Places"] floating enable
 for_window [instance="journey"] floating enable
+for_window [instance="Dictionary"] floating enable border pixel 6
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
