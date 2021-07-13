@@ -17,5 +17,6 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'mileszs/ack.vim'
   Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
   Plug 'dylanaraps/wal.vim'
+  Plug 'mhinz/vim-startify'
 call plug#end()
 
