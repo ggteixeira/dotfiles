@@ -1,34 +1,6 @@
 # Dotfiles
 ![desktop-screenshot](https://github.com/vibraniumdev/dotfiles/blob/main/media/desktop.png)
 
-## Instalação
-Como instalar: [INSTALL.md](https://github.com/vibraniumdev/dotfiles/wiki/Instala%C3%A7%C3%A3o) (em construção).
-Clone este repositório para a pasta `~/.dotfiles`: 
-
-`mkdir ~/.dotfiles && git clone git@github.com:vibraniumdev/dotfiles.git ~/.dotfiles`
-
-rm ~/.config/nvim/init.vim && ln -s ~/.dotfiles/init.vim ~/.config/nvim
-
-mkdir ~/.config/nvim/config && ln -s ~/.dotfiles/nvim-config/* ~/.config/nvim/config
-
-brew install pyenv (Mac) (qual o passo a passo pro Linux?)
-
-rm ~/.zshrc && ln -s ~/.dotfiles/.zshrc ~/
-
-ln -s ~/.dotfiles/.alias ~/
-
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-echo 'source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-
-Colocar o "export ZSH" dependente de sistema operacional (ou usar sempre o mesmo nome de usuário?). Isso, exportar o caminho do Zsh (diferenca eh /Users ou /home)
-
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
 ## Disclaimer
 Se você está procurando meus dotfiles para o Manjaro i3wm ou para macOS, eles estão [aqui](https://github.com/vibraniumdev/i3wm-dotfiles) (Manjaro i3wm) e [aqui](https://github.com/vibraniumdev/macOS-Dotfiles) (macOS).
 
@@ -88,14 +60,15 @@ A lista completa de coisas ainda por fazer/consertar está [nas issues deste rep
 
 ## Coisas que não deram certo
 
+
 ## Referências Bibliográficas (em construção)
 
 ### Dotfiles
 
-* Dotfiles do Kent C. Dodds (@kentcdodds): https://github.com/kentcdodds/dotfiles
-* Dotfiles do Juliano Faria (@frontendwizard): https://github.com/frontendwizard/dotfiles
-* Dotfiles do Otavio Pace (@otaviopace): https://github.com/otaviopace/dotfiles
-* Dotfiles do Greg Scheerlinck (@greg-js): https://github.com/greg-js
+* Dotfiles do Kent C. Dodds ([@kentcdodds](https://github.com/kentcdodds/dotfiles))
+* Dotfiles do Juliano Faria ([@frontendwizard](https://github.com/frontendwizard/dotfiles)) 
+* Dotfiles do Otavio Pace ([@otaviopace](https://github.com/otaviopace/dotfiles)) 
+* Dotfiles do Greg Scheerlinck ([@greg-js](https://github.com/greg-js)) 
 
 ### Tutoriais
 
@@ -110,12 +83,5 @@ A lista completa de coisas ainda por fazer/consertar está [nas issues deste rep
 
 ***
 
-# Arch Linux
+ 
 
-* Dar um `chmod +x` no script da polybar
-
-* Instalar a fonte vim-devicons para habilitar os ícones na NERDTree
-
-* Criar o alias `gotopolybar='vim $HOME/.config/polybar/config'`
-
-  
