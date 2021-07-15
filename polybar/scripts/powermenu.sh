@@ -57,19 +57,20 @@ case $chosen in
         fi
         ;;
     $lock)
-		if [[ -f /usr/bin/i3lock ]]; then
-			i3lock
-		elif [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l
+		# if [[ -f /usr/bin/i3lock ]]; then
+			# i3lock
+		if [[ -f /usr/bin/betterlockscreen ]]; then
+			betterlockscreen -l dimblur
 		fi
         ;;
     $suspend)
 		ans=$(confirm_exit &)
-		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
-			mpc -q pause
-			amixer set Master mute
-      betterlockscreen -l
-			systemctl suspend
+		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" || $ans == "" ]]; then
+      # mpc -q pause
+      playerctl pause
+      amixer set Master mute
+      betterlockscreen -l dimblur
+      systemctl suspend
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
 			exit 0
         else
