@@ -155,6 +155,7 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 set $ws9 9
+set $ws10 10
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -166,6 +167,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -177,6 +179,7 @@ bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws10
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -188,9 +191,10 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws9; workspace $ws10
 
 # Assign apps to specific workspaces
-assign [class="Spotify"] $ws9
+# assign [class="Spotify"] 9
 
 # Open specific applications in floating mode
 for_window [class="Galculator"] floating enable sticky enable border 
@@ -251,7 +255,7 @@ exec --no-startup-id wal -R
 # Lock Screen
 # exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
 exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -u
-bindsym $mod+0 exec --no-startup-id betterlockscreen -l dimblur 
+bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur 
 # exec --no-startup-id betterlockscreen -l dimblur -time 10 
 
 # exec --no-startup-id compton -b
