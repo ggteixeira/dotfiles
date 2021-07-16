@@ -198,6 +198,7 @@ bindsym $mod+Shift+0 move container to workspace $ws9; workspace $ws10
 
 # Open specific applications in floating mode
 for_window [class="Galculator"] floating enable sticky enable border 
+for_window [class="copyq"] floating enable sticky enable border 
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="octopi"] floating enable
