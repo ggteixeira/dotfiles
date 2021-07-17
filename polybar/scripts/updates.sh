@@ -2,7 +2,7 @@
 
 NOTIFY_ICON=/usr/share/icons/Papirus/32x32/apps/system-software-update.svg
 
-get_total_updates() { UPDATES=$(checkupdates 2>/dev/null | wc -l); }
+get_total_updates() { UPDATES=$(~/.dotfiles/polybar/scripts/checkupdates 2>/dev/null | wc -l); }
 
 while true; do
     get_total_updates
@@ -38,8 +38,9 @@ while true; do
     # when no updates are available, use a longer loop, this saves on CPU
     # and network uptime, only checking once every 30 min for new updates
     while (( UPDATES == 0 )); do
-        echo " None"
-        sleep 1800
+        echo " No updates"
+        # sleep 1800
+        sleep 0.5
         get_total_updates
     done
 done
