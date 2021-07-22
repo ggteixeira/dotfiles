@@ -20,6 +20,7 @@ alias nvimrc='cd ~/.dotfiles/nvim-config && vim mappings.vimrc'
 alias gotoalias='vim ~/.alias'
 alias gotoconfig='cd ~/.dotfiles/i3 && vim config'
 alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
+alias gotodotfiles='cd ~/.dotfiles'
 
 # REPLACEMENT aliases
 alias vim='nvim'
