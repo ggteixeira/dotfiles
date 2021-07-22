@@ -1,0 +1,30 @@
+#
+# /home/gui/.dotfiles/.nvidia-settings-rc
+#
+# Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
+# Generated on Sun Jul 18 17:42:27 2021
+#
+
+# ConfigProperties:
+
+RcFileLocale = C
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = No
+ShowQuitDialog = Yes
+UpdateRulesOnProfileNameChange = Yes
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
+
+# Attributes:
+
+0/LogAniso=0
+0/FSAA=0
+0/TextureClamping=1
+0/FXAA=0
+0/FSAAAppControlled=1
+0/LogAnisoAppControlled=1
+0/OpenGLImageSettings=1
+0/FSAAAppEnhanced=0
+0/ShowGraphicsVisualIndicator=0
