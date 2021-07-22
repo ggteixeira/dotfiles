@@ -191,7 +191,7 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws9; workspace $ws10
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 # Assign apps to specific workspaces
 # assign [class="Spotify"] 9
@@ -252,6 +252,7 @@ bindsym $mod+r mode "resize"
 
 # Autostart applications
  # exec --no-startup-id redshift
+exec --no-startup-id xrandr --output HDMI-1-1 --primary --output eDP-1-1 --noprimary --left-of HDMI-1-1
 exec --no-startup-id wal -R
 # Lock Screen
 # exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
@@ -260,11 +261,12 @@ bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur
 # exec --no-startup-id betterlockscreen -l dimblur -time 10 
 
 # exec --no-startup-id compton -b
-exec --no-startup-id picom -b
+exec_always --no-startup-id picom -b
 # exec --no-startup-id tlp-start
 # exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
-exec --no-startup-id xrandr --output HDMI-1 --primary;
+# exec --no-startup-id xrandr --output HDMI-1-1 --primary --output eDP-1-1 --left-of HDMI-1-1 --dpi 96
+
 exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
 exec --no-startup-id dunst
 #Tempo até que a tela tranque:
@@ -272,7 +274,9 @@ exec --no-startup-id dunst
 # exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
 # exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
 exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
-exec --no-startup-id xrandr --dpi 96
+exec --no-startup-id optimus-manager-qt
+
+
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
