@@ -16,6 +16,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-vi-mode
 )
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
@@ -57,3 +58,6 @@ export BAT_THEME="onedark"
 # source ~/.cache/wal/colors-tty.sh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"
+
+# Vi-Mode Settings
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
