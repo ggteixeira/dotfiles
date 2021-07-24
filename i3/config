@@ -256,7 +256,7 @@ exec --no-startup-id xrandr --output HDMI-1-1 --primary --output eDP-1-1 --nopri
 exec --no-startup-id wal -R
 # Lock Screen
 # exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
-exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -u
+exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -r 1920x1080 -u
 bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur 
 # exec --no-startup-id betterlockscreen -l dimblur -time 10 
 
