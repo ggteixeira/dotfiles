@@ -204,6 +204,7 @@ for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="octopi"] floating enable
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="Gpick"] floating enable border pixel 6
+for_window [class="Simplenote"] floating enable border pixel 6
 # for_window [class="Font-manager"] floating enable
 for_window [instance="Places"] floating enable
 for_window [instance="journey"] floating enable
