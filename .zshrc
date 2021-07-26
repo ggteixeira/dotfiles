@@ -33,6 +33,11 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
 bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
 bindkey '^H' backward-kill-word
 
+# Makes autosuggest-accept and zsh-vi-mode compatible. Source: https://github.com/jeffreytse/zsh-vi-mode/issues/57#issuecomment-799364881
+function zvm_after_init() {
+  zvm_bindkey viins '^@' autosuggest-accept
+}
+
 # FZF settings
 #source /usr/share/doc/fzf/examples/key-bindings.zsh
 #source /usr/share/doc/fzf/examples/completion.zsh;
