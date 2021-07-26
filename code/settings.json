@@ -1,0 +1,96 @@
+{
+  "atomKeymap.promptV3Features": true,
+  "editor.formatOnPaste": true,
+  "telemetry.enableCrashReporter": false,
+  "code-runner.enableAppInsights": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.accessibilitySupport": "off",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "**/.idea": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "workbench.fontAliasing": "auto",
+  "editor.fontLigatures": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "python.languageServer": "Microsoft",
+  "editor.fontSize": 12,
+  "diffEditor.wordWrap": "on",
+  "editor.wordWrap": "on",
+  "atlascode.jira.enabled": true,
+  "yaml.schemas": {
+    "file:///Users/guiemi/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "terminal.integrated.fontFamily": "\"Hack\"",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+"explorer.confirmDragAndDrop": false,
+  "code-runner.runInTerminal": true,
+  "atlascode.jira.jqlList": [
+    {
+      "id": "f5b66e0f-b294-41e4-a701-966d5c19dcb2",
+      "enabled": true,
+      "name": "My printi Issues",
+      "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+      "siteId": "ebe03660-ac09-4e89-a31f-0ca52963d14f",
+      "monitor": true
+    }
+  ],
+  "editor.minimap.enabled": false,
+  "terminal.integrated.cursorStyle": "line",
+  "gitlens.mode.statusBar.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.statusBar.pullRequests.enabled": false,
+  "gitlens.statusBar.reduceFlicker": false,
+"python.pythonPath": "/usr/bin/python3",
+"python.formatting.provider": "black",
+"editor.fontFamily": "\"Hack\"",
+"update.mode": "manual",
+"terminal.integrated.fontSize": 13,
+"debug.console.fontFamily": "Hack",
+"window.menuBarVisibility": "toggle",
+"workbench.activityBar.visible": false,
+"vim.cursorStylePerMode.insert": "line",
+"vim.cursorStylePerMode.normal": "block",
+"vim.cursorStylePerMode.replace": "underline",
+"vim.cursorStylePerMode.visual": "block",
+"vim.cursorStylePerMode.visualblock": "block",
+"vim.cursorStylePerMode.visualline": "block",
+"vim.enableNeovim": true,
+"vim.neovimPath": "/usr/bin/nvim",
+"vim.neovimUseConfigFile": true,
+"vim.hlsearch": true,
+"vim.leader": "<space>",
+"vim.neovimConfigPath": "~/.dotfiles/nvim-config/init.vim",
+"vim.useSystemClipboard": true,
+"vim.statusBarColorControl": true,
+"workbench.colorCustomizations": {
+  "statusBar.background": "#005f5f",
+  "statusBar.noFolderBackground": "#005f5f",
+  "statusBar.debuggingBackground": "#005f5f"
+}
+}
