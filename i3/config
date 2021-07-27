@@ -22,7 +22,7 @@ hide_edge_borders none
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 6
-bindsym $mod+n border normal
+# bindsym $mod+n border normal
 
 font xft:Noto Sans 10
 font pango:DejaVu Sans Mono 8
@@ -61,9 +61,11 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # change wallpaper (random pywal)
-bindsym $mod+p exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/
-bindsym $mod+Shift+p exec --no-startup-id flameshot screen -n 0 -p $HOME/Pictures/Screenshots/
+bindsym $mod+n exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/
+bindsym $mod+Shift+n exec --no-startup-id flameshot screen -n 0 -p $HOME/Pictures/Screenshots/
 
+bindsym $mod+p exec --no-startup-id flameshot gui; exec --no-startup-id flameshot config -t=false
+# bindsym $mod+Shift+p exec --no-startup-id
 
 # kill focused window
 bindsym $mod+Shift+q kill
