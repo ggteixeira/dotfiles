@@ -308,7 +308,7 @@ client.background       $bg
 # 
 # client.background       #F8F8F2
 
-bindsym $mod+space exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.dotfiles/polybar/scripts/rofi/launcher.rasi
+bindsym $mod+space exec --no-startup-id ~/.dotfiles/polybar/scripts/launcher.sh
 bindsym $mod+Tab exec --no-startup-id rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.dotfiles/polybar/scripts/rofi/launcher.rasi
 
 
