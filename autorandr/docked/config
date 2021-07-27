@@ -1,8 +1,8 @@
 output eDP-1-1
 off
-output DP-1
+output DP-1-1
 off
-output HDMI-2
+output HDMI-1-2
 off
 output HDMI-1-1
 crtc 1
