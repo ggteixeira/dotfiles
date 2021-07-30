@@ -86,5 +86,6 @@
   "vim.hlsearch": true,
   "vim.leader": "<space>",
   "vim.neovimConfigPath": "~/.dotfiles/nvim-config/init.vim",
-  "vim.useSystemClipboard": true
+  "vim.useSystemClipboard": true,
+  "redhat.telemetry.enabled": false
 }
