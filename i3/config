@@ -70,6 +70,11 @@ bindsym $mod+p exec --no-startup-id flameshot gui; exec --no-startup-id flamesho
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# focus settings
+focus_follows_mouse no
+# mouse_warping none
+# focus_wrapping no
+
 # Launch apps
 # bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
