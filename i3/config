@@ -204,7 +204,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 # assign [class="Spotify"] 9
 
 # Open specific applications in floating mode
-for_window [class="Galculator"] floating enable sticky enable border 
+for_window [class="Calculator"] floating enable sticky enable border 
 for_window [class="copyq"] floating enable sticky enable border 
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
@@ -284,7 +284,8 @@ exec --no-startup-id dunst
 exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
 exec --no-startup-id optimus-manager-qt
 
-
+# Close dunst notification
+bindsym $mod+Escape exec --no-startup-id dunstctl close-all
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
