@@ -46,7 +46,7 @@
   },
   "terminal.integrated.fontFamily": "\"Hack\"",
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter-notebook"
   },
   "explorer.confirmDragAndDrop": false,
   "code-runner.runInTerminal": true,
@@ -87,5 +87,11 @@
   "vim.leader": "<space>",
   "vim.neovimConfigPath": "~/.dotfiles/nvim-config/init.vim",
   "vim.useSystemClipboard": true,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "liveshare.presence": false,
+  "editor.linkedEditing": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  }
 }
