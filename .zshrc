@@ -27,9 +27,10 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # PYENV settings
-# export PATH="$HOME/.pyenv/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)" 
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)" 
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 
 # zsh-autosuggestions settings
