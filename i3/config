@@ -201,7 +201,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
 
 # Assign apps to specific workspaces
-# assign [class="Spotify"] 9
+for_window [class="Spotify"] move container to workspace $ws10
 
 # Open specific applications in floating mode
 for_window [class="Calculator"] floating enable sticky enable border 
