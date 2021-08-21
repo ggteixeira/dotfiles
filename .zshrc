@@ -2,7 +2,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+if [[ -f ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 source /usr/share/nvm/init-nvm.sh
@@ -12,7 +14,9 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim" # Sets Neovim as default editor
 
 # . ~/.alias
-source ~/.alias
+if [[ -f ~/.alias ]]; then
+  source ~/.alias
+fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -22,7 +26,9 @@ plugins=(
   zsh-vi-mode
 )
 
-source ~/.oh-my-zsh/oh-my-zsh.sh
+if [[ -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
+  source ~/.oh-my-zsh/oh-my-zsh.sh
+fi
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
