@@ -4,7 +4,7 @@
   "telemetry.enableCrashReporter": false,
   "code-runner.enableAppInsights": false,
   "telemetry.enableTelemetry": false,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Atom One Dark",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "editor.accessibilitySupport": "off",
