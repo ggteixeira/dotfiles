@@ -19,7 +19,8 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "colors.rasi"
+/* @import "colors.rasi" */
+@import "~/.cache/wal/colors-rofi-dark"
 
 window {
     transparency:                   "real";
@@ -38,13 +39,13 @@ prompt {
     enabled: 						true;
 	padding: 						2px 0px 0px 10px;
 	background-color: 				@al;
-	text-color: 					@fg;
+	text-color: 					@foreground;
 }
 
 textbox-prompt-colon {
 	padding: 						2px 0px 0px 5px;
 	background-color: 				@al;
-	text-color: 					@fg;
+	text-color: 					@foreground;
 	expand: false;
 	str: "";
 	font:							"feather 12";
@@ -112,6 +113,7 @@ element-text {
     horizontal-align:               0;
     vertical-align:                 0.5;
     margin:                         0px 2.5px 0px 2.5px;
+    text-color:                     @foreground;
 }
 
 element selected {
