@@ -269,7 +269,7 @@ bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur
 # exec --no-startup-id betterlockscreen -l dimblur -time 10 
 
 # exec --no-startup-id compton -b
-exec_always --no-startup-id picom -b
+# exec_always --no-startup-id picom -b
 # exec --no-startup-id tlp-start
 # exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
