@@ -19,6 +19,7 @@ if [[ -f ~/.alias ]]; then
 fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="spaceship"
 
 plugins=(
     zsh-autosuggestions
