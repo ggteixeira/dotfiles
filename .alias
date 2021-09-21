@@ -7,7 +7,7 @@ alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias please='sudo'
 alias dedoff='shutdown now'
 alias rm='rm -i'
-alias htop='gotop --nvidia'
+# alias htop='vtop'
 
 # DOTFILES aliases (Bare Repository)
 # alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
