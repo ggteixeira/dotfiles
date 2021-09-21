@@ -260,7 +260,7 @@ bindsym $mod+r mode "resize"
 
 # Autostart applications
  # exec --no-startup-id redshift
-exec --no-startup-id xrandr --output HDMI-1-1 --primary --output eDP-1-1 --noprimary --left-of HDMI-1-1
+exec --no-startup-id xrandr --output HDMI-1 --primary --output eDP-1 --noprimary --left-of HDMI-1
 exec --no-startup-id wal -R
 # Lock Screen
 # exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
@@ -273,7 +273,7 @@ exec_always --no-startup-id picom -b
 # exec --no-startup-id tlp-start
 # exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
-# exec --no-startup-id xrandr --output HDMI-1-1 --primary --output eDP-1-1 --left-of HDMI-1-1 --dpi 96
+# exec --no-startup-id xrandr --output HDMI-1 --primary --output eDP-1 --left-of HDMI-1 --dpi 96
 
 exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
 exec --no-startup-id dunst
