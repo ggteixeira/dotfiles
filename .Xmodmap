@@ -6,16 +6,17 @@ remove mod5 = Mode_switch
 keycode 64 = 
 keycode 64 = ISO_Level3_Latch NoSymbol ISO_Level3_Latch
 
-! Swaps Right Super w/ Left Alt 
+! Swap Right Super w/ Left Alt 
 clear mod4
 add mod4 = Super_L
 add mod3 = Super_R
 keycode 134 = NoSymbol
-keycode 134 = Alt_L
+keycode 134 = Alt_R
 
-! Swaps Esc with Caps Lock
-remove lock = Caps_Lock
+! Swap Esc with Caps Lock
+clear lock
 keycode 66 = 
-keycode 66 = Escape
-
 keycode 9 = 
+keycode 66 = Escape
+keycode 9 = 
+add lock = Caps_Lock
