@@ -61,8 +61,8 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # change wallpaper (random pywal)
-bindsym $mod+n exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/
-bindsym $mod+Shift+n exec --no-startup-id flameshot screen -n 0 -p $HOME/Pictures/Screenshots/
+bindsym $mod+Shift+n exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/
+bindsym $mod+Shift+p exec --no-startup-id flameshot screen -n 0 -p $HOME/Pictures/Screenshots/
 
 bindsym $mod+p exec --no-startup-id flameshot gui; exec --no-startup-id flameshot config -t=false
 # bindsym $mod+Shift+p exec --no-startup-id
