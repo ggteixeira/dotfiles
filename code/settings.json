@@ -4,7 +4,7 @@
   "telemetry.enableCrashReporter": false,
   "code-runner.enableAppInsights": false,
   "telemetry.enableTelemetry": false,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "editor.accessibilitySupport": "off",
@@ -72,7 +72,6 @@
   "update.mode": "manual",
   "terminal.integrated.fontSize": 13,
   "debug.console.fontFamily": "Hack",
-  "workbench.activityBar.visible": false,
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
   "vim.cursorStylePerMode.replace": "underline",
@@ -93,5 +92,11 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-"security.workspace.trust.untrustedFiles": "open"
+"security.workspace.trust.untrustedFiles": "open",
+"window.menuBarVisibility": "toggle",
+"editor.scrollbar.horizontalScrollbarSize": 6,
+"debug.console.lineHeight": 12,
+"keyboard.dispatch": "keyCode",
+"todohighlight.isEnable": false,
+"workbench.activityBar.visible": false
 }
