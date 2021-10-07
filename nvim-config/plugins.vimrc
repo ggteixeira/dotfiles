@@ -70,7 +70,8 @@ let g:coc_global_extensions = [
 set termguicolors
 syntax on
 " colorscheme wal
-colorscheme onedark 
+" colorscheme onedark 
+colorscheme dracula
 
 " Lightline settings
 set noshowmode
