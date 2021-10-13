@@ -261,6 +261,7 @@ bindsym $mod+r mode "resize"
 # Autostart applications
  # exec --no-startup-id redshift
 exec --no-startup-id xrandr --output HDMI-1 --primary --output eDP-1 --noprimary --left-of HDMI-1
+# exec --no-startup-id xrandr --output HDMI-1 --noprimary --output eDP-1 --primary --right-of HDMI-1
 exec --no-startup-id wal -R
 # Lock Screen
 # exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
@@ -276,7 +277,7 @@ bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur
 # exec --no-startup-id xrandr --output HDMI-1 --primary --output eDP-1 --left-of HDMI-1 --dpi 96
 
 exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
-exec --no-startup-id dunst
+exec --no-startup-id dunst -mon 1
 #Tempo até que a tela tranque:
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 # exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
