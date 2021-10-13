@@ -1,4 +1,3 @@
 #!/bin/sh
 
-printf "" && (pgrep -a openvpn$ | head -n 1 | awk '{print $NF }' | cut -d '.' -f 1 && echo off) | head -n 1
-
+printf "VPN " && (pgrep -a openvpn$ | head -n 1 | awk '{print $NF }' | cut -d '.' -f 1 && echo disabled) | head -n 1
