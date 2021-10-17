@@ -59,6 +59,10 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+# bindsym $mod+Return exec --no-startup-id kitty --single-instance
+# bindsym $mod+Return exec --no-startup-id alacritty
+
+# WINIT_X11_SCALE_FACTOR=1
 
 # change wallpaper (random pywal)
 bindsym $mod+Shift+n exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/
@@ -284,6 +288,7 @@ exec --no-startup-id dunst -mon 1
 # exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
 exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
 exec --no-startup-id optimus-manager-qt
+exec_always --no-startup-id setxkbmap && xmodmap ~/.Xmodmap && xmodmap
 
 # Close dunst notification
 bindsym $mod+Escape exec --no-startup-id dunstctl close-all
