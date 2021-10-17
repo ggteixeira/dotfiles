@@ -1,3 +1,7 @@
+# Pywal configs
+(cat ~/.cache/wal/sequences &)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -59,21 +63,6 @@ if type rg &> /dev/null; then
 fi
 
 export BAT_THEME="onedark"
-
-# Pywal configs
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-# Not supported in the "fish" shell.
-# (cat ~/.cache/wal/sequences &)
-
-# Alternative (blocks terminal for 0-3ms)
-# cat ~/.cache/wal/sequences
-
-# To add support for TTYs this line can be optionally added.
-# source ~/.cache/wal/colors-tty.sh
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"
 
 # Vi-Mode Settings
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
