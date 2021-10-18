@@ -26,3 +26,5 @@
   	path = .gitconfig-printi
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
