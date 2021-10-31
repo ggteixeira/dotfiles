@@ -23,6 +23,13 @@ alias gotoconfig='cd ~/.dotfiles/i3 && vim config'
 alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
 alias gotodotfiles='cd ~/.dotfiles'
 
+# Printi
+alias gotoalpha='cd ~/Printi/alpha/alpha-next'
+alias gotoomega='cd ~/Printi/omega/omega-frontend-v3'
+
+# GitHub
+alias gotojjs='cd ~/GitHub/divertimentos/Just-JavaScript && v README.md'
+
 # REPLACEMENT aliases
 alias vim='nvim'
 alias v='nvim'
@@ -30,7 +37,7 @@ xevv(){
   xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
 alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
-alias pbcopy='xclip -selection clipboard'
+alias copy='xclip -selection clipboard'
 
 # GIT aliases
 alias g='git'
