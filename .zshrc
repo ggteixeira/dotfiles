@@ -10,6 +10,7 @@ if [[ -f ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ]]; th
     source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 fi
 
+# NVM Settings
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     source /usr/share/nvm/init-nvm.sh
 fi
