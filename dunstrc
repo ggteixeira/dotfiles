@@ -2,7 +2,8 @@
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
-    monitor = eDP-1
+    # monitor = eDP-1
+    monitor = HDMI-1
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -17,7 +18,7 @@
     # will be ignored.
 
     # follow = none
-    follow = mouse 
+    # follow = mouse 
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
