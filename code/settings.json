@@ -44,7 +44,7 @@
   "yaml.schemas": {
     "file:///Users/guiemi/.vscode/extensions/atlassian.atlascode-2.8.6/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   },
-  "terminal.integrated.fontFamily": "\"Hack\"",
+  "terminal.integrated.fontFamily": "\"JetBrains Mono\"",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
@@ -71,7 +71,7 @@
   "editor.fontFamily": "\"JetBrains Mono\"",
   "update.mode": "manual",
   "terminal.integrated.fontSize": 13,
-  "debug.console.fontFamily": "Hack",
+  "debug.console.fontFamily": "JetBrains Mono",
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
   "vim.cursorStylePerMode.replace": "underline",
@@ -98,5 +98,12 @@
 "debug.console.lineHeight": 12,
 "keyboard.dispatch": "keyCode",
 "todohighlight.isEnable": false,
-"workbench.activityBar.visible": false
+"workbench.activityBar.visible": false,
+"editor.acceptSuggestionOnCommitCharacter": false,
+"[yaml]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[typescriptreact]": {
+  "editor.defaultFormatter": "vscode.typescript-language-features"
+}
 }
