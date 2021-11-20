@@ -279,6 +279,7 @@ exec_always --no-startup-id picom -b
 # exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
 # exec --no-startup-id xrandr --output HDMI-1 --primary --output eDP-1 --left-of HDMI-1 --dpi 96
+exec --no-startup-id xrandr --dpi 96
 
 exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
 exec_always --no-startup-id dunst -mon 1
