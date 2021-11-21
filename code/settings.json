@@ -12,6 +12,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.exclude": {
+    "**/__pycache__": true,
     "**/.idea": true
   },
   "[javascriptreact]": {
@@ -37,7 +38,7 @@
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "python.languageServer": "Default",
-  "editor.fontSize": 12,
+  "editor.fontSize": 11.5,
   "diffEditor.wordWrap": "on",
   "editor.wordWrap": "on",
   "atlascode.jira.enabled": true,
@@ -105,5 +106,9 @@
 },
 "[typescriptreact]": {
   "editor.defaultFormatter": "vscode.typescript-language-features"
-}
+},
+"editor.suggestOnTriggerCharacters": false,
+"emmet.showExpandedAbbreviation": "never",
+"emmet.showAbbreviationSuggestions": false,
+"emmet.showSuggestionsAsSnippets": true
 }
