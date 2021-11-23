@@ -264,7 +264,7 @@ bindsym $mod+r mode "resize"
 
 # Autostart applications
  # exec --no-startup-id redshift
-exec_always --no-startup-id xrandr --output eDP1 --noprimary --output HDMI1 --primary --right-of eDP1 --dpi 96
+exec_always --no-startup-id xrandr --output eDP-1 --noprimary --output HDMI-1 --primary --right-of eDP-1 --dpi 96
 
 exec --no-startup-id wal -R
 # Lock Screen
@@ -273,12 +273,11 @@ exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -r 1920x1080 
 bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur 
 # exec --no-startup-id betterlockscreen -l dimblur -time 10 
 
-# exec --no-startup-id compton -b
-exec_always --no-startup-id picom -b
+exec --no-startup-id picom -b
 # exec --no-startup-id tlp-start
 # exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
-# exec --no-startup-id xrandr --output HDMI1 --primary --output eDP1 --left-of HDMI1 --dpi 96
+# exec --no-startup-id xrandr --output HDMI-1 --primary --output eDP-1 --left-of HDMI-1 --dpi 96
 # exec --no-startup-id xrandr --dpi 96
 
 exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
