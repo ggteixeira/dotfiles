@@ -93,22 +93,22 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-"security.workspace.trust.untrustedFiles": "open",
-"window.menuBarVisibility": "toggle",
-"editor.scrollbar.horizontalScrollbarSize": 6,
-"debug.console.lineHeight": 12,
-"keyboard.dispatch": "keyCode",
-"todohighlight.isEnable": false,
-"workbench.activityBar.visible": false,
-"editor.acceptSuggestionOnCommitCharacter": false,
-"[yaml]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"[typescriptreact]": {
-  "editor.defaultFormatter": "vscode.typescript-language-features"
-},
-"editor.suggestOnTriggerCharacters": false,
-"emmet.showExpandedAbbreviation": "never",
-"emmet.showAbbreviationSuggestions": false,
-"emmet.showSuggestionsAsSnippets": true
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.menuBarVisibility": "toggle",
+  "editor.scrollbar.horizontalScrollbarSize": 6,
+  "debug.console.lineHeight": 12,
+  "todohighlight.isEnable": false,
+  "workbench.activityBar.visible": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.suggestOnTriggerCharacters": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "emmet.showAbbreviationSuggestions": false,
+  "emmet.showSuggestionsAsSnippets": true,
+  "keyboard.dispatch": "keyCode"
 }
