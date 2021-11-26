@@ -288,7 +288,7 @@ exec_always --no-startup-id dunst -mon 1
 # exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
 exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
 exec --no-startup-id optimus-manager-qt
-exec_always --no-startup-id setxkbmap && xmodmap ~/.Xmodmap && xmodmap
+exec_always --no-startup-id setxkbmap && xmodmap ~/.Xmodmap
 
 # Close dunst notification
 bindsym $mod+Escape exec --no-startup-id dunstctl close-all
