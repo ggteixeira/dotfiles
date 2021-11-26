@@ -29,7 +29,7 @@ alias gotoalpha='cd ~/Printi/alpha/alpha-next'
 alias gotoomega='cd ~/Printi/omega/omega-frontend-v3'
 
 # GitHub
-alias gotojjs='cd ~/GitHub/divertimentos/just-javascript && v README.md'
+
 
 # REPLACEMENT aliases
 alias vim='nvim'
