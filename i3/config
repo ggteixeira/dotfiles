@@ -265,6 +265,7 @@ bindsym $mod+r mode "resize"
 # Autostart applications
  # exec --no-startup-id redshift
 exec_always --no-startup-id xrandr --output eDP-1 --noprimary --output HDMI-1 --primary --right-of eDP-1 --dpi 96
+exec --no-startup-id albert
 
 exec --no-startup-id wal -R
 # Lock Screen
