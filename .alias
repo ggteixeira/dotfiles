@@ -23,6 +23,7 @@ alias gotoconfig='cd ~/.dotfiles/i3 && vim config'
 alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
 alias gotodotfiles='cd ~/.dotfiles'
 alias gotoescolinha='cd ~/Code/EscolinhaDoVito && v'
+alias gotoalura='cd ~/GitHub/divertimentos/advanced-css/3-sass'
 
 # Printi
 alias gotoalpha='cd ~/Printi/alpha/alpha-next'
