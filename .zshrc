@@ -1,3 +1,6 @@
+# Performance setttings
+zmodload zsh/zprof
+
 # Pywal configs
 (cat ~/.cache/wal/sequences &)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"
@@ -10,11 +13,6 @@ if [[ -f ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ]]; th
     source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 fi
 
-# NVM Settings
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    source /usr/share/nvm/init-nvm.sh
-fi
-
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim" # Sets Neovim as default editor
 
@@ -24,9 +22,9 @@ if [[ -f ~/.alias ]]; then
 fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-# ZSH_THEME="spaceship"
 
-plugins=(
+plugins+=(
+    zsh-nvm
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-vi-mode
@@ -67,3 +65,16 @@ export BAT_THEME="onedark"
 
 # Vi-Mode Settings
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+
+# Ruby settings
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
+
+# NVM Settings
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    source /usr/share/nvm/init-nvm.sh
+fi
+
+# NVM Lazy Loading Settings
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
