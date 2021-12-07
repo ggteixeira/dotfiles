@@ -27,7 +27,7 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ### PLUGINS
-plugins+=(
+plugins=(
     zsh-nvm
     zsh-autosuggestions
     zsh-syntax-highlighting
