@@ -220,6 +220,7 @@ for_window [class="Simplenote"] floating enable border pixel 6
 for_window [instance="Places"] floating enable
 for_window [instance="journey"] floating enable
 for_window [instance="Dictionary"] floating enable border pixel 6
+for_window [instance="pcmanfm"] floating enable border pixel 6
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -265,7 +266,7 @@ bindsym $mod+r mode "resize"
 # Autostart applications
  # exec --no-startup-id redshift
 exec_always --no-startup-id xrandr --output eDP-1 --noprimary --output HDMI-1 --primary --right-of eDP-1 --dpi 96
-exec --no-startup-id albert
+# exec --no-startup-id albert
 
 exec --no-startup-id wal -R
 # Lock Screen
