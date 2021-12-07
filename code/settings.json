@@ -107,8 +107,16 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "editor.suggestOnTriggerCharacters": false,
-  "emmet.showExpandedAbbreviation": "never",
-  "emmet.showAbbreviationSuggestions": false,
   "emmet.showSuggestionsAsSnippets": true,
-  "keyboard.dispatch": "keyCode"
+  "keyboard.dispatch": "keyCode",
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.useLanguageServer": true,
+  "[ruby]": {
+    "editor.defaultFormatter": "rebornix.ruby"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "shakram02.bash-beautify"
+  }
 }
