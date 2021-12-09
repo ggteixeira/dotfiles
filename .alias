@@ -6,7 +6,7 @@ alias weather='curl http://wttr.in/'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias please='sudo'
 alias dedoff='shutdown now'
-alias rm='rm -I'
+# alias rm='rm -I'
 # alias htop='vtop'
 
 # DOTFILES aliases (Bare Repository)

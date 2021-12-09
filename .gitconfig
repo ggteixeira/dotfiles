@@ -10,7 +10,7 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	editor = /usr/bin/nvim
+	editor = nvim
 [gpg]
 	program = gpg
 [commit]
