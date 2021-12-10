@@ -1,12 +1,9 @@
 ### Loading Performance Tool
 zmodload zsh/zprof
 
-### PYWAL configs
-(cat ~/.cache/wal/sequences &)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 ### POWERLEVEL10K Settings
@@ -16,7 +13,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 # Sets Neovim as default editor
-export EDITOR="nvim" 
+export EDITOR="nvim"
 
 ### ALIAS Settings
 if [[ -f ~/.alias ]]; then
@@ -76,11 +73,15 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
-### NVM Settings
+### NVM and PYWAL Settings (Linux-exclusive settings)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    source /usr/share/nvm/init-nvm.sh
+    source /usr/share/nvm/init-nvm.sh  # NVM
+
+    (cat ~/.cache/wal/sequences &)  # PYWAL
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"  # PYWAL
 fi
 
 ## NVM Lazy Loading Settings
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
+export PATH="/usr/local/sbin:$PATH"
