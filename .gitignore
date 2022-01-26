@@ -4,3 +4,4 @@
 *.dotfiles.git
 .config/kwinrulesrc
 .DS_Store
+.gitconfig-printi
