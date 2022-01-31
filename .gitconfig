@@ -1,3 +1,7 @@
+[includeIf "gitdir:~/GitHub/"]
+  	path = .gitconfig-github
+[includeIf "gitdir:~/Printi/"]
+  	path = .gitconfig-printi
 [alias]
 	l = "log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 	st = status
@@ -20,10 +24,6 @@
 [user]
   email = 24235344+vibraniumdev@users.noreply.github.com
   name = Guilherme Teixeira
-[includeIf "gitdir:~/GitHub/"]
-  	path = .gitconfig-github
-[includeIf "gitdir:~/Printi/"]
-  	path = .gitconfig-printi
 [pull]
 	rebase = false
 [init]

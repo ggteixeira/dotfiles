@@ -25,6 +25,7 @@ alias gotodotfiles='cd ~/.dotfiles'
 alias gotoescolinha='cd ~/Code/EscolinhaDoVito && v'
 alias gotoalura='cd ~/GitHub/divertimentos/advanced-css/3-sass'
 alias gotoexercism='cd ~/GitHub/divertimentos/Exercism/javascript'
+alias gotouserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
 
 # Printi
 alias gotoalpha='cd ~/Printi/alpha/alpha-next'
