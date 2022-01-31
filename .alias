@@ -24,10 +24,11 @@ alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
 alias gotodotfiles='cd ~/.dotfiles'
 alias gotoescolinha='cd ~/Code/EscolinhaDoVito && v'
 alias gotoalura='cd ~/GitHub/divertimentos/advanced-css/3-sass'
+alias gotoexercism='cd ~/GitHub/divertimentos/Exercism/javascript'
 
 # Printi
 alias gotoalpha='cd ~/Printi/alpha/alpha-next'
-alias gotoomega='cd ~/Printi/omega/omega-frontend-v3'
+alias gotoomega='cd ~/Printi/omega/omega-frontend-v3 && nvm use omega'
 
 # GitHub
 
@@ -39,7 +40,8 @@ xevv(){
   xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
 alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
-alias copy='xclip -selection clipboard'
+# alias pbcopy='xclip -selection clipboard'
+alias ccbranch='git branch --show-current | pbcopy'
 alias js='node'
 
 # GIT aliases
@@ -62,6 +64,7 @@ alias gst='git status'
 
 # PYTHON aliases:
 alias pipi='pip install --upgrade pip && pip install -r requirements.txt && pip freeze — local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U && pip freeze > requirements.txt && git add requirements.txt && git commit -m "Atualiza pacotes" && git push'
+alias pip='pip3'
 
 # RUBY aliases
 alias beijos='bundle exec jekyll serve'
