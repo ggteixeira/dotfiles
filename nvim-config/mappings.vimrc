@@ -44,7 +44,8 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nmap <leader>r :w<CR>:so %<CR>
 
 " Activate FZF using ctrl+p
-nnoremap <silent> <expr> <C-P> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <expr> <C-P> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":GFiles\<cr>"
+nnoremap <silent> <C-g> :Rg!<CR>
 
 nnoremap <leader><Tab> :Buffers <CR>
 
@@ -62,3 +63,11 @@ inoremap <S-Tab> <C-d>
 
 " Center cursor with scrolloff
 nnoremap <leader>c :set scrolloff=999 <CR>
+ 
+" Source Vim config file
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+ 
+" vim-visual-multi
+let g:VM_maps = {}
+let g:VM_maps["Select Cursor Down"] = '<C-j>' "start selecting down
+let g:VM_maps["Select Cursor Up"]   = '<C-k>' " start selecting up
