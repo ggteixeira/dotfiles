@@ -88,14 +88,14 @@ let g:lightline = {
 
 
 " Sets The Silver Searcher
-let g:ackprg = 'ag --nogroup --nocolor --column'
-let g:Ag = 'ag --nogroup --nocolor --column'
+" let g:ackprg = 'ag --nogroup --nocolor --column'
+" let g:Ag = 'ag --nogroup --nocolor --column'
 
 " NERDCommenter settings
 let g:NERDSpaceDelims = 1
 
 " FZF settings
-let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+let g:fzf_preview_window = ['right:40%', 'ctrl-/']
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -103,7 +103,7 @@ let g:fzf_action = {
   \ 'ctrl-s': 'vsplit' }
 
 " let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
-let g:fzf_layout = {'down': '40%'}
+let g:fzf_layout = {'down': '50%'}
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 " BRACEY settings
