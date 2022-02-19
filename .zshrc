@@ -41,10 +41,14 @@ fi
 
 ### PYENV settings
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# eval "$(pyenv virtualenv-init -)"
+# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"    # if `pyenv` is not already on PATH
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 ### ZSH-AUTOSUGGESTIONS settings
 bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
