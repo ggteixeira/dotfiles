@@ -72,11 +72,12 @@ syntax on
 " colorscheme wal
 colorscheme onedark 
 " colorscheme dracula
+" colorscheme carbon
 
 " Lightline settings
 set noshowmode
 let g:lightline = {
-\  'colorscheme': 'onedark',
+\  'colorscheme': 'one',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
