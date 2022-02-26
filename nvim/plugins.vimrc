@@ -1,3 +1,30 @@
+" teste dois
+Plug 'preservim/nerdtree', {'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'joshdick/onedark.vim'
+Plug 'gko/vim-coloresque'
+Plug 'ryanoasis/vim-devicons'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'alvan/vim-closetag'
+Plug 'dylanaraps/wal.vim'
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'alvan/vim-closetag'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'michaeldyrynda/carbon'
+Plug 'sheerun/vim-polyglot'
+
 """ NERDTREE settings
 let NERDTreeIgnore=[
       \'\~$', '\.pyc$', 
@@ -65,14 +92,6 @@ let g:coc_global_extensions = [
       \'coc-emmet'
 \]
 
-" One Dark Theme settings
-
-set termguicolors
-syntax on
-" colorscheme wal
-colorscheme onedark 
-" colorscheme dracula
-" colorscheme carbon
 
 " Lightline settings
 set noshowmode
@@ -113,3 +132,5 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 
 " Indent Blankline
 let g:indent_blankline_filetype_exclude = ['startify', 'nerdtree', 'help']
+
+
