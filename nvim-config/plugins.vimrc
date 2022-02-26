@@ -61,8 +61,8 @@ let g:coc_global_extensions = [
       \'coc-git',
       \'coc-eslint',
       \'coc-styled-components',
-      \'coc-emmet',
-      \'coc-pairs'
+      \'coc-pairs',
+      \'coc-emmet'
 \]
 
 " One Dark Theme settings
@@ -87,9 +87,9 @@ let g:lightline = {
 \  }
 
 
-" Sets The Silver Searcher
+" sets the silver searcher
 " let g:ackprg = 'ag --nogroup --nocolor --column'
-" let g:Ag = 'ag --nogroup --nocolor --column'
+" let g:ag = 'ag --nogroup --nocolor --column'
 
 " NERDCommenter settings
 let g:NERDSpaceDelims = 1
@@ -106,5 +106,6 @@ let g:fzf_action = {
 let g:fzf_layout = {'down': '50%'}
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
-" BRACEY settings
-" let g:bracey_refresh_on_save=1
+" Closetag Settings
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
