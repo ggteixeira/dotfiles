@@ -23,5 +23,6 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'tpope/vim-fugitive'
   Plug 'alvan/vim-closetag'
   Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'michaeldyrynda/carbon'
 call plug#end()
 
