@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/nvim_plugins')
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' | 
+            \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'itchyny/lightline.vim'
   Plug 'itchyny/vim-gitbranch'
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -14,9 +17,11 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'junegunn/fzf.vim'
   Plug 'preservim/nerdcommenter'
   Plug 'alvan/vim-closetag'
-  Plug 'mileszs/ack.vim'
-  Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
   Plug 'dylanaraps/wal.vim'
   Plug 'mhinz/vim-startify'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
+  Plug 'alvan/vim-closetag'
+  Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
