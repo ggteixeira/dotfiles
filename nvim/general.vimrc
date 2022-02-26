@@ -20,7 +20,6 @@ set nocompatible
 set noerrorbells
 set noshowmode
 set noswapfile
-set number
 set number 
 set relativenumber
 set ruler 
