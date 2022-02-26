@@ -70,8 +70,8 @@ let g:coc_global_extensions = [
 set termguicolors
 syntax on
 " colorscheme wal
-" colorscheme onedark 
-colorscheme dracula
+colorscheme onedark 
+" colorscheme dracula
 
 " Lightline settings
 set noshowmode
@@ -109,3 +109,6 @@ let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --ma
 " Closetag Settings
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
+
+" Indent Blankline
+let g:indent_blankline_filetype_exclude = ['startify', 'nerdtree', 'help']
