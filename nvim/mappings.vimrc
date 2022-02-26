@@ -83,3 +83,5 @@ let g:VM_leader = 'space'
 " let g:VM_maps["Select Cursor Down"] = 'leader-j' "start selecting down
 " let g:VM_maps["Select Cursor Up"]   = 'leader-k' " start selecting up
 
+" Clear search afterwards
+map <silent><esc> :noh <CR>
