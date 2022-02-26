@@ -12,7 +12,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'gko/vim-coloresque'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'

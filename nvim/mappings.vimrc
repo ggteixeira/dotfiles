@@ -72,16 +72,6 @@ nnoremap <leader>c :set scrolloff=999 <CR>
  
 " Source Vim config file
 nnoremap <leader>sv :source $MYVIMRC<CR>
- 
-" vim-visual-multi
-let g:VM_maps = {}
-let g:VM_leader = 'space'
-" let g:VM_maps["Select Cursor Down"] = '<leader>j' "start selecting down
-" let g:VM_maps["Select Cursor Up"]   = '<leader>k' " start selecting up
-
-
-" let g:VM_maps["Select Cursor Down"] = 'leader-j' "start selecting down
-" let g:VM_maps["Select Cursor Up"]   = 'leader-k' " start selecting up
 
 " Clear search afterwards
 map <silent><esc> :noh <CR>
