@@ -25,4 +25,3 @@ call plug#begin('~/.vim/nvim_plugins')
   Plug 'michaeldyrynda/carbon'
   Plug 'sheerun/vim-polyglot'
 call plug#end()
-
