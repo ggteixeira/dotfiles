@@ -25,7 +25,7 @@ nmap ,p "0p
 " TABS mappings
 nnoremap <leader>h :tabprevious <CR>
 nnoremap <leader>l :tabnext <CR>
-nnoremap <leader>p :tabnew 
+nnoremap <leader>n :tabnew<CR>
 
 " move current tab to left/right
 noremap <Leader><Left>  :tabmove -1<CR>
@@ -60,6 +60,7 @@ nnoremap <leader>b :Prettier <CR>
 " Toggle Nerdcommenter
 " For some cryptic reason, Nvim registers ctrl+/ as ctrl+_.
 nmap <C-_> <plug>NERDCommenterToggle 
+vmap <C-_> <plug>NERDCommenterSexy
 
 " for command mode
 nnoremap <S-Tab> <<
