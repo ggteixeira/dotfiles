@@ -27,6 +27,10 @@ nnoremap <leader>h :tabprevious <CR>
 nnoremap <leader>l :tabnext <CR>
 nnoremap <leader>p :tabnew 
 
+" move current tab to left/right
+noremap <Leader><Left>  :tabmove -1<CR>
+noremap <Leader><Right> :tabmove +1<CR>
+
 " NERDTREE mappings
 nnoremap <A-S-e> :NERDTreeFocus<CR>
 
@@ -46,6 +50,7 @@ nmap <leader>r :w<CR>:so %<CR>
 " Activate FZF using ctrl+p
 nnoremap <silent> <expr> <C-P> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":GFiles\<cr>"
 nnoremap <silent> <C-g> :Rg!<CR>
+nnoremap <silent> <leader>p :Files<CR>
 
 nnoremap <leader><Tab> :Buffers <CR>
 
@@ -65,9 +70,15 @@ inoremap <S-Tab> <C-d>
 nnoremap <leader>c :set scrolloff=999 <CR>
  
 " Source Vim config file
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
  
 " vim-visual-multi
 let g:VM_maps = {}
-let g:VM_maps["Select Cursor Down"] = '<C-j>' "start selecting down
-let g:VM_maps["Select Cursor Up"]   = '<C-k>' " start selecting up
+let g:VM_leader = 'space'
+" let g:VM_maps["Select Cursor Down"] = '<leader>j' "start selecting down
+" let g:VM_maps["Select Cursor Up"]   = '<leader>k' " start selecting up
+
+
+" let g:VM_maps["Select Cursor Down"] = 'leader-j' "start selecting down
+" let g:VM_maps["Select Cursor Up"]   = 'leader-k' " start selecting up
+
