@@ -26,19 +26,23 @@ Lista de features essenciais presentes no VSCode
 
 ### Workspaces
 
-Usar o Vim no terminal – que é o meu caso – dispensa o conceito de workspace porque é mais direto ao ponto dar um `cd` na pasta de trabalho raiz e abrir o Vim lá. Há inclusive alguns aliases de navegação que facilitam ainda mais esse processo quando ele se torna repetitivo, como os meus `goto`: [.zsh_aliases](https://github.com/vibraniumdev/dotfiles/blob/main/.zsh_aliases).
+Usar o Vim no terminal – que é o meu caso – dispensa o conceito de workspace porque é mais direto ao ponto dar um `cd` na pasta de trabalho raiz e abrir o Vim lá. Há inclusive alguns aliases de navegação que facilitam ainda mais esse processo quando ele se torna repetitivo, como aliases do tipo `goto`: [.zsh_aliases](https://github.com/vibraniumdev/dotfiles/blob/main/.zsh_aliases).
 
 ### Ctrl+P/Command+P e Busca Global
 
-Substituir o ctrl+p para buscar nomes de arquivos a partir da pasta-raiz de um projeto foi uma tarefa simples com o FZF. Utilizando o comando `:Files`, eu consegui implementar a mesma feature com a qual já estava acostumado, com algumas opções a mais de aparência.
+Substituir o **ctrl+p** para buscar nomes de arquivos a partir da pasta-raiz de um projeto foi uma tarefa simples com o FZF. Utilizando os comandos `:Files` e `GFiles`, é possível implementar a mesma feature, com algumas opções a mais de aparência.
 
 ### Multi-Cursores
 
-No Code você pode editar mais de uma linha por vez usando `ctrl+shift+seta`. No Vim, o [vim-visual-multi](https://github.com/mg979/vim-visual-multi) dá conta não só de editar várias linha de uma vez como de fazer o `ctrl+d`, que é editar vários pontos do texto através de correspondência. Por exemplo, se você quer transformar todos os `border: 1rem solid blue;` de um arquivo para `red`, basta colocar o cursor em cima da palavra e ativar a função usando `ctrl+n`.
+No Code é possível editar mais de uma linha por vez usando `ctrl+shift+seta` e editar palavras repetidas usando o `ctrl+d` . Para o Vim, usei por bastante tempo o plugin [vim-visual-multi](https://github.com/mg979/vim-visual-multi), pois ele tenta replicar essa funcionalidade e, na maior parte do tempo, consegue bem. Porém, um colega do grupo [Vim - Br](https://t.me/vimbr) (Telegram), você não precisa de plugin nenhum se aprender alguns feitiços escondidos debaixo do capô do próprio Vim. Este texto chamado [You don't need more than one cursor in Vim (Christoph Hermann)](https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db) ensina a utilizar três coisas:
+1. O `cgn`;
+2. Uma técnica que eu gosto bastante, de fazer o Vim nativamente editar várias linhas verticalmente ao mesmo tempo, assim como o Code faz. Essa funcionalidade, porém, possui algumas limitações, como, por exemplo, apenas funcionar se a edição for feita exatamente no início da linha. Se a edição for apagar caracteres, a tecla **delete** não vai funcionar, apenas o **backspace**.
+3. Macros. As macros são o tipo de ferramenta que faz com que o Vim deixa os editores de texto normal comendo poeira. O poder delas é ilimitado, ainda mais se forem construídas utilizando recursão.
+Utilizando esse texto, eu dispensei a extensão e passei a treinar os comandos nativos. A parte mais difícil são as macros avançadas; mas vale a pena; no Vim, tudo é um aprendizado constante.
 
 ### Auto Close Tag
 
-Foi adicionada ao NeoVim uma funcionalidade que não está presente no VSCode, mas está no WebStorm. Quando você insere uma tag HTML, como por exemplo um `<h1>`, o plugin automaticamente insere o `</h1>`. Simples e poderoso.
+Através do plugin [vim-closetag](https://github.com/alvan/vim-closetag) qualquer tag HTML aberta é automaticamente fechada depois que o usuário aperta `>`. No VSCode isso também precisa ser ativado via extensão, enquanto que no WebStorm o comportamento é nativo. Simples e poderoso.
 
 ### NERDTree
 
