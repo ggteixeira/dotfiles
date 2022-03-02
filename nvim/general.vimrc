@@ -18,7 +18,7 @@ set linebreak
 set mouse=a
 set nocompatible
 set noerrorbells
-set noshowmode
+" set noshowmode
 set noswapfile
 set number 
 set relativenumber
