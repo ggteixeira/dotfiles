@@ -54,10 +54,10 @@ A lista completa de coisas ainda por fazer/consertar está [nas issues deste rep
 
 ### Dotfiles
 
-- Dotfiles do Kent C. Dodds ([@kentcdodds](https://github.com/kentcdodds/dotfiles))
-- Dotfiles do Juliano Faria ([@frontendwizard](https://github.com/frontendwizard/dotfiles))
-- Dotfiles do Otavio Pace ([@otaviopace](https://github.com/otaviopace/dotfiles))
-- Dotfiles do Greg Scheerlinck ([@greg-js](https://github.com/greg-js))
+- Kent C. Dodds ([@kentcdodds](https://github.com/kentcdodds/dotfiles))
+- Juliano Faria ([@frontendwizard](https://github.com/frontendwizard/dotfiles))
+- Otavio Pace ([@otaviopace](https://github.com/otaviopace/dotfiles))
+- Greg Scheerlinck ([@greg-js](https://github.com/greg-js))
 - Marian Pop dotfiles ([@mvpopuk](https://github.com/mvpopuk/dotfiles))
 
 ### Tutoriais
