@@ -20,7 +20,7 @@ Plug 'michaeldyrynda/carbon'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sheerun/vim-polyglot'
-
+Plug 'pangloss/vim-javascript'
 
 " Plug 'gko/vim-coloresque'
 " Plug 'dylanaraps/wal.vim'
@@ -82,6 +82,7 @@ let g:coc_global_extensions = [
       \'coc-eslint',
       \'coc-styled-components',
       \'coc-pairs',
+      \'coc-emmet',
 \]
 
 """ Lightline 
