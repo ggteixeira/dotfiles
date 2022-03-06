@@ -21,7 +21,7 @@ set noerrorbells
 " set noshowmode
 set noswapfile
 set number 
-set relativenumber
+set norelativenumber
 set ruler 
 set shiftwidth=2
 set shortmess=I

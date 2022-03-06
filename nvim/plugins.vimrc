@@ -5,27 +5,25 @@
 Plug 'preservim/nerdtree', {'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'gko/vim-coloresque'
 Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'alvan/vim-closetag'
-Plug 'dylanaraps/wal.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'alvan/vim-closetag'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'sheerun/vim-polyglot'
 Plug 'michaeldyrynda/carbon'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sheerun/vim-polyglot'
+
+
+" Plug 'gko/vim-coloresque'
+" Plug 'dylanaraps/wal.vim'
 
 " ------------------------------------------------------------------------------
 " # Plugin Configs 
@@ -76,8 +74,6 @@ let g:AutoPairsMapBS = 0
 
 """ COC 
 let g:coc_global_extensions = [
-      \'coc-tslint-plugin', 
-      \'coc-tsserver', 
       \'coc-css', 
       \'coc-html', 
       \'coc-json', 
@@ -86,7 +82,6 @@ let g:coc_global_extensions = [
       \'coc-eslint',
       \'coc-styled-components',
       \'coc-pairs',
-      \'coc-emmet'
 \]
 
 """ Lightline 
