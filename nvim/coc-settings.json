@@ -1,18 +1,14 @@
 {
   "eslint.probe": 
     [
-      "javascript",
       "javascriptreact",
-      "typescript",
       "typescriptreact",
-      "html",
-      "markdown"
+      "html"
   ],
   "styled-components.tags": 
     [
       "styled",
       "css",
-      "sty",
       "createGlobalStyle"
   ]
 }

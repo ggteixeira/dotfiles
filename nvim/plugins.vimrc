@@ -72,19 +72,6 @@ endfunction
 " which caused interference with the ctrl+backspace function in insert mode
 let g:AutoPairsMapBS = 0
 
-""" COC 
-let g:coc_global_extensions = [
-      \'coc-css', 
-      \'coc-html', 
-      \'coc-json', 
-      \'coc-prettier', 
-      \'coc-git',
-      \'coc-eslint',
-      \'coc-styled-components',
-      \'coc-pairs',
-      \'coc-emmet',
-\]
-
 """ Lightline 
 let g:lightline = {
 \  'colorscheme': 'one',
