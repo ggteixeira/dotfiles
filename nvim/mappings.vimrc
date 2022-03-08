@@ -9,10 +9,6 @@ nnoremap <silent><c-s> :<c-u>update<cr>
 vnoremap <silent><c-s> <c-c>:update<cr>gv
 inoremap <silent><c-s> <c-o>:update<cr> 
  
-" Use <cr> (Enter/Return) to confirm/accept completion
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 " Just type ; to enter command mode when in normal mode
 nnoremap ; :
 
@@ -40,9 +36,6 @@ nnoremap <A-S-e> :NERDTreeFocus<CR>
 
 " Opens NERDTree and keeps the focus in the file
 nnoremap <silent><C-\> :call ToggleNerdTree() <Bar> if &filetype ==# 'nerdtree' <Bar> wincmd p <Bar> endif<CR>
-
-" COC Prettier mappings
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Source current file using leader+r
 nmap <leader>r :w<CR>:so %<CR>
@@ -75,3 +68,19 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Clear search afterwards
 map <silent><esc> :noh <CR>
+
+
+""" COC mappings
+" Use <cr> (Enter/Return) to confirm/accept completion
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" COC Prettier mappings
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+
