@@ -11,7 +11,7 @@ inoremap <silent><c-s> <c-o>:update<cr>
  
 " Use <cr> (Enter/Return) to confirm/accept completion
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-inoremap <silent><expr> <c-space> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Just type ; to enter command mode when in normal mode
 nnoremap ; :
