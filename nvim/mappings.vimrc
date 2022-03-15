@@ -61,7 +61,7 @@ nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
 " Center cursor with scrolloff
-nnoremap <leader>c :set scrolloff=999 <CR>
+nnoremap <leader>cc :set scrolloff=999 <CR>
  
 " Source Vim config file
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -83,4 +83,15 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " COC Prettier mappings
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-
+" go to definition
+nmap <silent> gd <Plug>(coc-definition)
+" go to type definition
+nmap <silent> gy <Plug>(coc-type-definition)
+" go to implementation
+nmap <silent> gi <Plug>(coc-implementation)
+" go to references
+nmap <silent> gr <Plug>(coc-references)
+" run code lens on current line
+nmap <leader>bl <Plug>(coc-codelens-action)
+" rename symbol
+nmap <leader>rs  <Plug>(coc-rename)

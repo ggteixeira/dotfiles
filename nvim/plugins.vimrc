@@ -1,14 +1,12 @@
 " ------------------------------------------------------------------------------
 " # Plugin Definitions
 " ------------------------------------------------------------------------------
-
 Plug 'preservim/nerdtree', {'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'yuezk/vim-js'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
@@ -20,24 +18,35 @@ Plug 'michaeldyrynda/carbon'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
-
-" Plug 'gko/vim-coloresque'
-" Plug 'dylanaraps/wal.vim'
-
 " ------------------------------------------------------------------------------
 " # Plugin Configs 
 " ------------------------------------------------------------------------------
 
+""" COC
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-emmet',
+  \ 'coc-git',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-pairs',
+  \ 'coc-prettier',
+  \ 'coc-styled-components',
+  \ 'coc-eslint',
+\ ]
+
+set signcolumn=yes
+
 """ NERDTree
-let NERDTreeIgnore=[
-      \'\~$', '\.pyc$', 
-      \'^\.DS_Store$', 
-      \'^node_modules$', 
-      \'.git', 
-      \'.ropeproject', 
-      \'__pycache__'
+let NERDTreeIgnore = [
+  \'\~$', '\.pyc$', 
+  \'^\.DS_Store$', 
+  \'^node_modules$', 
+  \'.git', 
+  \'.ropeproject', 
+  \'__pycache__',
 \]
+
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
@@ -67,6 +76,9 @@ function! ToggleNerdTree()
   NERDTreeToggle
   set eventignore=
 endfunction
+
+let g:nerdtree_tabs_focus_on_files=1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*node_modules/
 
 " Turn of this plugin ability of handling backspace,
 " which caused interference with the ctrl+backspace function in insert mode
@@ -103,4 +115,6 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 
 """ Indent Blankline
 let g:indent_blankline_filetype_exclude = ['startify', 'nerdtree', 'help']
+
+
 

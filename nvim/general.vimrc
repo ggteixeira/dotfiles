@@ -1,6 +1,61 @@
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-filetype indent plugin on
+
+set autoindent 
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set backspace=indent,start,eol
+set clipboard=unnamed,unnamedplus
+set confirm
+set cursorline
+set expandtab
+set hidden
+set nobackup
+set nowritebackup
+set hlsearch
+set ignorecase
+set smartcase
+set inccommand=nosplit
+set incsearch
+set laststatus=2
+set linebreak
+set mouse=a
+set nocursorcolumn
+set noerrorbells
+set nonumber 
+set noswapfile
+set relativenumber
+set ruler 
+set shiftwidth=2
+set shortmess=I
+set showcmd
+set showmatch
+set smartindent
+set softtabstop=2
+set splitbelow
+set splitright
+set synmaxcol=0
+set t_Co=256
+set tabstop=2 
+set wildmenu
+
+colorscheme onedark
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+" let g:onedark_termcolors=256
+
+" colorscheme dracula
+" colorscheme carbon
+
+"" Remember cursor position
+augroup vimrc-remember-cursor-position
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
 
 let g:loaded_2html_plugin      = 0
 let g:loaded_gzip              = 0
@@ -16,39 +71,3 @@ let g:loaded_spellfile_plugin  = 0
 let g:loaded_tarPlugin         = 0
 let g:loaded_tutor_mode_plugin = 0
 let g:loaded_zipPlugin         = 0
-
-set autoindent 
-set backspace=indent,start,eol
-set clipboard=unnamed,unnamedplus
-set confirm
-set cursorline
-set expandtab
-set hidden
-set hlsearch
-set ignorecase
-set smartcase
-set inccommand=nosplit
-set incsearch
-set laststatus=2
-set linebreak
-set mouse=a
-set nocompatible
-set nocursorcolumn
-set noerrorbells
-set nonumber 
-set noswapfile
-set relativenumber
-set ruler 
-set shiftwidth=2
-set shortmess=I
-set showcmd
-set showmatch
-set signcolumn=yes
-set smartindent
-set softtabstop=2
-set splitbelow
-set splitright
-set synmaxcol=200
-set t_Co=256
-set tabstop=2 
-set wildmenu
