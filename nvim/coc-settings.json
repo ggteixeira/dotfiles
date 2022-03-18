@@ -1,19 +1,5 @@
 {
   "styled-components.tags": ["styled", "css", "createGlobalStyle"],
-  "typescript.implementationsCodeLens.enable": false,
-  "typescript.referencesCodeLens.enable": false,
-  "typescript.referencesCodeLens.showOnAllFunctions": true,
-  "typescript.preferences.includePackageJsonAutoImports": "off",
-  "typescript.suggestionActions.enabled": false,
-  "typescript.validate.enable": false,
   "typescript.autoClosingTags": false,
-  "typescript.suggest.completeFunctionCalls": false,
-  "typescript.suggest.includeCompletionsWithSnippetText": false,
-  "typescript.suggest.classMemberSnippets.enabled": false,
-  "typescript.format.enabled": false,
-  "javascript.format.enabled": false,
-  "javascript.autoClosingTags": false,
-  "javascript.implementationsCodeLens.enable": false,
-  "javascript.referencesCodeLens.enable": false,
-  "javascript.referencesCodeLens.showOnAllFunctions": false
+  "javascript.autoClosingTags": false
 }
