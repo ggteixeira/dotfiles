@@ -26,6 +26,7 @@ alias gotoalura='cd ~/GitHub/divertimentos/advanced-css/3-sass'
 alias gotoexercism='cd ~/GitHub/divertimentos/Exercism/javascript'
 alias gotouserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
 alias gotoala='cd $HOME/.dotfiles/alacritty/ && v alacritty.yml'
+alias gotokit='cd $HOME/.dotfiles/kitty/ && v kitty.conf'
 
 # Printi
 alias gotoalpha='cd ~/Printi/alpha/alpha-next'
