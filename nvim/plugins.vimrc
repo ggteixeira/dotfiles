@@ -14,9 +14,13 @@ Plug 'alvan/vim-closetag'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
 Plug 'lukas-reineke/indent-blankline.nvim'
+
+""" Themes
 Plug 'michaeldyrynda/carbon'
 Plug 'joshdick/onedark.vim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+
 Plug 'sheerun/vim-polyglot'
 " ------------------------------------------------------------------------------
 " # Plugin Configs 
