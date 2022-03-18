@@ -24,7 +24,7 @@ import:
 # available, otherwise `xterm-256color` is used.
 #TERM: alacritty
 
-#window:
+# window:
 # Window dimensions (changes require restart)
 #
 # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -62,7 +62,7 @@ import:
 # Values for `decorations` (macOS only):
 #     - transparent: Title bar, transparent background and title bar buttons
 #     - buttonless: Title bar, transparent background and no title bar buttons
-#decorations: full
+# decorations: full
 
 # Background opacity
 #
@@ -100,10 +100,10 @@ import:
 # and `light`. Set this to `None` to use the default theme variant.
 #gtk_theme_variant: None
 
-#scrolling:
+scrolling:
 # Maximum number of lines in the scrollback buffer.
 # Specifying '0' will disable scrolling.
-#history: 10000
+  history: 10000
 
 # Scrolling distance multiplier.
 #multiplier: 3
@@ -111,21 +111,22 @@ import:
 font:
   normal:
     family: FiraCode Nerd Font Mono
-    style: Regular
+    style:
+      Regular
 
       #  bold:
       #    family: "Fira Code Nerd Font"
       #    style: Bold
       #
       #  italic:
-      #    family: "Fira Code Nerd Font" 
+      #    family: "Fira Code Nerd Font"
       #    style: Italic
       #
       #  bold_italic:
       #    family: "Fira Code Nerd Font"
       #    style: Bold Italic
 
-  size: 12
+  size: 11.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -154,7 +155,7 @@ font:
   #
   #builtin_box_drawing: true
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
 #colors:
@@ -349,16 +350,16 @@ font:
 # When set to `true`, selected text will be copied to the primary clipboard.
 #save_to_clipboard: false
 
-#cursor:
+cursor:
 # Cursor style
-#style:
+  style:
 # Cursor shape
 #
 # Values for `shape`:
 #   - ▇ Block
 #   - _ Underline
 #   - | Beam
-#shape: Block
+    shape: Beam
 
 # Cursor blinking state
 #
@@ -367,7 +368,7 @@ font:
 #   - Off: Disable blinking by default
 #   - On: Enable blinking by default
 #   - Always: Force the cursor to always blink
-#blinking: Off
+    blinking: On
 
 # Vi mode cursor style
 #
@@ -378,7 +379,7 @@ font:
 #vi_mode_style: None
 
 # Cursor blinking interval in milliseconds.
-#blink_interval: 750
+    blink_interval: 750
 
 # If this is `true`, the cursor will be rendered as a hollow box when the
 # window is not focused.
@@ -413,7 +414,7 @@ font:
 #working_directory: None
 
 # Send ESC (\x1b) before characters when alt is pressed.
-#alt_send_esc: true
+alt_send_esc: false
 
 # Offer IPC using `alacritty msg` (unix only)
 #ipc_socket: true
