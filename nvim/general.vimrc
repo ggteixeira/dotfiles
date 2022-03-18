@@ -23,9 +23,9 @@ set linebreak
 set mouse=a
 set nocursorcolumn
 set noerrorbells
-set nonumber 
+set number 
 set noswapfile
-set relativenumber
+set norelativenumber
 set ruler 
 set shiftwidth=2
 set shortmess=I
@@ -39,6 +39,7 @@ set synmaxcol=0
 set t_Co=256
 set tabstop=2 
 set wildmenu
+set lazyredraw
 
 colorscheme onedark
 
@@ -49,7 +50,8 @@ endif
 " let g:onedark_termcolors=256
 
 " colorscheme dracula
-" colorscheme carbon
+colorscheme carbon
+" colorscheme nord
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
