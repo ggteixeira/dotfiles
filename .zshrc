@@ -72,9 +72,11 @@ eval "$(pyenv virtualenv-init -)"
 
 ### ZSH-AUTOSUGGESTIONS settings
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
+  # bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
   bindkey '^H' backward-kill-word
 fi
+
+bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
 
 ## Makes autosuggest-accept and zsh-vi-mode compatible. Source: https://github.com/jeffreytse/zsh-vi-mode/issues/57#issuecomment-799364881
 function zvm_after_init() {
