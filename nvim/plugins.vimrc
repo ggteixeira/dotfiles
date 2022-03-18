@@ -90,7 +90,7 @@ let g:AutoPairsMapBS = 0
 
 """ Lightline 
 let g:lightline = {
-\  'colorscheme': 'one',
+\  'colorscheme': 'nord',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
