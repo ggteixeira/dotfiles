@@ -50,8 +50,8 @@ endif
 " let g:onedark_termcolors=256
 
 " colorscheme dracula
-" colorscheme carbon
-colorscheme nord
+colorscheme carbon
+" colorscheme nord
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
