@@ -1,5 +1,11 @@
 {
-  "styled-components.tags": ["styled", "css", "createGlobalStyle"],
   "typescript.autoClosingTags": false,
-  "javascript.autoClosingTags": false
+  "javascript.autoClosingTags": false,
+  "styled-components.tags": [
+    "styled",
+    "css",
+    "sty",
+    "styles",
+    "createGlobalStyle"
+  ]
 }
