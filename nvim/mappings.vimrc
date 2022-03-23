@@ -97,5 +97,5 @@ nmap <leader>bl <Plug>(coc-codelens-action)
 " rename symbol
 nmap <leader>rs  <Plug>(coc-rename)
 
-" git-blame.nvim'
-
+" COC git 
+nmap gs <Plug>(coc-git-chunkinfo)
