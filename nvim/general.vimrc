@@ -21,7 +21,6 @@ set incsearch
 set laststatus=2
 set linebreak
 set mouse=a
-set nocursorcolumn
 set noerrorbells
 set number 
 set noswapfile
