@@ -11,6 +11,7 @@ inoremap <silent><c-s> <c-o>:update<cr>
  
 " Just type ; to enter command mode when in normal mode
 nnoremap ; :
+vnoremap ; :
 
 " Paste last thing yanked, not the last thing deleted:
 nmap ,p "0p
@@ -95,3 +96,6 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>bl <Plug>(coc-codelens-action)
 " rename symbol
 nmap <leader>rs  <Plug>(coc-rename)
+
+" git-blame.nvim'
+

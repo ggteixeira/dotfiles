@@ -22,6 +22,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'sheerun/vim-polyglot'
+Plug 'f-person/git-blame.nvim'
 " ------------------------------------------------------------------------------
 " # Plugin Configs 
 " ------------------------------------------------------------------------------
@@ -88,17 +89,17 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*node_modules/
 " which caused interference with the ctrl+backspace function in insert mode
 let g:AutoPairsMapBS = 0
 
-""" Lightline 
+" Lightline 
 let g:lightline = {
-\  'colorscheme': 'nord',
-\  'active': {
-\    'left': [ [ 'mode', 'paste' ],
-\              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-\  },
-\   'component_function': {
-\   'gitbranch': 'gitbranch#name'
-\  },
-\  }
+ \  'colorscheme': 'nord',
+ \  'active': {
+ \    'left': [ [ 'mode', 'paste' ],
+ \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+ \  },
+ \   'component_function': {
+ \   'gitbranch': 'gitbranch#name'
+ \  },
+ \  }
 
 """ NERDCommenter 
 let g:NERDSpaceDelims = 1
@@ -120,5 +121,8 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 """ Indent Blankline
 let g:indent_blankline_filetype_exclude = ['startify', 'nerdtree', 'help']
 
-
-
+""" git-blame.nvim
+" let g:gitblame_message_template = '<summary> • <date> (<author>)'
+let g:gitblame_message_template = '<author>, <date> • <sha> | <summary>'
+let g:gitblame_date_format = '%r'
+let g:gitblame_ignored_filetypes = ['nerdtree']
