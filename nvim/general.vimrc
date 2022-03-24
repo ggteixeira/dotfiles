@@ -11,6 +11,7 @@ set confirm
 set cursorline
 set expandtab
 set hidden
+set title
 set nobackup
 set nowritebackup
 set hlsearch
@@ -39,6 +40,8 @@ set t_Co=256
 set tabstop=2 
 set wildmenu
 set lazyredraw
+set background=dark
+set noshowmode
 
 colorscheme onedark
 
