@@ -99,3 +99,6 @@ nmap <leader>rs  <Plug>(coc-rename)
 
 " COC git 
 nmap gs <Plug>(coc-git-chunkinfo)
+
+""" Git Blame
+nnoremap <leader>gb :GitBlameToggle <CR>

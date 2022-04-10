@@ -20,6 +20,10 @@ Plug 'michaeldyrynda/carbon'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'gruvbox-community/gruvbox'
+Plug 'EdenEast/nightfox.nvim' 
+Plug 'sainnhe/everforest'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'f-person/git-blame.nvim'
@@ -38,6 +42,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-styled-components',
   \ 'coc-eslint',
+  \ 'coc-snippets',
 \ ]
 
 set signcolumn=yes
@@ -91,7 +96,7 @@ let g:AutoPairsMapBS = 0
 
 " Lightline 
 let g:lightline = {
- \  'colorscheme': 'nord',
+ \  'colorscheme': 'one',
  \  'active': {
  \    'left': [ [ 'mode', 'paste' ],
  \              [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -123,6 +128,7 @@ let g:indent_blankline_filetype_exclude = ['startify', 'nerdtree', 'help']
 
 """ git-blame.nvim
 " let g:gitblame_message_template = '<summary> • <date> (<author>)'
+let g:gitblame_enabled = 0
 let g:gitblame_message_template = '<author>, <date> • <sha> | <summary>'
 let g:gitblame_date_format = '%r'
 let g:gitblame_ignored_filetypes = ['nerdtree']

@@ -36,24 +36,46 @@ set softtabstop=2
 set splitbelow
 set splitright
 set synmaxcol=0
-set t_Co=256
 set tabstop=2 
 set wildmenu
 set lazyredraw
-set background=dark
 set noshowmode
-
-colorscheme onedark
+set t_Co=256
 
 if (has("termguicolors"))
   set termguicolors
 endif
+set background=light
 
-" let g:onedark_termcolors=256
+" handling setting and unsetting BAT_THEME for fzf.vim
+" (Check the bat_themes list using bat --list-themes)
+augroup update_bat_theme
+    autocmd!
+    autocmd colorscheme * call ToggleBatEnvVar()
+augroup end
+function ToggleBatEnvVar()
+    if (&background == "light")
+        let $BAT_THEME='base16'
+    else
+        let $BAT_THEME=''
+    endif
+endfunction
 
+""" Everforest Theme
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:everforest_background = 'medium'
+let g:everforest_better_performance = 1
+let g:everforest_enable_italic = 1
+
+
+""" Set themes
+" colorscheme everforest
 " colorscheme dracula
-colorscheme carbon
+" colorscheme carbon
+" colorscheme PaperColor
 " colorscheme nord
+" colorscheme gruvbox
+colorscheme dawnfox
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position

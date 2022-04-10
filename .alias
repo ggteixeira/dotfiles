@@ -30,7 +30,7 @@ alias gotokit='cd $HOME/.dotfiles/kitty/ && v kitty.conf'
 
 # Printi
 alias gotoalpha='cd ~/Printi/alpha/alpha-next'
-alias gotoomega='cd ~/Printi/omega/omega-frontend-v3 && nvm use omega'
+alias gotoomega='cd ~/Printi/omega/omega-frontend-v3'
 
 # GitHub
 
