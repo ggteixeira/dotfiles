@@ -55,7 +55,7 @@ augroup update_bat_theme
 augroup end
 function ToggleBatEnvVar()
     if (&background == "light")
-        let $BAT_THEME='base16'
+        let $BAT_THEME='GitHub'
     else
         let $BAT_THEME=''
     endif
