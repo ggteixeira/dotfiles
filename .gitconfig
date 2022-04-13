@@ -28,4 +28,5 @@
   	path = .gitconfig-github
 [includeIf "gitdir:~/Printi/"]
   	path = .gitconfig-printi
-
+[push]
+	default = current
