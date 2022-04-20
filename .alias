@@ -15,8 +15,7 @@ alias dedoff='shutdown now'
 # MOVEMENT aliases
 alias gotovimcolors='cd /usr/share/vim/vim*/colors'
 alias zshrc="vim ~/.zshrc"
-alias vimrc='cd ~/.dotfiles/nvim && vim mappings.vimrc'
-alias nvimrc='cd ~/.dotfiles/nvim && vim plugins.vimrc'
+alias nvimrc='cd ~/.dotfiles/nvim && vim init.lua'
 alias gotoalias='vim ~/.alias'
 alias gotoconfig='cd ~/.dotfiles/i3 && vim config'
 alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
