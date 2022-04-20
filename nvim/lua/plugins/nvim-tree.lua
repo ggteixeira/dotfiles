@@ -36,10 +36,10 @@ end
 -- Call setup:
 --- Each of these are documented in `:help nvim-tree.OPTION_NAME`
 nvim_tree.setup {
-  open_on_setup = true,
-  open_on_setup_file = true,
+  open_on_setup = false,
+  open_on_setup_file = false,
   open_on_tab = true,
-  auto_close = true,
+  auto_close = false,
   update_cwd = true,
   view = { width = 32 },
   renderer = {

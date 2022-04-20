@@ -110,14 +110,27 @@ return packer.startup(function(use)
   }
 
   -- Dashboard (start screen)
+--[[
+   [  use {
+   [    'goolord/alpha-nvim',
+   [    requires = { 'kyazdani42/nvim-web-devicons' },
+   [  }
+   [
+   ]]
+
+  -- Start Screen
   use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    'mhinz/vim-startify'
   }
 
   use {
-  'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} }
+    'EdenEast/nightfox.nvim'
+  }
+
+  -- Finding things
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use {
@@ -125,7 +138,7 @@ return packer.startup(function(use)
   }
 
   use {
-    use 'mhartington/formatter.nvim'
+    'mhartington/formatter.nvim'
   }
 
 end)
