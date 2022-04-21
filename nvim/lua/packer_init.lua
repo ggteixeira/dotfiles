@@ -83,6 +83,19 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
 
+  -- plenary
+  use {
+    'nvim-lua/plenary.nvim'
+  }
+
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+        require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
+
   -- git labels
   use {
     'lewis6991/gitsigns.nvim',

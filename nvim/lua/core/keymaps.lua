@@ -82,3 +82,6 @@ map('v', '<C-_>', '<plug>NERDCommenterSexy')
 
 -- git-blame
 map('n', '<leader>gb', ':GitBlameToggle<CR>')
+
+--  null_ls (formatting)
+map('n', '<leader>b', ':lua vim.lsp.buf.formatting()<CR>', {noremap = true, silent=false})
