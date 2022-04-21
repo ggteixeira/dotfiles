@@ -14,8 +14,11 @@ require('core/autocmds')
 require('core/keymaps')
 require('core/colors')
 require('core/statusline')
+-- Themes
 require('themes/nightfox')
 require('themes/colorscheme')
+require('themes/everforest')
+
 require('plugins/nvim-tree')
 require('plugins/indent-blankline')
 require('plugins/nvim-cmp')
