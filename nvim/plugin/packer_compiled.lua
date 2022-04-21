@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/Users/guilherme/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/famiu/feline.nvim"
   },
-  ["formatter.nvim"] = {
-    loaded = true,
-    path = "/Users/guilherme/.local/share/nvim/site/pack/packer/start/formatter.nvim",
-    url = "https://github.com/mhartington/formatter.nvim"
-  },
   ["git-blame.nvim"] = {
     loaded = true,
     path = "/Users/guilherme/.local/share/nvim/site/pack/packer/start/git-blame.nvim",

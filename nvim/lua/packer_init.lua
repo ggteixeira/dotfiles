@@ -124,8 +124,4 @@ return packer.startup(function(use)
     'alvan/vim-closetag'
   }
 
-  use {
-    'mhartington/formatter.nvim'
-  }
-
 end)
