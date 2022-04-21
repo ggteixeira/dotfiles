@@ -49,7 +49,7 @@ return packer.startup(function(use)
   use 'preservim/tagbar'
 
   -- Nerdcommenter
- use 'preservim/nerdcommenter'
+  use 'preservim/nerdcommenter'
 
   -- Treesitter interface
   use 'nvim-treesitter/nvim-treesitter'
@@ -91,7 +91,7 @@ return packer.startup(function(use)
   use({
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
-        require("null-ls").setup()
+      require("null-ls").setup()
     end,
     requires = { "nvim-lua/plenary.nvim" },
   })
@@ -110,7 +110,7 @@ return packer.startup(function(use)
   }
 
   -- Dashboard (start screen)
---[[
+  --[[
    [  use {
    [    'goolord/alpha-nvim',
    [    requires = { 'kyazdani42/nvim-web-devicons' },
@@ -123,14 +123,20 @@ return packer.startup(function(use)
     'mhinz/vim-startify'
   }
 
+  -- THEMES
+  -- nightfox
   use {
     'EdenEast/nightfox.nvim'
+  }
+
+  use {
+    'sainnhe/everforest'
   }
 
   -- Finding things
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   use {
