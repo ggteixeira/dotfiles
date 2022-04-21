@@ -63,4 +63,17 @@ M.rose_pine = {
   red = '#ebbcba',
 }
 
+-- Theme: nord (this one was "created" by me)
+-- Colors: https://www.nordtheme.com/docs/colors-and-palettes
+M.nord = {
+  bg = '#3b4252',
+  fg = '#d8dee9',
+  pink = '#b48ead',
+  green = '#a3be8c',
+  cyan = '#88c0d0',
+  yellow = '#ebcb8b',
+  orange = '#d08770',
+  red = '#bf616a',
+}
+
 return M
