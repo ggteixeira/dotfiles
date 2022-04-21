@@ -21,7 +21,7 @@ opt.completeopt = 'menuone,noselect'  -- Autocomplete options
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true           -- Show line number
-opt.relativenumber = true   -- Show relative numbers
+opt.relativenumber = false   -- Show relative numbers
 opt.showmatch = true        -- Highlight matching parenthesis
 --opt.showcmd = true
 opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
