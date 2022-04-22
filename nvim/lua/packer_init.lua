@@ -25,6 +25,9 @@ end
 
 -- Install plugins
 return packer.startup(function(use)
+  -- Impatient
+  use 'lewis6991/impatient.nvim'
+
   -- Add you plugins here:
   use 'wbthomason/packer.nvim' -- packer can manage itself
 
