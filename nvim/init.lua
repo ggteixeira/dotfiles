@@ -16,7 +16,7 @@ require('core/colors')
 require('core/statusline')
 -- Themes
 require('themes/nightfox')
-require('themes/colorscheme')
+require('themes/colorschemes')
 require('themes/everforest')
 
 require('plugins/nvim-tree')
