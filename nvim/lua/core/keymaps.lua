@@ -59,16 +59,16 @@ map('v', ';', ':', { silent = false })
 -----------------------------------------------------------
 
 -- Terminal mappings
-map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
-map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
+map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
+map('t', '<Esc>', '<C-\\><C-n>') -- exit
 
 -- NvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
+map('n', '<leader>f', ':NvimTreeRefresh<CR>') -- refresh
+map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
 
 -- Tagbar
-map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
 
 -- Telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>')
@@ -84,4 +84,4 @@ map('v', '<C-_>', '<plug>NERDCommenterSexy')
 map('n', '<leader>gb', ':GitBlameToggle<CR>')
 
 --  null_ls (formatting)
-map('n', '<leader>b', ':lua vim.lsp.buf.formatting()<CR>', {noremap = true, silent=false})
+map('n', '<leader>b', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = false })
