@@ -105,33 +105,19 @@ return packer.startup(function(use)
     end
   }
 
-  use {
-    'f-person/git-blame.nvim'
-  }
-
-  -- Dashboard (start screen)
-  --[[
-   [  use {
-   [    'goolord/alpha-nvim',
-   [    requires = { 'kyazdani42/nvim-web-devicons' },
-   [  }
-   [
-   ]]
+  use 'f-person/git-blame.nvim'
 
   -- Start Screen
-  use {
-    'mhinz/vim-startify'
-  }
+  use 'mhinz/vim-startify'
 
   -- THEMES
   -- nightfox
-  use {
-    'EdenEast/nightfox.nvim'
-  }
+  use 'EdenEast/nightfox.nvim'
 
-  use {
-    'sainnhe/everforest'
-  }
+  -- everforest
+  use 'sainnhe/everforest'
+
+  use 'michaeldyrynda/carbon'
 
   -- Finding things
   use {
@@ -139,8 +125,7 @@ return packer.startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  use {
-    'alvan/vim-closetag'
-  }
+  -- Closing tags automatically
+  use 'alvan/vim-closetag'
 
 end)
