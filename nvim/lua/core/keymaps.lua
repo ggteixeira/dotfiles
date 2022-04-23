@@ -84,4 +84,4 @@ map('v', '<C-_>', '<plug>NERDCommenterSexy')
 map('n', '<leader>gb', ':GitBlameToggle<CR>')
 
 --  null_ls (formatting)
-map('n', '<leader>b', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = false })
+--map('n', '<leader>b', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = false })
