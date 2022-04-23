@@ -118,7 +118,7 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { 'bashls', 'pyright', 'clangd', 'html', 'sumneko_lua', 'tsserver' }
+local servers = { 'bashls', 'pyright', 'clangd', 'html', 'tsserver' }
 -- Call setup
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
