@@ -10,8 +10,9 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- Change leader to a comma
+-- Change leader to space
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -----------------------------------------------------------
 -- Neovim shortcuts
@@ -54,6 +55,9 @@ map('n', '<leader>q', ':qa!<CR>')
 map('n', ';', ':', { silent = false })
 map('v', ';', ':', { silent = false })
 
+-- Shift+Tab to inverse tab
+map('i', '<S-Tab>', '<C-d>')
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
@@ -83,5 +87,5 @@ map('v', '<C-_>', '<plug>NERDCommenterSexy')
 -- git-blame
 map('n', '<leader>gb', ':GitBlameToggle<CR>')
 
---  null_ls (formatting)
---map('n', '<leader>b', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = false })
+--  formatting
+map('n', '<leader>b', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = false })
