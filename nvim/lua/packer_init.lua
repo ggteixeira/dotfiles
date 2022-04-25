@@ -130,4 +130,8 @@ return packer.startup(function(use)
   -- Closing tags automatically
   use 'alvan/vim-closetag'
 
+  -- HEX colorizer: nvim-colorizer
+
+  use 'norcalli/nvim-colorizer.lua'
+
 end)

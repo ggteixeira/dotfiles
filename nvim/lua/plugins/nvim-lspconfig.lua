@@ -88,7 +88,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap('n', '<leader>b', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
 --[[
@@ -118,7 +117,8 @@ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.m
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { 'bashls', 'pyright', 'clangd', 'html', 'tsserver' }
+--local servers = { 'bashls', 'pyright', 'clangd', 'html', 'eslint', 'sumneko_lua'}
+local servers = { 'bashls', 'pyright', 'clangd', 'html', 'tsserver', 'eslint' }
 -- Call setup
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

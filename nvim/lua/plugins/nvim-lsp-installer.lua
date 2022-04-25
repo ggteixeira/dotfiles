@@ -11,10 +11,11 @@ lsp_installer.on_server_ready(function(server)
           diagnostics = {
             globals = { 'vim', 'use' }
           },
-          --workspace = {
-            -- Make the server aware of Neovim runtime files
+          workspace = {
+             --Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
             --library = {[vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true}
-          --}
+          }
         }
       }
     }
