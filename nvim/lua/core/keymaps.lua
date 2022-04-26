@@ -11,6 +11,7 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Change leader to space
+map('', "<Space>", "<nop>") -- First disable space key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -58,6 +59,17 @@ map('v', ';', ':', { silent = false })
 -- Shift+Tab to inverse tab
 map('i', '<S-Tab>', '<C-d>')
 
+-- Resize with arrows
+
+--map("n", "<leader><Up>", ":resize -2<CR>")
+--map("n", "<leader><Down>", ":resize +2<CR>")
+--map("n", "<leader><Left>", ":vertical resize -2<CR>")
+--map("n", "<leader><Right>", ":vertical resize +2<CR>")
+
+-- Indent w/ Visual Mode
+map('v', '<', '<gv')
+map('v', '>', '>gv')
+
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
@@ -68,11 +80,11 @@ map('t', '<Esc>', '<C-\\><C-n>') -- exit
 
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>') -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
+--map('n', '<leader>f', ':NvimTreeRefresh<CR>') -- refresh
+--map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
 
 -- Tagbar
-map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
+--map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
 
 -- Telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>')
