@@ -67,6 +67,12 @@ return packer.startup(function(use)
 
   use 'williamboman/nvim-lsp-installer'
 
+  use 'L3MON4D3/LuaSnip'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-buffer'
+  use 'saadparwaiz1/cmp_luasnip'
+
   -- Autocomplete
   use {
     'hrsh7th/nvim-cmp',
@@ -77,6 +83,12 @@ return packer.startup(function(use)
       'hrsh7th/cmp-buffer',
       'saadparwaiz1/cmp_luasnip',
     },
+  }
+  use {
+    'tzachar/cmp-tabnine',
+    run = './install.sh',
+    requires = {
+      'hrsh7th/nvim-cmp' }
   }
 
   -- Statusline
@@ -133,5 +145,8 @@ return packer.startup(function(use)
   -- HEX colorizer: nvim-colorizer
 
   use 'norcalli/nvim-colorizer.lua'
+
+  -- Notifycations
+  use 'rcarriga/nvim-notify'
 
 end)
