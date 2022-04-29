@@ -69,3 +69,6 @@ alias pip='pip3'
 
 # RUBY aliases
 alias beijos='bundle exec jekyll serve'
+
+# MacOS aliases
+alias flushdnsmac='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
