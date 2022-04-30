@@ -19,6 +19,9 @@ vim.g.maplocalleader = ' '
 -- Neovim shortcuts
 -----------------------------------------------------------
 
+-- Option/Alt + Backspace deletes word instead of entering Normal Mode
+map('i', '<A-BS>', '<C-w>')
+
 -- Disable arrow keys
 map('', '<up>', '<nop>')
 map('', '<down>', '<nop>')
