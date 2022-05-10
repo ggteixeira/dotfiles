@@ -14,22 +14,49 @@ alias dedoff='shutdown now'
 
 # MOVEMENT aliases
 alias gotovimcolors='cd /usr/share/vim/vim*/colors'
-alias zshrc="vim ~/.zshrc"
-alias nvimrc='cd ~/.dotfiles/nvim && vim lua/packer_init.lua'
-alias gotoalias='vim ~/.alias'
-alias gotoconfig='cd ~/.dotfiles/i3 && vim config'
-alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
-alias gotodotfiles='cd ~/.dotfiles'
-alias gotoescolinha='cd ~/Code/EscolinhaDoVito && v'
-alias gotoalura='cd ~/GitHub/divertimentos/advanced-css/3-sass'
-alias gotoexercism='cd ~/GitHub/divertimentos/Exercism/javascript'
-alias gotouserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
-alias gotoala='cd $HOME/.dotfiles/alacritty/ && v alacritty.yml'
-alias gotokit='cd $HOME/.dotfiles/kitty/ && v kitty.conf'
+alias gtvimcolors='cd /usr/share/vim/vim*/colors'
 
-# Printi
+alias zshrc="vim ~/.zshrc"
+alias vimrc='cd ~/.dotfiles/nvim && vim mappings.vimrc'
+# alias nvimrc='cd ~/.dotfiles/nvim && vim plugins.vimrc'
+alias nvimrc='cd ~/.dotfiles/nvim && vim lua/packer_init.lua'
+
+alias gotoalias='vim ~/.alias'
+alias gtalias='vim ~/.alias'
+
+alias gotoconfig='cd ~/.dotfiles/i3 && vim config'
+alias gtconfig='cd ~/.dotfiles/i3 && vim config'
+
+alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
+alias gtpoly='cd ~/.dotfiles/polybar && vim config.ini'
+
+alias gotodotfiles='cd ~/.dotfiles'
+alias gtdotfiles='cd ~/.dotfiles'
+
+alias gotoescolinha='cd ~/Code/EscolinhaDoVito && v'
+alias gtescolinha='cd ~/Code/EscolinhaDoVito && v'
+
+alias gotoalura='cd ~/GitHub/divertimentos/advanced-css/3-sass'
+alias gtalura='cd ~/GitHub/divertimentos/advanced-css/3-sass'
+
+alias gotoexercism='cd ~/GitHub/divertimentos/Exercism/javascript'
+alias gtexercism='cd ~/GitHub/divertimentos/Exercism/javascript'
+
+alias gotouserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
+alias gtuserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
+
+alias gotoala='cd $HOME/.dotfiles/alacritty/ && v alacritty.yml'
+alias gtala='cd $HOME/.dotfiles/alacritty/ && v alacritty.yml'
+
+alias gotokit='cd $HOME/.dotfiles/kitty/ && v kitty.conf'
+alias gtkit='cd $HOME/.dotfiles/kitty/ && v kitty.conf'
+
+# GO TO Printi
 alias gotoalpha='cd ~/Printi/alpha/alpha-next'
+alias gtalpha='cd ~/Printi/alpha/alpha-next'
+
 alias gotoomega='cd ~/Printi/omega/omega-frontend-v3'
+alias gtomega='cd ~/Printi/omega/omega-frontend-v3'
 
 # GitHub
 
