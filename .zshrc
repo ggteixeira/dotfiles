@@ -101,6 +101,8 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH="$PATH:$GEM_HOME/bin"
 export PATH="/usr/local/sbin:$PATH"
+export GEM_HOME="$HOME/.gem"
+eval "$(rbenv init - zsh)"
 
 ### NVIM Color Settings
 COLORTERM="truecolor"
