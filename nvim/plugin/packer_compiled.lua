@@ -237,6 +237,11 @@ _G.packer_plugins = {
     path = "/Users/guilherme/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
   },
+  ["vim-prettier"] = {
+    loaded = true,
+    path = "/Users/guilherme/.local/share/nvim/site/pack/packer/start/vim-prettier",
+    url = "https://github.com/prettier/vim-prettier"
+  },
   ["vim-startify"] = {
     loaded = true,
     path = "/Users/guilherme/.local/share/nvim/site/pack/packer/start/vim-startify",

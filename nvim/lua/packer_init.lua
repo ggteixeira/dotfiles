@@ -146,7 +146,10 @@ return packer.startup(function(use)
 
   use 'norcalli/nvim-colorizer.lua'
 
-  -- Notifycations
+  -- Notifications
   use 'rcarriga/nvim-notify'
+
+  -- Prettier
+  use { 'prettier/vim-prettier', run = 'yarn install' }
 
 end)
