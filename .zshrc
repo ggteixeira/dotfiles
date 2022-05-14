@@ -106,3 +106,6 @@ eval "$(rbenv init - zsh)"
 
 ### NVIM Color Settings
 COLORTERM="truecolor"
+
+### Lunarvim Settings
+export PATH="$HOME/.local/bin:$PATH"
