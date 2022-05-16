@@ -3,7 +3,23 @@
 	st = status
 	com = commit
 	diffcom = git diff HEAD~1
-	git = !git
+  g = git
+  ga = git add
+  gc = git commit -v
+  gd = 'git diff'
+  gds = 'git diff --staged'
+  gf = 'git fetch'
+  glogone = 'git log --oneline'
+  glgg = 'git log --graph'
+  glgga = 'git log --graph --decorate --all'
+  glgm = 'git log --graph --max-count=10'
+  glog = 'git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+  gp = 'git push'
+  gpom = "git push origin main"
+  gpoma = "git push origin master"
+  grmc = 'git rm --cached'
+  gst = git status
+  sttt = status
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
