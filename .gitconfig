@@ -33,13 +33,14 @@
 	gpgSign = false
 [tag]
 	forceSignAnnotated = false
-[user]
-	email = guilherme.freitas@printi.com.br
-	name = Guilherme Freitas
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[user]
+    name = Guilherme Teixeira 
+    email = 24235344+vibraniumdev@users.noreply.github.com
+    username = vibraniumdev 
 [includeIf "gitdir:~/GitHub/"]
   	path = .gitconfig-github
 [includeIf "gitdir:~/Code/"]
