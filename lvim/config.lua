@@ -10,27 +10,26 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = false
-lvim.colorscheme = "onenord"
--- lvim.colorscheme = "everforest"
+lvim.format_on_save = true
+lvim.colorscheme = "dracula"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
-lvim.opt.relativenumber = true -- set relative numbered lines
-
+vim.opt.relativenumber = true
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<C-\\>"] = ":NvimTreeToggle<cr>"
+lvim.keys.insert_mode["<S-Tab>"] = "<C-d>"
 
 -- Enter command mode using ; instead of Shift+; (":")
 vim.api.nvim_set_keymap('n', ';', ':', { silent = false })
 vim.api.nvim_set_keymap('v', ';', ':', { silent = false })
 
 -- unmap a default keymapping
--- lvim.keys.normal_mode["<C-Up>"] = false
--- edit a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
+-- vim.keymap.del("n", "<C-Up>")
+-- override a default keymapping
+-- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
@@ -100,9 +99,9 @@ lvim.lsp.automatic_servers_installation = false
 ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
 ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright", "eslint" })
-local opts = {} -- check the lspconfig documentation for a list of all possible options
-require("lvim.lsp.manager").setup("pyright", opts)
-require("lvim.lsp.manager").setup("eslint", opts)
+-- local opts = {} -- check the lspconfig documentation for a list of all possible options
+require("lvim.lsp.manager").setup("pyright")
+require("lvim.lsp.manager").setup("eslint")
 
 ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 ---`:LvimInfo` lists which server(s) are skiipped for the current filetype
@@ -182,6 +181,7 @@ lvim.plugins = {
   {
     "sainnhe/everforest",
   },
+  { "Mofiqul/dracula.nvim" },
 
 }
 
