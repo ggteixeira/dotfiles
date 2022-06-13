@@ -39,6 +39,8 @@ alias required='true'
 ### MOVEMENT
 alias gotovimcolors='cd /usr/share/vim/vim*/colors'
 alias gtvimcolors='cd /usr/share/vim/vim*/colors'
+alias startomega='z omega && nvm use lts/erbium && npm run hmg'
+alias gotoomega='z omega && nvm use lts/gallium && lvim'
 
 alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
 alias gtpoly='cd ~/.dotfiles/polybar && vim config.ini'
