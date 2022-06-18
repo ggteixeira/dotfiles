@@ -11,6 +11,7 @@ alias dedoff='shutdown now'
 
 ### GIT
 alias g='git'
+alias st='status'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gitl="git log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -55,8 +56,8 @@ function xevv
 end
 
 alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
-# alias pbcopy='xclip -selection clipboard'
-# alias cpbranch='git branch --show-current | pbcopy'
+alias pbcopy='xclip -selection clipboard'
+alias cpbranch='git branch --show-current | pbcopy'
 alias js='node'
 
 ### PYTHON aliases:
