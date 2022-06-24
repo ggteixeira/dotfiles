@@ -4,6 +4,7 @@ alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+alias updateall='sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo snap refresh && flatpak update -y'
 alias please='sudo'
 alias dedoff='shutdown now'
 # alias rm='rm -I'
