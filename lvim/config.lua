@@ -11,10 +11,13 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "onenord"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 vim.opt.relativenumber = true
+
+-- Disable virtual text
+lvim.lsp.diagnostics.virtual_text = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -189,11 +192,9 @@ lvim.plugins = {
   },
   { "rmehri01/onenord.nvim" },
   { "lunarvim/colorschemes" },
-  {
-    "sainnhe/everforest",
-  },
+  { "sainnhe/everforest" },
   { "Mofiqul/dracula.nvim" },
-
+  { "ellisonleao/gruvbox.nvim" },
   {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
