@@ -3,18 +3,32 @@
 
 command_timeout = 1000
 
+# format = """
+# $directory\
+# [](fg:#DA627D bg:#FCA17D)\
+# $git_branch\
+# $git_status\
+# [](fg:#FCA17D bg:#86BBD8)\
+# $nodejs\
+# $rust\
+# [](fg:#86BBD8 bg:#33658A)\
+# $time\
+# [ ](fg:#33658A)\
+# """
+
 format = """
 $directory\
 [](fg:#DA627D bg:#FCA17D)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#86BBD8)\
+[]( fg:#FCA17D bg:#86BBD8)\
 $nodejs\
 $rust\
 [](fg:#86BBD8 bg:#33658A)\
 $time\
 [ ](fg:#33658A)\
 """
+
 
 # 
 
@@ -41,7 +55,8 @@ style_root = "bg:#9A348E"
 format = '[ $user ]($style)'
 
 [directory]
-style = "bg:#DA627D"
+# style = "bg:#DA627D"
+style = "fg:#2e3440 bg:#DA627D"
 format = "[ $path ]($style)"
 truncation_length = 0
 truncation_symbol = "…/"
@@ -61,17 +76,17 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D"
-format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
+style = "fg:#2e3440 bg:#FCA17D"
+format = '[[ $symbol $branch ](bg:#FCA17D fg:#2e3440)]($style)'
 
 [git_status]
-style = "bg:#FCA17D"
-format = '[[($all_status$ahead_behind )](bg:#FCA17D)]($style)'
+style = "fg:#2e3440 bg:#FCA17D"
+format = '[[($all_status$ahead_behind )](bg:#FCA17D fg:#2e3440)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "fg:#2e3440 bg:#86BBD8"
+format = '[[ $symbol ($version) ](fg:#2E3440 bg:#86BBD8)]($style)'
 
 [rust]
 symbol = ""
