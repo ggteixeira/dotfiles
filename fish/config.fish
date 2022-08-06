@@ -13,7 +13,7 @@ set -g theme_short_path no
 set -g theme_no_git_indicator no
 
 # Starship (prompt) activation
-starship init fish | source
+# starship init fish | source
 
 # Rbenv settings
 status --is-interactive; and source (rbenv init -|psub)
