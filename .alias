@@ -1,5 +1,6 @@
 ### GENERAL
 alias li='ls -l'
+alias lh='ls -ld .?*'
 alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
