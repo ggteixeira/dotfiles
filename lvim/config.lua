@@ -33,6 +33,9 @@ lvim.keys.insert_mode["<S-Tab>"] = "<C-d>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<cr>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<cr>"
 
+-- Comments
+vim.api.nvim_set_keymap('n', '<Leader>/', 'gcc', { silent = false })
+
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
