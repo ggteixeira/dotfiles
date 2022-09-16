@@ -12,7 +12,7 @@ alias dedoff='shutdown now'
 # alias htop='vtop'
 
 # Solving problems
-alias cleancalendar='pkill -f calendar && sudo rm -rf ~/{.local/share,.cache}/evolution/calendar/ && gnome-calendar
+alias cleancalendar='pkill -f calendar && sudo rm -rf ~/{.local/share,.cache}/evolution/calendar/ && gnome-calendar'
 
 ### GIT
 alias g='git'
