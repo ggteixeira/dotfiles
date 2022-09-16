@@ -15,6 +15,7 @@ lvim.colorscheme = "onenord"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 vim.opt.relativenumber = true
+vim.opt.wrap = true -- display lines as one long line
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.spell = false
 -- Disable virtual text
@@ -88,23 +89,25 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
-}
+-- lvim.builtin.treesitter.ensure_installed = {
+--   "bash",
+--   "c",
+--   "javascript",
+--   "json",
+--   "lua",
+--   "python",
+--   "typescript",
+--   "tsx",
+--   "jsx",
+--   "css",
+--   "rust",
+--   "java",
+--   "yaml",
+-- }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 -- generic LSP settings
 
@@ -177,13 +180,29 @@ lvim.plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufRead",
-    setup = function()
-      vim.g.indentLine_enabled = 1
-      vim.g.indent_blankline_char = "▏"
-      vim.g.indent_blankline_filetype_exclude = { "help", "terminal", "dashboard" }
-      vim.g.indent_blankline_buftype_exclude = { "terminal" }
-      vim.g.indent_blankline_show_trailing_blankline_indent = false
-      vim.g.indent_blankline_show_first_indent_level = false
+    config = function()
+      local blankline_opts = {
+        filetype_exclude = {
+          "alpha",
+          "help",
+          "terminal",
+          "dashboard",
+          "lspinfo",
+          "lsp-installer",
+          "mason",
+        },
+        buftype_exclude = { "terminal" },
+        bufname_exclude = { "config.lua" },
+
+        show_trailing_blankline_indent = false,
+        show_first_indent_level = false,
+        -- use_treesitter = true,
+        space_char_blankline = " ",
+        show_current_context = true,
+        show_current_context_start = true,
+      }
+
+      require("indent_blankline").setup(blankline_opts)
     end
   },
   {
@@ -210,7 +229,21 @@ lvim.plugins = {
       }
     end,
   },
-
+  { "p00f/nvim-ts-rainbow" },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
+    end,
+  },
 }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
