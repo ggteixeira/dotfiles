@@ -11,7 +11,12 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "gruvbox"
+-- lvim.colorscheme = "gruvbox"
+vim.g.catppuccin_flavour = "macchiato"
+lvim.colorscheme = "catppuccin"
+-- vim.g.catppuccin_flavour = "mocha"
+-- vim.g.catppuccin_flavour = "frappe"
+-- vim.g.catppuccin_flavour = "latte"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 vim.opt.relativenumber = true
@@ -177,34 +182,34 @@ linters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "BufRead",
-    config = function()
-      local blankline_opts = {
-        filetype_exclude = {
-          "alpha",
-          "help",
-          "terminal",
-          "dashboard",
-          "lspinfo",
-          "lsp-installer",
-          "mason",
-        },
-        buftype_exclude = { "terminal" },
-        bufname_exclude = { "config.lua" },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   event = "BufRead",
+  --   config = function()
+  --     local blankline_opts = {
+  --       filetype_exclude = {
+  --         "alpha",
+  --         "help",
+  --         "terminal",
+  --         "dashboard",
+  --         "lspinfo",
+  --         "lsp-installer",
+  --         "mason",
+  --       },
+  --       buftype_exclude = { "terminal" },
+  --       bufname_exclude = { "config.lua" },
 
-        show_trailing_blankline_indent = false,
-        show_first_indent_level = false,
-        -- use_treesitter = true,
-        space_char_blankline = " ",
-        show_current_context = true,
-        show_current_context_start = true,
-      }
+  --       show_trailing_blankline_indent = false,
+  --       show_first_indent_level = false,
+  --       -- use_treesitter = true,
+  --       space_char_blankline = " ",
+  --       show_current_context = true,
+  --       show_current_context_start = true,
+  --     }
 
-      require("indent_blankline").setup(blankline_opts)
-    end
-  },
+  --     require("indent_blankline").setup(blankline_opts)
+  --   end
+  -- },
   {
     "tpope/vim-surround",
     keys = { "c", "d", "y" }
@@ -218,6 +223,85 @@ lvim.plugins = {
   { "sainnhe/everforest" },
   { "Mofiqul/dracula.nvim" },
   { "ellisonleao/gruvbox.nvim" },
+  { "p00f/nvim-ts-rainbow" },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({ "css", "scss", "html", "javascript", "rasi" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
+    end,
+  },
+  {
+    "catppuccin/nvim",
+    conf = function()
+      return lvim and lvim.colorscheme == "catppuccin"
+    end,
+    config = function()
+      pcall(function()
+        if lvim and lvim.colorscheme == "catppuccin" then
+          require("catppuccin").setup({
+            compile = {
+              enabled = true,
+              path = vim.fn.stdpath "cache" .. "/catppuccin"
+            },
+            dim_inactive = {
+              enabled = false,
+              shade = "dark",
+              percentage = 0.15,
+            },
+            styles = {
+              comments = { "italic" },
+              conditionals = { "italic" },
+              loops = {},
+              functions = {},
+              keywords = {},
+              strings = {},
+              variables = {},
+              numbers = {},
+              booleans = {},
+              properties = {},
+              types = {},
+              operators = {},
+            },
+            integrations = {
+              treesitter = true,
+              native_lsp = {
+                enabled = true,
+                virtual_text = {
+                  errors = { "italic" },
+                  hints = { "italic" },
+                  warnings = { "italic" },
+                  information = { "italic" },
+                },
+                underlines = {
+                  errors = { "underline" },
+                  hints = { "underline" },
+                  warnings = { "underline" },
+                  information = { "underline" },
+                },
+              },
+              dap = {
+                enabled = true,
+                enable_ui = true,
+              },
+              dashboard = true,
+              markdown = true,
+              nvimtree = true,
+              telescope = true,
+            }
+          })
+          lvim.builtin.lualine.options.theme = "catppuccin"
+        end
+      end)
+    end,
+  },
   {
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -227,21 +311,6 @@ lvim.plugins = {
         dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
         options = { "buffers", "curdir", "tabpages", "winsize" },
       }
-    end,
-  },
-  { "p00f/nvim-ts-rainbow" },
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-      })
     end,
   },
 }
