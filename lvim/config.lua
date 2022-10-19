@@ -12,9 +12,9 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 -- lvim.colorscheme = "gruvbox"
-vim.g.catppuccin_flavour = "macchiato"
 lvim.colorscheme = "catppuccin"
--- vim.g.catppuccin_flavour = "mocha"
+-- vim.g.catppuccin_flavour = "macchiato"
+vim.g.catppuccin_flavour = "mocha"
 -- vim.g.catppuccin_flavour = "frappe"
 -- vim.g.catppuccin_flavour = "latte"
 -- to disable icons and use a minimalist setup, uncomment the following
