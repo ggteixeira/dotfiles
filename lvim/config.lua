@@ -22,6 +22,7 @@ vim.g.catppuccin_flavour = "mocha"
 vim.opt.relativenumber = true
 vim.opt.wrap = true -- display lines as one long line
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+vim.opt.timeoutlen = 150
 vim.opt.spell = false
 -- Disable virtual text
 lvim.lsp.diagnostics.virtual_text = false
