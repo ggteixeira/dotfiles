@@ -89,7 +89,6 @@ lvim.builtin.which_key.mappings["S"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = false
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -258,7 +257,7 @@ lvim.plugins = {
               percentage = 0.15,
             },
             styles = {
-              comments = { "italic" },
+              comments = {},
               conditionals = { "italic" },
               loops = {},
               functions = {},
