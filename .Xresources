@@ -4,6 +4,8 @@ Xft.rgba:      rgb
 Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+! Xft.dpi: 102
+! Xft.dpi: 102
 
 XTerm*background:        #222D31
 XTerm*foreground:        #d8d8d8
