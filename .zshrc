@@ -10,10 +10,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-### POWERLEVEL10K Settings
-if [[ -f ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ]]; then
-    source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-fi
+# ### POWERLEVEL10K Settings
+# if [[ -f ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ]]; then
+#     source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+# fi
 
 export ZSH="$HOME/.oh-my-zsh"
 # Sets Neovim as default editor
@@ -25,18 +25,18 @@ if [[ -f ~/.alias ]]; then
 fi
 
 ### THEMES
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ### NVM and PYWAL Settings (Linux-exclusive settings)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    source /usr/share/nvm/init-nvm.sh  # NVM
+    # source /usr/share/nvm/init-nvm.sh  # NVM
 
-    (cat ~/.cache/wal/sequences &)  # PYWAL
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"  # PYWAL
+    # (cat ~/.cache/wal/sequences &)  # PYWAL
+    # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"  # PYWAL
 fi
 
 ## NVM Lazy Loading Settings
-export NVM_LAZY=1
+zstyle ':omz:plugins:nvm' lazy true
 # export NVM_LAZY_LOAD=true
 # export NVM_COMPLETION=true
 # export PATH="/usr/local/sbin:$PATH"
@@ -46,7 +46,8 @@ plugins=(
     nvm
     zsh-autosuggestions
     zsh-syntax-highlighting
-    zsh-vi-mode
+    # zsh-vi-mode
+    zsh-z
 )
 
 ### SOURCING OH MY ZSH
@@ -62,6 +63,10 @@ fi
 # eval "$(pyenv virtualenv-init -)"
 # export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # export PYENV_ROOT="$HOME/.pyenv"
 # export PATH="$PYENV_ROOT/bin:$PATH"    # if `pyenv` is not already on PATH
@@ -109,3 +114,11 @@ COLORTERM="truecolor"
 
 ### Lunarvim Settings
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+### Starship configs
+eval "$(starship init zsh)"
