@@ -16,6 +16,7 @@ keycode 134 = Alt_R
 ! Swap Esc with Caps Lock
 clear lock
 keycode 66 = 
-keycode 9 = 
 keycode 66 = Escape
+keycode 9 = 
+keycode 9 = Caps_Lock
 ! add lock = Caps_Lock
