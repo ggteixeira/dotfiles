@@ -33,8 +33,12 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- unmap a default keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<C-\\>"] = ":NvimTreeToggle<cr>"
+-- lvim.keys.normal_mode["<C-\\>"] = ":NvimTreeToggle<cr>"
+lvim.keys.normal_mode["<C-n>"] = ":NvimTreeToggle<cr>"
 lvim.keys.insert_mode["<S-Tab>"] = "<C-d>"
+
+--statusline extra configs
+lvim.builtin.lualine.style = "default" -- options: "lvim" (default), "default" or "none"
 
 -- Tab Switch Buffer
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<cr>"
@@ -89,9 +93,16 @@ lvim.builtin.which_key.mappings["S"] = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.terminal.active = false
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+
+-- TOGGLETERM configs
+
+lvim.builtin.terminal.active = true
+lvim.builtin.terminal.direction = 'float'
+lvim.builtin.terminal.start_in_insert = true
+lvim.builtin.terminal.size = 30
+-- lvim.builtin.terminal.close_on_exit = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 -- lvim.builtin.treesitter.ensure_installed = {
@@ -240,66 +251,49 @@ lvim.plugins = {
   },
   {
     "catppuccin/nvim",
-    conf = function()
-      return lvim and lvim.colorscheme == "catppuccin"
-    end,
+    -- conf = function()
+    --   return lvim and lvim.colorscheme == "catppuccin"
+    -- end,
     config = function()
-      pcall(function()
-        if lvim and lvim.colorscheme == "catppuccin" then
-          require("catppuccin").setup({
-            compile = {
-              enabled = true,
-              path = vim.fn.stdpath "cache" .. "/catppuccin"
+      require('catppuccin').setup({
+        transparent_background = false,
+        term_colors = true,
+        styles = {
+          comments = { 'bold' },
+          conditionals = { 'bold' },
+          functions = { 'bold' },
+          keywords = { 'bold' },
+          types = { 'bold' },
+        },
+        integrations = {
+          treesitter = true,
+          native_lsp = {
+            enabled = true,
+            underlines = {
+              errors = { 'undercurl' },
+              hints = { 'undercurl' },
+              warnings = { 'undercurl' },
+              information = { 'undercurl' },
             },
-            dim_inactive = {
-              enabled = false,
-              shade = "dark",
-              percentage = 0.15,
-            },
-            styles = {
-              comments = {},
-              conditionals = { "italic" },
-              loops = {},
-              functions = {},
-              keywords = {},
-              strings = {},
-              variables = {},
-              numbers = {},
-              booleans = {},
-              properties = {},
-              types = {},
-              operators = {},
-            },
-            integrations = {
-              treesitter = true,
-              native_lsp = {
-                enabled = true,
-                virtual_text = {
-                  errors = { "italic" },
-                  hints = { "italic" },
-                  warnings = { "italic" },
-                  information = { "italic" },
-                },
-                underlines = {
-                  errors = { "underline" },
-                  hints = { "underline" },
-                  warnings = { "underline" },
-                  information = { "underline" },
-                },
-              },
-              dap = {
-                enabled = true,
-                enable_ui = true,
-              },
-              dashboard = true,
-              markdown = true,
-              nvimtree = true,
-              telescope = true,
-            }
-          })
-          lvim.builtin.lualine.options.theme = "catppuccin"
-        end
-      end)
+          },
+          lsp_trouble = true,
+          cmp = true,
+          gitsigns = true,
+          telescope = true,
+          nvimtree = {
+            transparent_panel = true,
+          },
+          indent_blankline = {
+            enabled = true,
+            colored_indent_levels = true,
+          },
+          bufferline = true,
+          markdown = true,
+          hop = true,
+          notify = true,
+        },
+      })
+      vim.cmd([[colorscheme catppuccin]])
     end,
   },
   {
