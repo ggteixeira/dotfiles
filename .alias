@@ -5,14 +5,35 @@ alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
-alias updateall='sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean && sudo apt clean && sudo snap refresh && flatpak update -y'
+alias updateall='\
+  \echo "UPDATE" && 
+  \sudo apt update -y && 
+
+  \echo "UPGRADE" && 
+  \sudo apt upgrade -y && 
+
+  \echo "AUTOREMOVE" && 
+  \sudo apt autoremove -y && 
+
+  \echo "AUTOCLEAN" && 
+  \sudo apt autoclean -y && 
+
+  \echo "CLEAN" && 
+  \sudo apt clean -y && 
+
+  \echo "SNAP REFRESH" && 
+  \sudo snap refresh && 
+
+  \echo "FLATPAK UPDATE" && 
+  \flatpak update -y'
+
 alias please='sudo'
 alias dedoff='shutdown now'
 # alias rm='rm -I'
 # alias htop='vtop'
 
 # Solving problems
-alias cleancalendar='pkill -f calendar && sudo rm -rf ~/{.local/share,.cache}/evolution/calendar/ && gnome-calendar'
+alias cleancalendar='pkill -f calendar && sudo rm -rf ~/{.local/share,.cache}/evolution/calendar/ && gnome-calendar &'
 
 ### GIT
 alias g='git'
@@ -31,7 +52,7 @@ alias glgg='git log --graph'
 alias glgga='git log --graph --decorate --all'
 alias glgm='git log --graph --max-count=10'
 alias glog='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
-alias gp='git push'
+alias gp='git branch --show-current | xclip -selection clipboard && git push origin $(xclip -selection clipboard -o)'
 alias gpom='git push origin main'
 alias gpoma='git push origin master'
 alias grmc='git rm --cached'
@@ -40,14 +61,14 @@ alias sttt='status'
 alias clean='git-lfs clean -- %f'
 alias smudge='git-lfs smudge -- %f'
 alias process='git-lfs filter-process'
-alias required='true'
+
 
 ### MOVEMENT
 alias gotovimcolors='cd /usr/share/vim/vim*/colors'
 alias gtvimcolors='cd /usr/share/vim/vim*/colors'
 alias startomega='z omega && nvm use omega && npm run hmg'
 alias gotoomega='z omega && nvm use omega && lvim'
-alias gotoaliases='lvim ~/.alias'
+alias gotoalias='lvim ~/.alias'
 
 alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
 alias gtpoly='cd ~/.dotfiles/polybar && vim config.ini'
@@ -57,6 +78,7 @@ alias gtuserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6b
 
 ### REPLACEMENT 
 alias vim='nvim'
+alias v='lvim'
 xevv(){
   xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 }
