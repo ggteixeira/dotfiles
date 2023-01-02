@@ -6,9 +6,9 @@
 ## Twitter : @adi1090x
 
 dir="~/.config/polybar/scripts/rofi"
-uptime=$(uptime | awk -F'( |,|:)+' '{print $6,$7",",$8,"h,",$9,"min."}')
+uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $dir/powermenu.rasi"
+rofi_command="rofi -no-config -theme $dir/powermenu.rasi"
 
 # Options
 shutdown=" Shutdown"
@@ -20,6 +20,7 @@ logout=" Logout"
 # Confirmation
 confirm_exit() {
 	rofi -dmenu\
+        -no-config\
 		-i\
 		-no-fixed-num-lines\
 		-p "Are You Sure? : "\
@@ -28,7 +29,7 @@ confirm_exit() {
 
 # Message
 msg() {
-	rofi -theme "$dir/message.rasi" -e "Available Options  -  yes / y / no / n"
+	rofi -no-config -theme "$dir/message.rasi" -e "Available Options  -  yes / y / no / n"
 }
 
 # Variable passed to rofi
@@ -57,20 +58,19 @@ case $chosen in
         fi
         ;;
     $lock)
-		# if [[ -f /usr/bin/i3lock ]]; then
-			# i3lock
-		if [[ -f /usr/bin/betterlockscreen ]]; then
-			betterlockscreen -l dimblur
+		if [[ -f /usr/bin/i3lock ]]; then
+			i3lock -c 6272A4
+		elif [[ -f /usr/bin/betterlockscreen ]]; then
+			betterlockscreen -l
 		fi
         ;;
     $suspend)
 		ans=$(confirm_exit &)
 		if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" || $ans == "" ]]; then
-      # mpc -q pause
-      playerctl pause
-      amixer set Master mute
-      betterlockscreen -l dimblur
-      systemctl suspend
+			mpc -q pause
+			amixer set Master mute
+			i3lock -c 6272A4
+			systemctl suspend
 		elif [[ $ans == "no" || $ans == "NO" || $ans == "n" || $ans == "N" ]]; then
 			exit 0
         else
