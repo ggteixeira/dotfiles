@@ -36,6 +36,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<C-\\>"] = ":NvimTreeToggle<cr>"
 lvim.keys.normal_mode["<C-n>"] = ":NvimTreeToggle<cr>"
 lvim.keys.insert_mode["<S-Tab>"] = "<C-d>"
+lvim.keys.insert_mode["jk"] = "<escape>"
 
 --statusline extra configs
 lvim.builtin.lualine.style = "default" -- options: "lvim" (default), "default" or "none"
