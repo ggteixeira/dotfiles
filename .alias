@@ -6,25 +6,25 @@ alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias updateall='\
-  \echo "UPDATE" && 
+  \echo "UPDATE #####################################################" && 
   \sudo apt update -y && 
 
-  \echo "UPGRADE" && 
+  \echo "UPGRADE #####################################################" && 
   \sudo apt upgrade -y && 
 
-  \echo "AUTOREMOVE" && 
+  \echo "AUTOREMOVE #####################################################" && 
   \sudo apt autoremove -y && 
 
-  \echo "AUTOCLEAN" && 
+  \echo "AUTOCLEAN #####################################################" && 
   \sudo apt autoclean -y && 
 
-  \echo "CLEAN" && 
+  \echo "CLEAN #####################################################" && 
   \sudo apt clean -y && 
 
-  \echo "SNAP REFRESH" && 
+  \echo "SNAP REFRESH #####################################################" && 
   \sudo snap refresh && 
 
-  \echo "FLATPAK UPDATE" && 
+  \echo "FLATPAK UPDATE #####################################################" && 
   \flatpak update -y'
 
 alias please='sudo'
