@@ -3,7 +3,8 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-command_timeout = 3000
+# command_timeout = 3000
+command_timeout = 4000
 
 # format = """
 # $directory\
