@@ -25,7 +25,7 @@ if [[ -f ~/.alias ]]; then
 fi
 
 ### THEMES
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ### NVM and PYWAL Settings (Linux-exclusive settings)
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -46,7 +46,7 @@ plugins=(
     nvm
     zsh-autosuggestions
     zsh-syntax-highlighting
-    # zsh-vi-mode
+    zsh-vi-mode
     zsh-z
 )
 
@@ -119,6 +119,3 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-### Starship configs
-eval "$(starship init zsh)"
