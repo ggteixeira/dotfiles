@@ -17,7 +17,10 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 # Sets Neovim as default editor
-export EDITOR="nvim"
+# export EDITOR="nvim"
+
+# Sets Lunarvim as default editor
+export EDITOR="lvim"
 
 ### ALIAS Settings
 if [[ -f ~/.alias ]]; then
@@ -31,15 +34,28 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # source /usr/share/nvm/init-nvm.sh  # NVM
 
-    # (cat ~/.cache/wal/sequences &)  # PYWAL
-    # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9,bold,underline"  # PYWAL
 fi
 
-## NVM Lazy Loading Settings
-zstyle ':omz:plugins:nvm' lazy true
-# export NVM_LAZY_LOAD=true
-# export NVM_COMPLETION=true
-# export PATH="/usr/local/sbin:$PATH"
+### New NVM and NVM Lazy Load settings:
+
+export NVM_DIR="$HOME/.nvm"
+
+# This lazy loads nvm
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+  nvm $@
+}
+
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Make binaries accessible:
+export PATH="$NVM_DIR/versions/node/v12.14.1/bin:$PATH"
+
+# This resolves the path to the default node version
+DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
+
 
 ### PLUGINS
 plugins=(
@@ -64,14 +80,15 @@ fi
 # export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # export PYENV_ROOT="$HOME/.pyenv"
 # export PATH="$PYENV_ROOT/bin:$PATH"    # if `pyenv` is not already on PATH
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # eval "$(pyenv init --path)"
 
@@ -105,9 +122,10 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 ### RUBY settings
 # export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 # export PATH="$PATH:$GEM_HOME/bin"
-export PATH="/usr/local/sbin:$PATH"
-export GEM_HOME="$HOME/.gem"
-eval "$(rbenv init - zsh)"
+
+# export PATH="/usr/local/sbin:$PATH"
+# export GEM_HOME="$HOME/.gem"
+# eval "$(rbenv init - zsh)"
 
 ### NVIM Color Settings
 COLORTERM="truecolor"
@@ -116,6 +134,3 @@ COLORTERM="truecolor"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
