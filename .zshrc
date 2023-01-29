@@ -30,13 +30,13 @@ fi
 ### THEMES
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-### NVM and PYWAL Settings (Linux-exclusive settings)
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # source /usr/share/nvm/init-nvm.sh  # NVM
+# # ### NVM and PYWAL Settings (Linux-exclusive settings)
+# # if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+# #     # source /usr/share/nvm/init-nvm.sh  # NVM
 
-fi
+# # fi
 
-### New NVM and NVM Lazy Load settings:
+# ### New NVM and NVM Lazy Load settings:
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -52,6 +52,8 @@ nvm() {
 
 # Make binaries accessible:
 export PATH="$NVM_DIR/versions/node/v12.14.1/bin:$PATH"
+
+DEFAULT_NODE_VER='$((cat "$NVM_DIR/alias/default" || cat ~/.nvmrc) 2> /dev/null)'
 
 # This resolves the path to the default node version
 DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
@@ -134,3 +136,5 @@ COLORTERM="truecolor"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+### Making firma's scripts available system-wide 
+export PATH="$HOME/.cargo/bin:$PATH"
