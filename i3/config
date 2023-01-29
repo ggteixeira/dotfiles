@@ -13,15 +13,18 @@ new_float pixel 6
 
 # Set inner/outer gaps
 
-gaps inner 6
+gaps inner 10
 gaps outer 0
+
+# Only enable gaps on a workspace when there is at least one container
+smart_gaps off
 
 # Hide borders
 hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 6
+bindsym $mod+y border pixel 6 
 # bindsym $mod+n border normal
 
 font xft:Noto Sans 10
@@ -29,7 +32,7 @@ font pango:DejaVu Sans Mono 8
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # Blueman
 exec --no-startup-id blueman-applet
@@ -39,12 +42,16 @@ exec --no-startup-id blueman-applet
 bindsym XF86MonBrightnessUp exec --no-startup-id light -s sysfs/backlight/auto -A 10
 bindsym XF86MonBrightnessDown exec --no-startup-id light -s sysfs/backlight/auto -U 10
 
+# Secondary monitor brightness controls
+bindsym Ctrl+Shift+k exec --no-startup-id ddcutil setvcp 10 + 10  
+bindsym Ctrl+Shift+j exec --no-startup-id ddcutil setvcp 10 - 10  
+
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle  
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 
@@ -53,7 +60,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
 bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
 bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
- 
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -65,8 +72,8 @@ bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 # WINIT_X11_SCALE_FACTOR=1
 
 # change wallpaper (random pywal)
-bindsym $mod+Shift+n exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/
-bindsym $mod+Shift+p exec --no-startup-id flameshot screen -n 0 -p $HOME/Pictures/Screenshots/
+# bindsym $mod+Shift+n exec --no-startup-id wal -i $HOME/Pictures/Wallpapers/
+bindsym $mod+Shift+P exec --no-startup-id flameshot screen -n 0 -p $HOME/Pictures/Screenshots/
 
 bindsym $mod+p exec --no-startup-id flameshot gui; exec --no-startup-id flameshot config -t=false
 # bindsym $mod+Shift+p exec --no-startup-id
@@ -209,6 +216,7 @@ for_window [class="Spotify"] move container to workspace $ws10
 
 # Open specific applications in floating mode
 for_window [class="Calculator"] floating enable sticky enable border 
+for_window [class="Gnome-calculator"] floating enable sticky enable border 
 for_window [class="copyq"] floating enable sticky enable border 
 for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
@@ -221,9 +229,15 @@ for_window [instance="Places"] floating enable
 for_window [instance="journey"] floating enable
 for_window [instance="Dictionary"] floating enable border pixel 6
 for_window [instance="pcmanfm"] floating enable border pixel 6
+for_window [instance="nemo"] floating enable border pixel 6
+for_window [instance="screenkey"] floating disable, border normal 2
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
+
+
+# Defaults all windows not covered by rules above
+for_window [class=".*"] border pixel 6 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -236,97 +250,134 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# # resize window (you can also use the mouse for that)
+# mode "resize" {
+#         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+#         # Pressing left will shrink the window’s width.
+#         # Pressing right will grow the window’s width.
+#         # Pressing up will shrink the window’s height.
+#         # Pressing down will grow the window’s height.
+#         bindsym h resize shrink width 5 px or 5 ppt
+#         bindsym j resize grow height 5 px or 5 ppt
+#         bindsym k resize shrink height 5 px or 5 ppt
+#         bindsym l resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+#         # same bindings, but for the arrow keys
+#         bindsym Left resize shrink width 10 px or 10 ppt
+#         bindsym Down resize grow height 10 px or 10 ppt
+#         bindsym Up resize shrink height 10 px or 10 ppt
+#         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+#         # back to normal: Enter or Escape or $mod+r
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+#         bindsym $mod+r mode "default"
+# }
+
+# bindsym $mod+r mode "resize"
+
+# redshift modes
+bindsym $mod+r mode "$mode_redshift"
+set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
+set $kill_redshift pkill -9 redshift;
+mode "$mode_redshift" {
+    bindsym a exec --no-startup-id "$kill_redshift redshift -P -t 5000:3000", mode "default"
+    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
+    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
+    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
+    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
+    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
+ 
+    # exit mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
-
 # Autostart applications
- # exec --no-startup-id redshift
-exec_always --no-startup-id xrandr --output eDP-1 --noprimary --output HDMI-1 --primary --right-of eDP-1 --dpi 96
+ exec --no-startup-id redshift
+exec_always --no-startup-id xrandr --output eDP-1 --noprimary --output HDMI-1 --primary --right-of eDP-1 --dpi 102
+exec --no-startup-id copyq
 # exec --no-startup-id albert
+exec --no-startup-id flameshot
 
-exec --no-startup-id wal -R
+# exec --no-startup-id wal -R
 # Lock Screen
 # exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
-exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -r 1920x1080 -u
-bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur 
+# exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -r 1920x1080 -u
+# bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur 
+bindsym $mod+Ctrl+q exec --no-startup-id i3lock -c 6272A4
 # exec --no-startup-id betterlockscreen -l dimblur -time 10 
 
-exec --no-startup-id picom -b
+exec_always --no-startup-id picom -b
 # exec --no-startup-id tlp-start
 # exec --no-startup-id nitrogen --restore; sleep 1
 # exec_always --no-startup-id conky
 # exec --no-startup-id xrandr --output HDMI-1 --primary --output eDP-1 --left-of HDMI-1 --dpi 96
 # exec --no-startup-id xrandr --dpi 96
 
-exec_always --no-startup-id $HOME/.dotfiles/polybar/launch.sh
-exec_always --no-startup-id dunst -mon 1
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id dunst -mon 1
 #Tempo até que a tela tranque:
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 # exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
 # exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
-exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
-exec --no-startup-id optimus-manager-qt
+# exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
+# exec --no-startup-id optimus-manager-qt
+
+
 exec_always --no-startup-id setxkbmap && xmodmap ~/.Xmodmap
 
+# swap caps lock and escape
+
+# exec_always --no-startup-id xmodmap -e "clear lock"
+# exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+# exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+
+
 # Close dunst notification
-bindsym $mod+Escape exec --no-startup-id dunstctl close-all
+# bindsym $mod+Escape exec --no-startup-id dunstctl close-all
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-set_from_resource $cg i3wm.color0 #f0f0f0
+# set_from_resource $fg i3wm.color7 #f0f0f0
+# set_from_resource $bg i3wm.color2 #f0f0f0
+# set_from_resource $cg i3wm.color0 #f0f0f0
 # 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  #F8F8F2   $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $cg
-client.unfocused        $bg     $bg     $fg  $bg       $cg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-
-client.background       $bg
-
-
-# # Theme colors
-# # class                 border  bground text    indicator child_border
-# client.focused          #6272A4 #6272A4 #F8F8F2 #F8F8F2   #6272A4
-# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# client.focused          $bg     $bg     $fg  #F8F8F2   $bg
+# client.focused_inactive $bg     $bg     $fg  $bg       $cg
+# client.unfocused        $bg     $bg     $fg  $bg       $cg
+# client.urgent           $bg     $bg     $fg  $bg       $bg
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
 # 
-# client.background       #F8F8F2
+# client.background       $bg
 
-bindsym $mod+space exec --no-startup-id ~/.dotfiles/polybar/scripts/launcher.sh
-bindsym $mod+Tab exec --no-startup-id rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.dotfiles/polybar/scripts/rofi/launcher.rasi
+
+ # Theme colors
+ # class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #F8F8F2   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
+
+bindsym $mod+space exec --no-startup-id  ~/.config/polybar/scripts/launcher.sh 
+
+bindsym $mod+Tab exec --no-startup-id rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/polybar/scripts/rofi/launcher.rasi
 
 
 floating_minimum_size 0 x 0
 floating_maximum_size 1440 x 900
+
+# Terminal Root changes
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
+exec --no-startup-id $HOME/.fehbg
+exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+# Sets keyboard repeat at startup
+exec_always --no-startup-id xset r rate 280 40
