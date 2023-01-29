@@ -61,8 +61,8 @@ vim.api.nvim_set_keymap('v', ';', ':', { silent = false })
 -- lvim.colorscheme = "everforest"
 -- lvim.colorscheme = "dracula"
 -- lvim.colorscheme = "gruvbox"
--- lvim.colorscheme = "catppuccin"
-lvim.colorscheme = "onenord"
+lvim.colorscheme = "catppuccin"
+-- lvim.colorscheme = "onenord"
 -- vim.g.catppuccin_flavour = "mocha"
 
 
