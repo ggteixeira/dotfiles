@@ -54,10 +54,6 @@ No Code é possível editar mais de uma linha por vez usando `ctrl+shift+seta` e
 2. Uma técnica que eu gosto bastante, de fazer o Vim nativamente editar várias linhas verticalmente ao mesmo tempo, assim como o Code faz. Essa funcionalidade, porém, possui algumas limitações, como, por exemplo, apenas funcionar se a edição for feita exatamente no início da linha. Se a edição for apagar caracteres, a tecla **delete** não vai funcionar, apenas o **backspace**.
 3. Macros. As macros são o tipo de ferramenta que faz com que o Vim deixa os editores de texto normal comendo poeira. O poder delas é ilimitado, ainda mais se forem construídas utilizando recursão. Utilizando esse texto, eu dispensei a extensão e passei a treinar os comandos nativos. A parte mais difícil são as macros avançadas; mas vale a pena; no Vim, tudo é um aprendizado constante.
 
-### Auto Close Tag
-
-Através do plugin [vim-closetag](https://github.com/alvan/vim-closetag) qualquer tag HTML aberta é automaticamente fechada depois que o usuário aperta `>`. No VSCode isso também precisa ser ativado via extensão, enquanto que no WebStorm o comportamento é nativo. Simples e poderoso.
-
 ### NERDTree
 
 A NERDTree (árvore de arquivos) mostra dinamicamente o arquivo aberto, assim como o VSCode faz por padrão. A função que faz isso não é minha, copiei do [Bob Zimmermann](https://stackoverflow.com/a/59977029). Thanks!
@@ -75,6 +71,7 @@ A lista completa de coisas ainda por fazer/consertar está [nas issues deste rep
 ## Coisas que não deram certo
 
 - Como eu uso o Vim dentro do terminal, alguns mappings colidem com os do sistema e com os do iTerm no Mac. Preciso criar uma categorização consistente de mappings. Precisa caber tudo e precisa ser mnemônico.
+- Fechar tags HTML automaticamente no JSX.
 
 ## Referências Bibliográficas (em construção)
 
@@ -96,6 +93,4 @@ A lista completa de coisas ainda por fazer/consertar está [nas issues deste rep
 - [Vim Plugin Highlight: fzf.vim! Fuzzy File Finding Fun!](https://www.youtube.com/watch?v=DpURGnb4Fyk) (Codevion)
 - [How to Configure Vim Like VSCode](https://www.youtube.com/watch?v=gnupOrSEikQ) (Ben Awad)
 
-### Reddit
-
----
+# 
