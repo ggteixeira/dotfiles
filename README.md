@@ -16,21 +16,35 @@ Uma terceira utilidade seria majoritariamente estética, já que, nessa toada de
 
 ## Processo de migração do Visual Studio Code para o Neovim
 
+A construção dos meus arquivos personalizados de configuração do Vim passaram por quatro fases: em meados de 2018, fiz meu primeiro `.vimrc`, parte baseado no do [Vitor Prado](https://github.com/vitorprado), e parte montado usando o [https://vimconfig.com/](https://vimconfig.com/). 
+
+A segunda parte foi quando migrei para o Neovim/nvim. O Neovim é um fork do Vim criado (pelas mãos de um brasileiro) a partir da necessidade de atualizar pontos legados do código do Vim e apontá-lo para uma direção mais moderna. O Vim original tem uma responsabilidade de manter compatibilidade com máquinas antigas ainda em operação; por isso a adoção por parte dos desenvolvedores do frescor que o Neovim trouxe só cresceu desde a sua criação. Migrei meu `.vimrc` para ele e segui atualizando-o conforme minhas necessidades.
+
+A terceira parte foi quando o Neovim anunciou suporte a LSPs (*Language Server Protocols*) e à linguagem de programação Lua (também criada por um brasileiro). Migrei minha config de VimScript para Lua.
+
+A quarta (e atual) mudança foi passar a usar o LunarVim como configuração-base. Peguei os standards que o Lunarvim trouxe e os adaptei às comodidades que venho construindo desde o início. Felizmente, boa parte das inovações que o LunarVim possui me soaram naturais e coerentes, então posso dizer que estou mais satisfeito do que nunca com meu setup atual.
+
 ![nvim-screenshot](https://github.com/vibraniumdev/dotfiles/blob/main/media/nvim.png)
 
-Lista de features essenciais presentes no VSCode
+### Suporte a múltiplas linguagens de programação
 
-### Features básicas
-
-### Mappings
+O Visual Studio Code é conhecido por suportar várias linguagens de programação simultaneamente, motivo pelo qual a sua adoção por parte de usuários de IDEs foi tão massiva. Felizmente o Neovim, graças ao suporte às LSPs, possui a mesmíssima capacidade. O LunarVim, inclusive, é capaz de detectar uma linguage nova e baixar o respectivo plugin automaticamente.  
 
 ### Workspaces
 
-Usar o Vim no terminal – que é o meu caso – dispensa o conceito de workspace porque é mais direto ao ponto dar um `cd` na pasta de trabalho raiz e abrir o Vim lá. Há inclusive alguns aliases de navegação que facilitam ainda mais esse processo quando ele se torna repetitivo, como aliases do tipo `goto`: [.zsh_aliases](https://github.com/vibraniumdev/dotfiles/blob/main/.zsh_aliases).
+Usar o Vim no terminal — que é o meu caso — dispensa o conceito de workspace porque é mais direto ao ponto dar um `cd` na pasta de trabalho raiz e abrir o Vim lá. Há inclusive alguns aliases de navegação que facilitam ainda mais esse processo quando ele se torna repetitivo, como aliases do tipo `goto`: [.zsh_aliases](https://github.com/vibraniumdev/dotfiles/blob/main/.zsh_aliases).
+
+Se o usuário quer muito replicar esse conceito no Vim, ele pode usar plugins como o [folke/persistence.nvim](https://github.com/folke/persistence.nvim), que salva o último estado dos arquivos e do layout usados. 
 
 ### Ctrl+P/Command+P e Busca Global
 
 Substituir o **ctrl+p** para buscar nomes de arquivos a partir da pasta-raiz de um projeto foi uma tarefa simples com o FZF. Utilizando os comandos `:Files` e `GFiles`, é possível implementar a mesma feature, com algumas opções a mais de aparência.
+
+No Lunarvim, basta utilizar o `<leader>f` que ele abre um plugin de busca chamado Telescope. Este busca arquivos **e** palavras-chave dentro de arquivos, tal qual o FZF.
+
+### Git
+
+Pare de apertar botões, use o git direto no terminal. *Learn the hard way*!
 
 ### Multi-Cursores
 
