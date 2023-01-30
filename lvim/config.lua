@@ -82,7 +82,7 @@ lvim.builtin.terminal.start_in_insert = true
 lvim.builtin.terminal.size = 30
 -- lvim.builtin.terminal.close_on_exit = true
 
--- lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ignore_install = { "haskell", "gitcommit" }
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
@@ -93,7 +93,7 @@ lvim.builtin.terminal.size = 30
 -- ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
+-- require("lvim.lsp.manager").setup("eslint", opts)
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
@@ -123,7 +123,7 @@ formatters.setup {
     command = "prettier",
     args = { "--print-with", "100" },
     extra_args = { "--print-width", "100" },
-    filetypes = { "typescript", "typescriptreact" },
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   },
 }
 local linters = require "lvim.lsp.null-ls.linters"
@@ -133,7 +133,7 @@ linters.setup {
     command = "shellcheck",
     args = { "--severity", "warning" },
   },
-  { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
+  -- { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
 }
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
