@@ -12,7 +12,6 @@ new_window pixel 6
 new_float pixel 6 
 
 # Set inner/outer gaps
-
 gaps inner 10
 gaps outer 0
 
@@ -37,7 +36,6 @@ exec --no-startup-id nm-applet
 # Blueman
 exec --no-startup-id blueman-applet
 
-
 # Screen brightness controls:
 bindsym XF86MonBrightnessUp exec --no-startup-id light -s sysfs/backlight/auto -A 10
 bindsym XF86MonBrightnessDown exec --no-startup-id light -s sysfs/backlight/auto -U 10
@@ -48,8 +46,8 @@ bindsym Ctrl+Shift+j exec --no-startup-id ddcutil setvcp 10 - 10
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
 
@@ -83,15 +81,6 @@ bindsym $mod+Shift+q kill
 
 # focus settings
 focus_follows_mouse no
-# mouse_warping none
-# focus_wrapping no
-
-# Launch apps
-# bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-# bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-# bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-# bindsym Print exec --no-startup-id i3-scrot
 
 # change focus
 bindsym $mod+h focus left
@@ -99,23 +88,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -128,26 +105,17 @@ bindsym $mod+q split toggle
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stackng
-# bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
 
-
 # change focus between tiling / floating windows
 bindsym $mod+d focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+m move scratchpad
@@ -163,7 +131,6 @@ bindsym $mod+Ctrl+Left workspace prev
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -235,47 +202,17 @@ for_window [instance="screenkey"] floating disable, border normal 2
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-
 # Defaults all windows not covered by rules above
 for_window [class=".*"] border pixel 6 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# Take Screenshots With Flameshot (Print Screens)
-# bindsym $mod+shift+4 exec --no-startup-id flameshot screen -n 0 -p ~/Pictures/Screenshots
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# # resize window (you can also use the mouse for that)
-# mode "resize" {
-#         # These bindings trigger as soon as you enter the resize mode
-
-#         # Pressing left will shrink the window’s width.
-#         # Pressing right will grow the window’s width.
-#         # Pressing up will shrink the window’s height.
-#         # Pressing down will grow the window’s height.
-#         bindsym h resize shrink width 5 px or 5 ppt
-#         bindsym j resize grow height 5 px or 5 ppt
-#         bindsym k resize shrink height 5 px or 5 ppt
-#         bindsym l resize grow width 5 px or 5 ppt
-
-#         # same bindings, but for the arrow keys
-#         bindsym Left resize shrink width 10 px or 10 ppt
-#         bindsym Down resize grow height 10 px or 10 ppt
-#         bindsym Up resize shrink height 10 px or 10 ppt
-#         bindsym Right resize grow width 10 px or 10 ppt
-
-#         # back to normal: Enter or Escape or $mod+r
-#         bindsym Return mode "default"
-#         bindsym Escape mode "default"
-#         bindsym $mod+r mode "default"
-# }
-
-# bindsym $mod+r mode "resize"
 
 # redshift modes
 bindsym $mod+r mode "$mode_redshift"
@@ -295,67 +232,25 @@ mode "$mode_redshift" {
 }
 
 # Autostart applications
- exec --no-startup-id redshift
+exec --no-startup-id redshift
 exec_always --no-startup-id xrandr --output eDP-1 --noprimary --output HDMI-1 --primary --right-of eDP-1 --dpi 102
 exec --no-startup-id copyq
 # exec --no-startup-id albert
 exec --no-startup-id flameshot
 
-# exec --no-startup-id wal -R
 # Lock Screen
-# exec --no-startup-id betterlockscreen -u ~/.cache/wal/wal 
 # exec --no-startup-id cat ~/.cache/wal/wal | xargs betterlockscreen -r 1920x1080 -u
-# bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l dimblur 
-bindsym $mod+Ctrl+q exec --no-startup-id i3lock -c 6272A4
-# exec --no-startup-id betterlockscreen -l dimblur -time 10 
+bindsym $mod+Ctrl+q exec --no-startup-id betterlockscreen -l blur 
 
 exec_always --no-startup-id picom -b
-# exec --no-startup-id tlp-start
-# exec --no-startup-id nitrogen --restore; sleep 1
-# exec_always --no-startup-id conky
-# exec --no-startup-id xrandr --output HDMI-1 --primary --output eDP-1 --left-of HDMI-1 --dpi 96
-# exec --no-startup-id xrandr --dpi 96
 
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# exec_always --no-startup-id dunst -mon 1
 #Tempo até que a tela tranque:
 # exec --no-startup-id xautolock -time 10 -locker blurlock
-# exec --no-startup-id setxkbmap us -variant mac -option lv3:lalt_latch
-# exec --no-startup-id xmodmap -e 'keycode 64 = ISO_Level3_Latch'
-# exec_always --no-startup-id xrdb ~/.cache/wal/colors.Xresources
-# exec --no-startup-id optimus-manager-qt
-
 
 exec_always --no-startup-id setxkbmap && xmodmap ~/.Xmodmap
 
-# swap caps lock and escape
-
-# exec_always --no-startup-id xmodmap -e "clear lock"
-# exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-# exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
-
-
 # Close dunst notification
-# bindsym $mod+Escape exec --no-startup-id dunstctl close-all
-
-# Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
-# from the generated scheme.
-# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
-# it fails to get colors from Xresources.
-# set_from_resource $fg i3wm.color7 #f0f0f0
-# set_from_resource $bg i3wm.color2 #f0f0f0
-# set_from_resource $cg i3wm.color0 #f0f0f0
-# 
-# class                 border  backgr. text indicator child_border
-# client.focused          $bg     $bg     $fg  #F8F8F2   $bg
-# client.focused_inactive $bg     $bg     $fg  $bg       $cg
-# client.unfocused        $bg     $bg     $fg  $bg       $cg
-# client.urgent           $bg     $bg     $fg  $bg       $bg
-# client.placeholder      $bg     $bg     $fg  $bg       $bg
-# 
-# client.background       $bg
-
+bindsym $mod+Escape exec --no-startup-id dunstctl close-all
 
  # Theme colors
  # class                 border  bground text    indicator child_border
