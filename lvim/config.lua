@@ -3,7 +3,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 
-vim.opt.wrap = true -- display lines as one long line
+vim.opt.wrap = true               -- display lines as one long line
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.timeoutlen = 150
 vim.opt.spell = false
@@ -50,6 +50,13 @@ lvim.builtin.lualine.style = "default" -- options: "lvim" (default), "default" o
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<cr>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<cr>"
 
+-- Override resize panes (to avoid conflicting with Logitech MX Anywhere's desktop movement gesture)
+lvim.keys.normal_mode["<C-Left>"] = false
+lvim.keys.normal_mode["<C-S-Left>"] = ":vertical resize -2<CR>"
+
+lvim.keys.normal_mode["<C-Right>"] = false
+lvim.keys.normal_mode["<C-S-Right>"] = ":vertical resize +2<CR>"
+
 -- Comments
 vim.api.nvim_set_keymap('n', '<Leader>/', 'gcc', { silent = false })
 
@@ -57,13 +64,14 @@ vim.api.nvim_set_keymap('n', '<Leader>/', 'gcc', { silent = false })
 vim.api.nvim_set_keymap('n', ';', ':', { silent = false })
 vim.api.nvim_set_keymap('v', ';', ':', { silent = false })
 
+
 -- -- Change theme settings
 -- lvim.colorscheme = "everforest"
 -- lvim.colorscheme = "dracula"
 -- lvim.colorscheme = "gruvbox"
 lvim.colorscheme = "catppuccin"
 -- lvim.colorscheme = "onenord"
--- vim.g.catppuccin_flavour = "mocha"
+vim.g.catppuccin_flavour = "macchiato"
 
 
 lvim.builtin.alpha.active = true
@@ -138,52 +146,51 @@ linters.setup {
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "BufRead",
-    config = function()
-      local blankline_opts = {
-        filetype_exclude = {
-          "alpha",
-          "help",
-          "terminal",
-          "dashboard",
-          "lspinfo",
-          "lsp-installer",
-          "mason",
-        },
-        buftype_exclude = { "terminal" },
-        bufname_exclude = { "config.lua" },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   event = "BufRead",
+  --   config = function()
+  --     local blankline_opts = {
+  --       filetype_exclude = {
+  --         "alpha",
+  --         "help",
+  --         "terminal",
+  --         "dashboard",
+  --         "lspinfo",
+  --         "lsp-installer",
+  --         "mason",
+  --       },
+  --       buftype_exclude = { "terminal" },
+  --       bufname_exclude = { "config.lua" },
+  --       show_trailing_blankline_indent = false,
+  --       show_first_indent_level = false,
+  --       -- use_treesitter = true,
+  --       space_char_blankline = " ",
+  --       show_current_context = true,
+  --       show_current_context_start = true,
+  --     }
 
-        show_trailing_blankline_indent = false,
-        show_first_indent_level = false,
-        -- use_treesitter = true,
-        space_char_blankline = " ",
-        show_current_context = true,
-        show_current_context_start = true,
-      }
-
-      require("indent_blankline").setup(blankline_opts)
-    end
-  },
+  --     require("indent_blankline").setup(blankline_opts)
+  --   end
+  -- },
   { "lunarvim/colorschemes" },
   { "rmehri01/onenord.nvim" },
   { "sainnhe/everforest" },
   { "Mofiqul/dracula.nvim" },
   { "ellisonleao/gruvbox.nvim" },
   { "p00f/nvim-ts-rainbow" },
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim",         name = "catppuccin" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({ "css", "scss", "html", "javascript", "rasi" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
+        RGB = true,      -- #RGB hex codes
+        RRGGBB = true,   -- #RRGGBB hex codes
         RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        rgb_fn = true,   -- CSS rgb() and rgba() functions
+        hsl_fn = true,   -- CSS hsl() and hsla() functions
+        css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
       })
     end,
   },
