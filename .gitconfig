@@ -22,3 +22,10 @@
   	path = .gitconfig-printi
 [push]
 	default = current
+[alias]
+	l = "log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+	st = status
+	com = commit
+	diffcom = git diff HEAD~1
+	git = !git
+  unstage = restore --staged . 
