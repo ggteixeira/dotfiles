@@ -10,10 +10,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# ### POWERLEVEL10K Settings
-# if [[ -f ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme ]]; then
-#     source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
-# fi
 
 export ZSH="$HOME/.oh-my-zsh"
 # Sets Neovim as default editor
@@ -29,12 +25,6 @@ fi
 
 ### THEMES
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# # ### NVM and PYWAL Settings (Linux-exclusive settings)
-# # if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-# #     # source /usr/share/nvm/init-nvm.sh  # NVM
-
-# # fi
 
 # ### New NVM and NVM Lazy Load settings:
 
@@ -75,24 +65,6 @@ fi
 ### SOURCING POWERLEVEL10K
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-### PYENV settings
-# export PATH="$HOME/.pyenv/bin:$PATH"
-# eval "$(pyenv virtualenv-init -)"
-# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"    # if `pyenv` is not already on PATH
-
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-
-# eval "$(pyenv init --path)"
-
 ### ZSH-AUTOSUGGESTIONS settings
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
@@ -107,8 +79,6 @@ function zvm_after_init() {
 }
 
 ### FZF settings
-#source /usr/share/doc/fzf/examples/key-bindings.zsh
-#source /usr/share/doc/fzf/examples/completion.zsh;
 
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files'
@@ -120,13 +90,6 @@ export BAT_THEME="onedark"
 ### VI-MODE Settings
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 
-### RUBY settings
-# export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-# export PATH="$PATH:$GEM_HOME/bin"
-
-# export PATH="/usr/local/sbin:$PATH"
-# export GEM_HOME="$HOME/.gem"
-# eval "$(rbenv init - zsh)"
 
 ### NVIM Color Settings
 COLORTERM="truecolor"
@@ -137,9 +100,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 ### Making firma's scripts available system-wide 
 export PATH="$HOME/.cargo/bin:$PATH"
-# source /Users/gui/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /Users/gui/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /Users/gui/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # z
 . /opt/homebrew/etc/profile.d/z.sh
