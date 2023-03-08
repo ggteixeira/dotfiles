@@ -71,7 +71,7 @@ vim.api.nvim_set_keymap('v', ';', ':', { silent = false })
 -- lvim.colorscheme = "gruvbox"
 lvim.colorscheme = "catppuccin"
 -- lvim.colorscheme = "onenord"
-vim.g.catppuccin_flavour = "macchiato"
+vim.g.catppuccin_flavour = "frappe"
 
 
 lvim.builtin.alpha.active = true
