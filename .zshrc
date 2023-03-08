@@ -63,9 +63,8 @@ DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAU
 plugins=(
     nvm
     zsh-autosuggestions
-    zsh-syntax-highlighting
     zsh-vi-mode
-    zsh-z
+    zsh-syntax-highlighting
 )
 
 ### SOURCING OH MY ZSH
@@ -138,3 +137,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 ### Making firma's scripts available system-wide 
 export PATH="$HOME/.cargo/bin:$PATH"
+# source /Users/gui/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /Users/gui/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /Users/gui/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# z
+. /opt/homebrew/etc/profile.d/z.sh
