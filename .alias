@@ -90,7 +90,7 @@ xevv(){
 
 alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
 # alias pbcopy='xclip -selection clipboard'
-alias cpbranch='git branch --show-current | pbcopy'
+alias cpbranch='git branch --show-current | pbcopy && pbpaste'
 alias js='node'
 
 ### PYTHON aliases:
