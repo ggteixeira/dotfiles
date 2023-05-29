@@ -12,7 +12,7 @@ vim.opt.spell = false
 lvim.log.level = "warn"
 lvim.format_on_save = {
   enabled = true,
-  -- pattern = "*.lua",
+  -- pattern = "*.a",
   timeout = 1500,
 }
 
@@ -57,6 +57,10 @@ lvim.keys.normal_mode["<C-S-Left>"] = ":vertical resize -2<CR>"
 lvim.keys.normal_mode["<C-Right>"] = false
 lvim.keys.normal_mode["<C-S-Right>"] = ":vertical resize +2<CR>"
 
+-- Vertical resizing
+lvim.keys.normal_mode["<C-S-Up>"] = ":horizontal resize +1<CR>"
+lvim.keys.normal_mode["<C-S-Down>"] = ":horizontal resize -1<CR>"
+
 -- Comments
 vim.api.nvim_set_keymap('n', '<Leader>/', 'gcc', { silent = false })
 
@@ -64,20 +68,28 @@ vim.api.nvim_set_keymap('n', '<Leader>/', 'gcc', { silent = false })
 vim.api.nvim_set_keymap('n', ';', ':', { silent = false })
 vim.api.nvim_set_keymap('v', ';', ':', { silent = false })
 
+-- Undotree mappings:
+
+lvim.keys.normal_mode['<C-S-n>'] = ":UndotreeToggle<CR> :UndotreeFocus<CR>"
 
 -- -- Change theme settings
 -- lvim.colorscheme = "everforest"
 -- lvim.colorscheme = "dracula"
--- lvim.colorscheme = "gruvbox"
-lvim.colorscheme = "catppuccin"
+lvim.colorscheme = "gruvbox"
 -- lvim.colorscheme = "onenord"
-vim.g.catppuccin_flavour = "frappe"
+-- lvim.colorscheme = "onedark"
+
+-- lvim.colorscheme = "catppuccin-latte"
+-- lvim.colorscheme = "catppuccin-mocha"
+-- lvim.colorscheme = "catppuccin-macchiato"
+-- lvim.colorscheme = "catppuccin-frappe"
 
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.width = 40
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Automatically install missing parsers when entering buffer
@@ -141,40 +153,17 @@ linters.setup {
     command = "shellcheck",
     args = { "--severity", "warning" },
   },
-  -- { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
+  {
+    command = "eslint",
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+  }
 }
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   event = "BufRead",
-  --   config = function()
-  --     local blankline_opts = {
-  --       filetype_exclude = {
-  --         "alpha",
-  --         "help",
-  --         "terminal",
-  --         "dashboard",
-  --         "lspinfo",
-  --         "lsp-installer",
-  --         "mason",
-  --       },
-  --       buftype_exclude = { "terminal" },
-  --       bufname_exclude = { "config.lua" },
-  --       show_trailing_blankline_indent = false,
-  --       show_first_indent_level = false,
-  --       -- use_treesitter = true,
-  --       space_char_blankline = " ",
-  --       show_current_context = true,
-  --       show_current_context_start = true,
-  --     }
 
-  --     require("indent_blankline").setup(blankline_opts)
-  --   end
-  -- },
   { "lunarvim/colorschemes" },
-  { "rmehri01/onenord.nvim" },
+  { 'rmehri01/onenord.nvim',   branch = 'main' },
   { "sainnhe/everforest" },
   { "Mofiqul/dracula.nvim" },
   { "ellisonleao/gruvbox.nvim" },
@@ -205,6 +194,9 @@ lvim.plugins = {
       }
     end,
   },
+  { "mbbill/undotree" },
+  { "tpope/vim-surround" }
+
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
