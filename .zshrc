@@ -6,9 +6,9 @@
 #   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 # }
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -24,7 +24,7 @@ if [[ -f ~/.alias ]]; then
 fi
 
 ### THEMES
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # ### New NVM and NVM Lazy Load settings:
 
@@ -63,7 +63,7 @@ if [[ -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
 fi
 
 ### SOURCING POWERLEVEL10K
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ### ZSH-AUTOSUGGESTIONS settings
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -103,3 +103,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # z
 . /opt/homebrew/etc/profile.d/z.sh
+
+### Pyenv settings
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+### Starship call
+eval "$(starship init zsh)"
