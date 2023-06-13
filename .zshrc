@@ -71,6 +71,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   bindkey '^H' backward-kill-word
 fi
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c6c6c,bold,underline"
+
 bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
 
 ## Makes autosuggest-accept and zsh-vi-mode compatible. Source: https://github.com/jeffreytse/zsh-vi-mode/issues/57#issuecomment-799364881
