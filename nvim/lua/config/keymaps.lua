@@ -10,6 +10,7 @@ vim.keymap.set("v", ";", ":")
 -- vim.keymap.set("n", "<C-n>", ":Neotree toggle <CR>", { silent = true })
 
 -- Use Space+H to clear search
+-- NOTE: This is redundant because Shift already cleans the search highlight
 vim.keymap.set("n", "<Leader>h", ":noh<CR>", { silent = true })
 
 -- vim.keymap.set("n", "<Leader>/", "gc", { silent = false })
