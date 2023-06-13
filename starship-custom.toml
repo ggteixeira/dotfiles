@@ -1,0 +1,91 @@
+### CONFIG DO GUI
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# command_timeout = 3000
+command_timeout = 4000
+
+format = """
+$directory\
+[](fg:#bf616a bg:#d08770)\
+$git_branch\
+$git_status\
+[]( fg:#d08770 bg:#88c0d0)\
+$nodejs\
+$rust\
+[](fg:#88c0d0 bg:#5e81ac)\
+$time\
+[ ](fg:#5e81ac)\
+"""
+
+
+# 
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+[shell]
+fish_indicator = ""
+powershell_indicator = "_"
+unknown_indicator = "mystery shell"
+style = "cyan bold"
+disabled = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = false
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[ $user ]($style)'
+
+[directory]
+# style = "bg:#bf616a"
+# style = "fg:#2e3440 bg:#bf616a"
+style = "fg:#ffffff bg:#bf616a bold"
+format = "[ $path ]($style)"
+truncation_length = 0
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[git_branch]
+symbol = ""
+style = "fg:#2e3440 bg:#d08770"
+format = '[[ $symbol $branch ](bg:#d08770 fg:#2e3440)]($style)'
+
+[git_status]
+style = "fg:#2e3440 bg:#d08770"
+format = '[[($all_status$ahead_behind )](bg:#d08770 fg:#2e3440)]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:#2e3440 bg:#88c0d0"
+format = '[[ $symbol ($version) ](fg:#2E3440 bg:#88c0d0)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#88c0d0"
+format = '[[ $symbol ($version) ](bg:#88c0d0)]($style)'
+
+[time]
+disabled = true
+time_format = "%R"                           # Hour:Minute Format
+style = "bg:#5e81ac"
+format = '[[ ♥ $time ](bg:#5e81ac)]($style)'
