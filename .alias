@@ -82,7 +82,7 @@ alias gtuserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6b
 alias zshrc='lvim ~/.zshrc'
 
 ### REPLACEMENT 
-alias vim='nvim'
+# alias vim='nvim'
 alias v='lvim'
 xevv(){
   xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
@@ -90,7 +90,7 @@ xevv(){
 
 alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
 # alias pbcopy='xclip -selection clipboard'
-alias cpbranch='git branch --show-current | pbcopy && pbpaste'
+alias cpbranch='git branch --show-current | pbcopy && echo "✨ done copying branch:" && pbpaste'
 alias js='node'
 
 ### PYTHON aliases:
@@ -102,3 +102,4 @@ alias beijos='bundle exec jekyll serve'
 
 ### macOS aliases
 alias flushdnsmac='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+
