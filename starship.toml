@@ -8,18 +8,23 @@ $git_status\
 $git_metrics\
 $fill\
 $nodejs\
-$cmd_duration $jobs $time\
+${custom.readme} ${custom.home} $cmd_duration $jobs $time\
 $line_break\
 $character"""
 
+# A continuation prompt that displays two filled in arrows
+continuation_prompt = '▶▶ '
+
 [nodejs]
 format = "[$symbol($version )]($style)"
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
 
 [fill]
 symbol = " "
 
 [directory]
-style = "blue"
+style = "bold blue"
 read_only = " "
 truncation_length = 4
 truncate_to_repo = false
@@ -54,3 +59,18 @@ disabled = false
 [cmd_duration]
 format = "[$duration]($style)"
 style = "yellow"
+
+# [custom.readme]
+# detect_files = ['README.md', 'README']
+# style = "bold red"
+# symbol = "R"
+# command = "wc -l README* | awk '{print $1}'"
+# format = "[$symbol $output]($style)"
+
+# [custom.home]
+# when = "test $HOME = $PWD"
+# format = "YOUT ARE HOME"
+
+# detect_folders = ['']
+# detect_extensions = ['']
+
