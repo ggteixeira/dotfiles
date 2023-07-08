@@ -53,10 +53,12 @@ plugins=(
     zsh-autosuggestions
     zsh-vi-mode
     zsh-syntax-highlighting
+    z 
 )
 
 ### SOURCING OH MY ZSH
 if [[ -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
+    export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
     source ~/.oh-my-zsh/oh-my-zsh.sh
 fi
 
