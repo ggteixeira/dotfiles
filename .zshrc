@@ -13,10 +13,8 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 # Sets Neovim as default editor
-# export EDITOR="nvim"
+export EDITOR="nvim"
 
-# Sets Lunarvim as default editor
-export EDITOR="lvim"
 
 ### ALIAS Settings
 if [[ -f ~/.alias ]]; then
