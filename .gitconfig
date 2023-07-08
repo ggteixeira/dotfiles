@@ -29,3 +29,4 @@
 	diffcom = git diff HEAD~1
 	git = !git
   unstage = restore --staged . 
+  adp = add -p
