@@ -29,14 +29,14 @@ fi
 export NVM_DIR="$HOME/.nvm"
 
 # This lazy loads nvm
-nvm() {
-  unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-  nvm $@
-}
+# nvm() {
+#   unset -f nvm
+#   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+#   nvm $@
+# }
 
 # This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Make binaries accessible:
 export PATH="$NVM_DIR/versions/node/v12.14.1/bin:$PATH"
