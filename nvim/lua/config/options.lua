@@ -7,3 +7,4 @@
 
 -- Timeout until the which key bar appear on <Leader> press
 vim.opt.timeoutlen = 200
+vim.opt.swapfile = false
