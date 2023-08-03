@@ -1,6 +1,6 @@
 ### Loading Performance Tool
 # zmodload zsh/zprof
-
+#
 # timezsh() {
 #   shell=${1-$SHELL}
 #   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
@@ -12,6 +12,7 @@
 
 
 export ZSH="$HOME/.oh-my-zsh"
+
 # Sets Neovim as default editor
 export EDITOR="nvim"
 
@@ -24,28 +25,22 @@ fi
 ### THEMES
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# ### New NVM and NVM Lazy Load settings:
+# ### New NVM 
 
 export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# This lazy loads nvm
-# nvm() {
-#   unset -f nvm
-#   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-#   nvm $@
-# }
+# # Make binaries accessible:
+# export PATH="$NVM_DIR/versions/node/v12.14.1/bin:$PATH"
+#
+# DEFAULT_NODE_VER='$((cat "$NVM_DIR/alias/default" || cat ~/.nvmrc) 2> /dev/null)'
+#
+# # This resolves the path to the default node version
+# DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
 
-# This loads nvm bash_completion
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Make binaries accessible:
-export PATH="$NVM_DIR/versions/node/v12.14.1/bin:$PATH"
-
-DEFAULT_NODE_VER='$((cat "$NVM_DIR/alias/default" || cat ~/.nvmrc) 2> /dev/null)'
-
-# This resolves the path to the default node version
-DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
-
+### nvm lazy mode
+zstyle ':omz:plugins:nvm' lazy yes
 
 ### PLUGINS
 plugins=(
@@ -81,13 +76,11 @@ function zvm_after_init() {
 }
 
 ### FZF settings
-
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files'
     export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-export BAT_THEME="onedark"
 
 ### VI-MODE Settings
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
@@ -113,3 +106,4 @@ eval "$(pyenv init -)"
 
 ### Starship call
 eval "$(starship init zsh)"
+

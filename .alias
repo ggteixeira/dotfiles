@@ -105,6 +105,7 @@ alias beijos='bundle exec jekyll serve'
 
 ### macOS aliases
 alias flushdnsmac='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+alias night="nightlight"
 
 ### Creating and entering directories
 function take {
