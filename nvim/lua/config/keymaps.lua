@@ -7,13 +7,7 @@ vim.keymap.set("n", ";", ":")
 vim.keymap.set("v", ";", ":")
 
 -- Use ctrl+n to toggle tree:
--- vim.keymap.set("n", "<C-n>", ":Neotree toggle <CR>", { silent = true })
-
--- Use Space+H to clear search
--- NOTE: This is redundant because Shift already cleans the search highlight
-vim.keymap.set("n", "<Leader>h", ":noh<CR>", { silent = true })
-
--- vim.keymap.set("n", "<Leader>/", "gc", { silent = false })
+vim.keymap.set("n", "<C-n>", ":Neotree toggle <CR>", { silent = true })
 
 -- Resizing windows (ctrl+shift+arrows)
 vim.keymap.set("n", "<C-S-Up>", ":horizontal resize +1 <CR>", { silent = true })
