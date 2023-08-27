@@ -1,4 +1,13 @@
 [user]
-    name = Guilherme Teixeira 
-    email = 24235344+vibraniumdev@users.noreply.github.com
-    username = vibraniumdev 
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrurYK1VSKbE9WqpW5xSpmTXg1mRf6GwpBOK6DB9Lk+
+	name = ggteixeira
+  email = 24235344+ggteixeira@users.noreply.github.com
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
