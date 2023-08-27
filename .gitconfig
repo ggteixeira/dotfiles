@@ -1,30 +1,42 @@
 [core]
 	editor = nvim
+
 [gpg]
 	program = gpg
 	format = ssh
+
 [commit]
 	gpgsign = true
+
 [tag]
 	forceSignAnnotated = false
+
 [pull]
 	rebase = false
+
 [init]
 	defaultBranch = main
+
 [user]
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrurYK1VSKbE9WqpW5xSpmTXg1mRf6GwpBOK6DB9Lk+
 	name = ggteixeira
   email = 24235344+ggteixeira@users.noreply.github.com
+
 [includeIf "gitdir:~/GitHub/"]
   	path = .gitconfig-github
+
 [includeIf "gitdir:~/Code/"]
   	path = .gitconfig-github
+
 [includeIf "gitdir:~/Printi/"]
   	path = .gitconfig-printi
+
 [includeIf "gitdir:~/Obsidian/"]
   	path = .gitconfig-codeberg
+
 [push]
 	default = current
+
 [alias]
 	l = "log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 	st = status
@@ -33,5 +45,6 @@
 	git = !git
   unstage = restore --staged . 
   adp = add -p
+
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
