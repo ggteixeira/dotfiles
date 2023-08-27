@@ -2,8 +2,9 @@
 	editor = nvim
 [gpg]
 	program = gpg
+	format = ssh
 [commit]
-	gpgSign = false
+	gpgsign = true
 [tag]
 	forceSignAnnotated = false
 [pull]
@@ -11,15 +12,17 @@
 [init]
 	defaultBranch = main
 [user]
-    name = Guilherme Teixeira 
-    email = 24235344+vibraniumdev@users.noreply.github.com
-    username = vibraniumdev 
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrurYK1VSKbE9WqpW5xSpmTXg1mRf6GwpBOK6DB9Lk+
+	name = ggteixeira
+  email = 24235344+ggteixeira@users.noreply.github.com
 [includeIf "gitdir:~/GitHub/"]
   	path = .gitconfig-github
 [includeIf "gitdir:~/Code/"]
   	path = .gitconfig-github
 [includeIf "gitdir:~/Printi/"]
   	path = .gitconfig-printi
+[includeIf "gitdir:~/Obsidian/"]
+  	path = .gitconfig-codeberg
 [push]
 	default = current
 [alias]
@@ -30,3 +33,5 @@
 	git = !git
   unstage = restore --staged . 
   adp = add -p
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
