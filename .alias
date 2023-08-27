@@ -79,6 +79,9 @@ alias gtpoly='cd ~/.dotfiles/polybar && vim config.ini'
 alias gotouserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
 alias gtuserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
 
+alias gotovault='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/'
+
+
 ## OTHER MOVEMENTS
 alias zshrc='nvim ~/.zshrc'
 
