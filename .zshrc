@@ -107,3 +107,6 @@ eval "$(pyenv init -)"
 ### Starship call
 eval "$(starship init zsh)"
 
+
+### Broot settings
+source /Users/gui/.config/broot/launcher/bash/br

@@ -121,3 +121,9 @@ alias c=clear
 
 ### sourcing zsh:
 alias s='source ~/.zshrc'
+
+### MODERN LINUX
+alias cat='bat'
+alias df='duf'
+alias tree='broot'
+alias ping='gping'
