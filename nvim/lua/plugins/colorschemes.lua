@@ -41,19 +41,22 @@ return {
   },
   {
     "olivercederborg/poimandres.nvim",
-    opts = {
-      bold_vert_split = true, -- use bold vertical separators
-      dim_nc_background = true, -- dim 'non-current' window backgrounds
-      disable_background = false, -- disable background
-      disable_float_background = true, -- disable background for floats
-      disable_italics = false, -- disable italics
-    },
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("poimandres").setup({
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
+      })
+    end,
   },
-
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      -- colorscheme = "catppuccin-mocha",
+      -- colorscheme = "rose-pine-main",
+      colorscheme = "poimandres",
       -- colorscheme = "catppuccin-macchiato",
       -- colorscheme = "gruvbox",
       -- colorscheme = "everforest",
