@@ -3,6 +3,7 @@ return {
   { "sainnhe/everforest" },
   { "Mofiqul/dracula.nvim" },
   { "ellisonleao/gruvbox.nvim" },
+  { "rose-pine/neovim", name = "rose-pine" },
   {
     "catppuccin/nvim",
     name = "catppuccin",
