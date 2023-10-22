@@ -56,8 +56,8 @@ return {
     opts = {
       -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "rose-pine-main",
-      colorscheme = "poimandres",
-      -- colorscheme = "catppuccin-macchiato",
+      -- colorscheme = "poimandres",
+      colorscheme = "catppuccin-macchiato",
       -- colorscheme = "gruvbox",
       -- colorscheme = "everforest",
       -- colorscheme = "dracula",
