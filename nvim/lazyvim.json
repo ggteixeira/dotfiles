@@ -1,6 +1,7 @@
 {
   "extras": [
-
+    "lazyvim.plugins.extras.formatting.prettier",
+    "lazyvim.plugins.extras.ui.mini-animate"
   ],
   "news": {
     "NEWS.md": "2123"

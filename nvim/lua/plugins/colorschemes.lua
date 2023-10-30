@@ -50,13 +50,18 @@ return {
         -- for configuration options
       })
     end,
+
+    -- optionally set the colorscheme within lazy config
+    init = function()
+      vim.cmd("colorscheme poimandres")
+    end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-mocha",
+      -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "rose-pine-main",
-      -- colorscheme = "poimandres",
+      colorscheme = "poimandres",
       -- colorscheme = "catppuccin-macchiato",
       -- colorscheme = "gruvbox",
       -- colorscheme = "everforest",
