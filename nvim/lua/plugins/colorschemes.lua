@@ -45,7 +45,7 @@ return {
     priority = 1000,
     config = function()
       require("poimandres").setup({
-        bold_vert_split = false, -- use bold vertical separators
+        bold_vert_split = true, -- use bold vertical separators
         dim_nc_background = false, -- dim 'non-current' window backgrounds
         disable_background = false, -- disable background
         disable_float_background = false, -- disable background for floats
