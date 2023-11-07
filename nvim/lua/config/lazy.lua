@@ -34,6 +34,7 @@ require("lazy").setup({
       "everforest",
       "dracula",
       "gruvbox",
+      "catppuccin",
       "catppuccin-latte",
       "catppuccin-frappe",
       "catppuccin-macchiato",

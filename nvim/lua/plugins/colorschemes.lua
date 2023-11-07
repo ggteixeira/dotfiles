@@ -61,12 +61,14 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin-mocha",
-      colorscheme = "rose-pine-moon",
+      colorscheme = "catppuccin-mocha",
+      -- colorscheme = "catppuccin-macchiato",
+      -- colorscheme = "catppuccin-frappe",
+      -- colorscheme = "catppuccin-latte",
+      -- colorscheme = "rose-pine-moon",
       -- colorscheme = "rose-pine-main",
       -- colorscheme = "rose-pine-dawn", -- light version
       -- colorscheme = "poimandres",
-      -- colorscheme = "catppuccin-macchiato",
       -- colorscheme = "gruvbox",
       -- colorscheme = "everforest",
       -- colorscheme = "dracula",
