@@ -110,3 +110,6 @@ eval "$(starship init zsh)"
 
 ### Broot settings
 source /Users/gui/.config/broot/launcher/bash/br
+
+### set/gsed PATH:
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
