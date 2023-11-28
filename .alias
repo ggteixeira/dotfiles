@@ -29,6 +29,7 @@ alias updateall='\
   \flatpak update -y'
 
 alias please='sudo'
+alias godmode='sudo su'
 alias dedoff='shutdown now'
 # alias rm='rm -I'
 # alias htop='vtop'
