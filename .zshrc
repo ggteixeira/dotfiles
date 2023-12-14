@@ -25,8 +25,7 @@ fi
 ### THEMES
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# ### New NVM 
-
+### New NVM 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -57,8 +56,6 @@ if [[ -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
     source ~/.oh-my-zsh/oh-my-zsh.sh
 fi
 
-### SOURCING POWERLEVEL10K
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ### ZSH-AUTOSUGGESTIONS settings
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -81,10 +78,8 @@ if type rg &> /dev/null; then
     export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-
 ### VI-MODE Settings
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
-
 
 ### NVIM Color Settings
 COLORTERM="truecolor"
@@ -96,20 +91,17 @@ export PATH="$HOME/.cargo/bin:$PATH"
 ### Making firma's scripts available system-wide 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# z
-. /opt/homebrew/etc/profile.d/z.sh
-
 ### Pyenv settings
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-### Starship call
-eval "$(starship init zsh)"
-
-
 ### Broot settings
-source /Users/gui/.config/broot/launcher/bash/br
+# source /home/gui/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
 
 ### set/gsed PATH:
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+
+### Starship call
+eval "$(starship init zsh)"
