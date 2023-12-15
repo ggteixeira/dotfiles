@@ -6,8 +6,8 @@ alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
 alias macupdate='brew update; brew upgrade; brew cleanup; brew doctor; omz update'
-alias fedoraupdate='sudo dnf update; omz update; nvim --headless +Lazy! sync +qa'
-alias updateall='\
+alias fedoraupdate='sudo dnf update -y; sudo dnf autoremove; sudo snap refresh; sudo flatpak update -y; omz update; nvim --headless +Lazy! sync +qa'
+alias debianupdate='\
   \echo "UPDATE #####################################################" && 
   \sudo apt update -y && 
 
