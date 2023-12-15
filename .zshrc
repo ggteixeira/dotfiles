@@ -6,14 +6,10 @@
 #   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 # }
 
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
-
+# Export Oh my zsh
 export ZSH="$HOME/.oh-my-zsh"
 
-# Sets Neovim as default editor
+### Sets Neovim as default editor
 export EDITOR="nvim"
 
 
@@ -22,21 +18,10 @@ if [[ -f ~/.alias ]]; then
     source ~/.alias
 fi
 
-### THEMES
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-
 ### New NVM 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# # Make binaries accessible:
-# export PATH="$NVM_DIR/versions/node/v12.14.1/bin:$PATH"
-#
-# DEFAULT_NODE_VER='$((cat "$NVM_DIR/alias/default" || cat ~/.nvmrc) 2> /dev/null)'
-#
-# # This resolves the path to the default node version
-# DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
 
 ### nvm lazy mode
 zstyle ':omz:plugins:nvm' lazy yes
@@ -56,18 +41,19 @@ if [[ -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
     source ~/.oh-my-zsh/oh-my-zsh.sh
 fi
 
-
 ### ZSH-AUTOSUGGESTIONS settings
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
   bindkey '^H' backward-kill-word
 fi
 
+### Suggestions colors
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c6c6c,bold,underline"
 
-bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
+### Accept suggestion with ctrl+space
+bindkey '^ ' autosuggest-accept 
 
-## Makes autosuggest-accept and zsh-vi-mode compatible. Source: https://github.com/jeffreytse/zsh-vi-mode/issues/57#issuecomment-799364881
+### Makes autosuggest-accept and zsh-vi-mode compatible. Source: https://github.com/jeffreytse/zsh-vi-mode/issues/57#issuecomment-799364881
 function zvm_after_init() {
     zvm_bindkey viins '^@' autosuggest-accept
 }
@@ -84,10 +70,6 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 ### NVIM Color Settings
 COLORTERM="truecolor"
 
-### Lunarvim Settings
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-
 ### Making firma's scripts available system-wide 
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -97,11 +79,10 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 ### Broot settings
-# source /home/gui/.config/broot/launcher/bash/br
 source $HOME/.config/broot/launcher/bash/br
 
 ### set/gsed PATH:
-PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 ### Starship call
 eval "$(starship init zsh)"
