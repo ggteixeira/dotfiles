@@ -1,13 +1,14 @@
 [user]
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrurYK1VSKbE9WqpW5xSpmTXg1mRf6GwpBOK6DB9Lk+
-	name = ggteixeira
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNafoI4aSXBavAGZ+LPy+K492PHoWIMlBccviLBZ2c5
+  name = Guilherme Teixeira
+	username = ggteixeira
   email = 24235344+ggteixeira@users.noreply.github.com
 
 [gpg]
   format = ssh
 
-[gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+; [gpg "ssh"]
+;  program = "/opt/1Password/op-ssh-sign"
 
 [commit]
   gpgsign = true
