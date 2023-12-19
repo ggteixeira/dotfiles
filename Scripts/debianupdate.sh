@@ -17,4 +17,4 @@ sudo snap refresh
 echo -e "\nUpdate Flatpak" 
 flatpak update -y'
 
-echo "oibebe 4"
+echo "oibebe 5"
