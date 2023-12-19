@@ -6,30 +6,8 @@ alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
 alias macupdate='brew update; brew upgrade; brew cleanup; brew doctor; omz update'
-# alias fedoraupdate='sudo dnf update -y; sudo dnf autoremove -y; sudo snap refresh; sudo flatpak update -y; omz update; nvim --headless "+Lazy! sync" +qa'
 alias fedoraupdate=$HOME/Scripts/fedoraupdate.sh
-alias debianupdate='\
-  \echo "UPDATE #####################################################" && 
-  \sudo apt update -y && 
-
-  \echo "UPGRADE #####################################################" && 
-  \sudo apt upgrade -y && 
-
-  \echo "AUTOREMOVE #####################################################" && 
-  \sudo apt autoremove -y && 
-
-  \echo "AUTOCLEAN #####################################################" && 
-  \sudo apt autoclean -y && 
-
-  \echo "CLEAN #####################################################" && 
-  \sudo apt clean -y && 
-
-  \echo "SNAP REFRESH #####################################################" && 
-  \sudo snap refresh && 
-
-  \echo "FLATPAK UPDATE #####################################################" && 
-  \flatpak update -y'
-
+alias debianupdate=$HOME/Scripts/debianupdate.sh
 alias please='sudo'
 alias godmode='sudo su'
 alias dedoff='shutdown now'
