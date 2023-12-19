@@ -19,7 +19,8 @@
 
 [user]
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrurYK1VSKbE9WqpW5xSpmTXg1mRf6GwpBOK6DB9Lk+
-	name = ggteixeira
+  username = ggteixeira
+	name = Guilherme Teixeira
   email = 24235344+ggteixeira@users.noreply.github.com
 
 [includeIf "gitdir:~/GitHub/"]
