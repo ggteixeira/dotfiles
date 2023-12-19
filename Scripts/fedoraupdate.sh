@@ -17,5 +17,3 @@ $ZSH/tools/upgrade.sh
 
 echo -e "\nUpdating Neovim"
 nvim --headless "+Lazy! sync" +qa
-
-echo -e "\nComplete!"
