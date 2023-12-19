@@ -18,7 +18,7 @@
 	defaultBranch = main
 
 [user]
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrurYK1VSKbE9WqpW5xSpmTXg1mRf6GwpBOK6DB9Lk+
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNafoI4aSXBavAGZ+LPy+K492PHoWIMlBccviLBZ2c5
   username = ggteixeira
 	name = Guilherme Teixeira
   email = 24235344+ggteixeira@users.noreply.github.com
