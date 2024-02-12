@@ -32,8 +32,8 @@
 [includeIf "gitdir:~/Printi/"]
   	path = .gitconfig-printi
 
-[includeIf "gitdir:~/Obsidian/"]
-  	path = .gitconfig-codeberg
+[includeIf "gitdir:~/Code/"]
+  	path = .gitconfig-github
 
 [push]
 	default = current
