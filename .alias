@@ -5,9 +5,9 @@ alias lh='ls -ld .?*' # only show hidden files
 alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
-alias macupdate='brew update; brew upgrade; brew cleanup; brew doctor; omz update'
-alias fedoraupdate=$HOME/Scripts/fedoraupdate.sh
-alias debianupdate=$HOME/Scripts/debianupdate.sh
+alias fedoraupdate=$HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
+alias debianupdate=$HOME/Code/GitHub/scripts/shell/debianupdate.sh
+alias macupdate=$HOME/Code/GitHub/scripts/shell/macupdate.sh
 alias please='sudo'
 alias godmode='sudo su'
 alias dedoff='shutdown now'
@@ -76,8 +76,8 @@ xevv(){
 }
 
 alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clip'
+# alias pbcopy='xclip -selection clipboard'
+# alias pbpaste='xclip -selection clip'
 alias cpbranch='git branch --show-current | pbcopy && echo "✨ done copying branch:" && pbpaste'
 alias js='node'
 
