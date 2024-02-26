@@ -66,12 +66,13 @@ return {
       -- colorscheme = "catppuccin-frappe",
       -- colorscheme = "catppuccin-latte",
       -- colorscheme = "rose-pine-moon",
-      colorscheme = "rose-pine-main",
+      -- colorscheme = "rose-pine-main",
       -- colorscheme = "rose-pine-dawn", -- light version
       -- colorscheme = "poimandres",
-      -- colorscheme = "gruvbox",
+      colorscheme = "gruvbox",
       -- colorscheme = "everforest",
       -- colorscheme = "dracula",
+      -- colorscheme = "onenord",
     },
   },
 }
