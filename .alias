@@ -5,9 +5,17 @@ alias lh='ls -ld .?*' # only show hidden files
 alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
-alias fedoraupdate=$HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
-alias debianupdate=$HOME/Code/GitHub/scripts/shell/debianupdate.sh
-alias macupdate=$HOME/Code/GitHub/scripts/shell/macupdate.sh
+
+conditional_update() {
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    $HOME/Code/GitHub/scripts/shell/macupdate.sh
+  else 
+    $HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
+fi
+}
+
+alias update=conditional_update
+
 alias please='sudo'
 alias godmode='sudo su'
 alias dedoff='shutdown now'
