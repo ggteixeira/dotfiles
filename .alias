@@ -9,10 +9,13 @@ alias weather='curl http://wttr.in/'
 conditional_update() {
   if [[ "$OSTYPE" == "darwin"* ]]; then
     $HOME/Code/GitHub/scripts/shell/macupdate.sh
-  else 
+  elif [ $(lsb_release -is) = "Fedora" ]; then
     $HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
+  else 
+    echo "Distro not covered by the update script!"
 fi
 }
+
 
 alias update=conditional_update
 
@@ -24,6 +27,13 @@ alias dedoff='shutdown now'
 
 # Solving problems
 alias cleancalendar='pkill -f calendar && sudo rm -rf ~/{.local/share,.cache}/evolution/calendar/ && gnome-calendar &'
+
+# if [[ "$OSTYPE" == "darwin"* ]]; 
+# then 
+#   echo "Darwin"
+# else
+#   echo "linux"
+# fi
 
 ### GIT
 alias g='git'
