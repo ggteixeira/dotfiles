@@ -1,3 +1,14 @@
+### macOS Specific
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias update=$HOME/Code/GitHub/scripts/shell/macupdate.sh
+  alias gotouserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
+  alias gtuserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
+  alias flushdnsmac='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
+  alias night="nightlight"
+  alias gotovault='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/'
+fi
+
+
 ### GENERAL
 alias rm=trash
 alias li='ls -l'
@@ -6,18 +17,18 @@ alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
 
-conditional_update() {
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    $HOME/Code/GitHub/scripts/shell/macupdate.sh
-  elif [ $(lsb_release -is) = "Fedora" ]; then
-    $HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
-  else 
-    echo "Distro not covered by the update script!"
-fi
-}
+# conditional_update() {
+#   if [[ "$OSTYPE" == "darwin"* ]]; then
+#     $HOME/Code/GitHub/scripts/shell/macupdate.sh
+#   elif [ $(lsb_release -is) = "Fedora" ]; then
+#     $HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
+#   else 
+#     echo "Distro not covered by the update script!"
+# fi
+# }
 
+# alias update=conditional_update
 
-alias update=conditional_update
 
 alias please='sudo'
 alias godmode='sudo su'
@@ -67,18 +78,12 @@ alias process='git-lfs filter-process'
 ### MOVEMENT
 # alias gotovimcolors='cd /usr/share/vim/vim*/colors'
 # alias gtvimcolors='cd /usr/share/vim/vim*/colors'
-alias startomega='z omega && nvm use omega && npm run hmg'
-alias gotoomega='z omega && nvm use omega && nvim'
-# alias gotoomega='cd ~/Printi/omega-frontend-v3 && nvm use omega'
 alias gotoalias='nvim ~/.alias'
 
 alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
 alias gtpoly='cd ~/.dotfiles/polybar && vim config.ini'
 
-alias gotouserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
-alias gtuserchrome='cd $HOME/Library/Application\ Support/Firefox/Profiles/h7l6bngt.default-release/chrome'
 
-alias gotovault='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/'
 
 
 ## OTHER MOVEMENTS
@@ -106,9 +111,6 @@ alias pip='pip3'
 ### RUBY aliases
 alias beijos='bundle exec jekyll serve'
 
-### macOS aliases
-alias flushdnsmac='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
-alias night="nightlight"
 
 ### Creating and entering directories
 function take {
