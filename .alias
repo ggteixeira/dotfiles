@@ -17,16 +17,6 @@ alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
 
-# conditional_update() {
-#   if [[ "$OSTYPE" == "darwin"* ]]; then
-#     $HOME/Code/GitHub/scripts/shell/macupdate.sh
-#   elif [ $(lsb_release -is) = "Fedora" ]; then
-#     $HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
-#   else 
-#     echo "Distro not covered by the update script!"
-# fi
-# }
-
 # alias update=conditional_update
 
 
