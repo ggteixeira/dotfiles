@@ -6,8 +6,27 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias flushdnsmac='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
   alias night="nightlight"
   alias gotovault='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/'
+
+  ### GIT
+  alias gp='git branch --show-current | pbcopy && git push origin $(pbpaste)'
 fi
 
+if [[ "$OSTYPE" == "gnu-linux"* ]]; then
+  alias update=$HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
+  alias cleancalendar='pkill -f calendar && sudo rm -rf ~/{.local/share,.cache}/evolution/calendar/ && gnome-calendar &'
+
+  ### GIT
+  alias gp='git branch --show-current | xclip -selection clipboard && git push origin $(xclip -selection clipboard -o)'
+
+  ### MOVEMENT
+  alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
+  alias gtpoly='cd ~/.dotfiles/polybar && vim config.ini'
+
+  # xevv 
+  xevv(){
+    xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+  }
+fi 
 
 ### GENERAL
 alias rm=trash
