@@ -17,24 +17,10 @@ alias -s md=typora  # Markdown files
 alias ld="ls -ld */"   # List in long format, only directories
 alias weather='curl http://wttr.in/'
 
-# alias update=conditional_update
-
-
 alias please='sudo'
 alias godmode='sudo su'
 alias dedoff='shutdown now'
-# alias rm='rm -I'
-# alias htop='vtop'
-
-# Solving problems
-alias cleancalendar='pkill -f calendar && sudo rm -rf ~/{.local/share,.cache}/evolution/calendar/ && gnome-calendar &'
-
-# if [[ "$OSTYPE" == "darwin"* ]]; 
-# then 
-#   echo "Darwin"
-# else
-#   echo "linux"
-# fi
+alias htop='btop'
 
 ### GIT
 alias g='git'
@@ -53,8 +39,7 @@ alias glgg='git log --graph'
 alias glgga='git log --graph --decorate --all'
 alias glgm='git log --graph --max-count=10'
 alias glog='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
-alias gp='git branch --show-current | xclip -selection clipboard && git push origin $(xclip -selection clipboard -o)'
-# alias gp='git branch --show-current | pbcopy && git push origin $(pbpaste)'
+
 alias gpom='git push origin main'
 alias gpoma='git push origin master'
 alias grmc='git rm --cached'
@@ -64,29 +49,14 @@ alias clean='git-lfs clean -- %f'
 alias smudge='git-lfs smudge -- %f'
 alias process='git-lfs filter-process'
 
-
 ### MOVEMENT
-# alias gotovimcolors='cd /usr/share/vim/vim*/colors'
-# alias gtvimcolors='cd /usr/share/vim/vim*/colors'
 alias gotoalias='nvim ~/.alias'
-
-alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
-alias gtpoly='cd ~/.dotfiles/polybar && vim config.ini'
-
-
-
 
 ## OTHER MOVEMENTS
 alias zshrc='nvim ~/.zshrc'
 
 ### REPLACEMENT 
-# alias vim='nvim'
-alias v='nvim'
 
-# xevv 
-xevv(){
-  xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-}
 
 alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
 # alias pbcopy='xclip -selection clipboard'
