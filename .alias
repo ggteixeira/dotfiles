@@ -22,6 +22,12 @@ if [[ "$OSTYPE" == "gnu-linux"* ]]; then
   alias gotopoly='cd ~/.dotfiles/polybar && vim config.ini'
   alias gtpoly='cd ~/.dotfiles/polybar && vim config.ini'
 
+  ### Arch Linux
+  alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
+
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clip'
+
   # xevv 
   xevv(){
     xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
@@ -74,12 +80,6 @@ alias gotoalias='nvim ~/.alias'
 ## OTHER MOVEMENTS
 alias zshrc='nvim ~/.zshrc'
 
-### REPLACEMENT 
-
-
-alias pacautoremove='pacman -Qdtq | sudo pacman -Rs -'
-# alias pbcopy='xclip -selection clipboard'
-# alias pbpaste='xclip -selection clip'
 alias cpbranch='git branch --show-current | pbcopy && echo "✨ done copying branch:" && pbpaste'
 alias js='node'
 
@@ -89,7 +89,6 @@ alias pip='pip3'
 
 ### RUBY aliases
 alias beijos='bundle exec jekyll serve'
-
 
 ### Creating and entering directories
 function take {
