@@ -11,8 +11,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias gp='git branch --show-current | pbcopy && git push origin $(pbpaste)'
 fi
 
-if [[ "$OSTYPE" == "gnu-linux"* ]]; then
-  alias update=$HOME/Code/GitHub/scripts/shell/fedoraupdate.sh
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  alias update=$HOME/Scripts/shell/fedoraupdate.sh
   alias cleancalendar='pkill -f calendar && sudo rm -rf ~/{.local/share,.cache}/evolution/calendar/ && gnome-calendar &'
 
   ### GIT
