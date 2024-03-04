@@ -13,4 +13,4 @@ echo -e "Brew doctor"
 brew doctor
 
 echo -e "OMZ update"
-omz update
+$ZSH/tools/upgrade.sh
