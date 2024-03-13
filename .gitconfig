@@ -1,12 +1,21 @@
-[core]
-	editor = nvim
+
+[user]
+  username = ggteixeira
+	name = Guilherme Teixeira
+  email = 24235344+ggteixeira@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB892dK7h4zJLKpcXMTJ3QreOW2zOpZ/3xC5tXqU9Umt
 
 [gpg]
-	program = gpg
-	format = ssh
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [commit]
-	gpgsign = true
+  gpgsign = true
+
+[core]
+	editor = nvim
 
 [tag]
 	forceSignAnnotated = false
@@ -16,12 +25,6 @@
 
 [init]
 	defaultBranch = main
-
-[user]
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC90FUy30LfAm5CA2bd22htCLRErYQP5cklT/dmht6Kn
-  username = ggteixeira
-	name = Guilherme Teixeira
-  email = 24235344+ggteixeira@users.noreply.github.com
 
 [push]
 	default = current
@@ -34,9 +37,6 @@
 	git = !git
   unstage = restore --staged . 
   adp = add -p
-
-[gpg]
-	program = gpg 
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
