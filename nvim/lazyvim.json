@@ -1,10 +1,11 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.linting.eslint",
     "lazyvim.plugins.extras.ui.mini-animate"
   ],
   "news": {
     "NEWS.md": "2123"
   },
-  "version": 2
+  "version": 3
 }
