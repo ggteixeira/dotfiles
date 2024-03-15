@@ -86,3 +86,6 @@ export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 ### Starship call
 eval "$(starship init zsh)"
+
+### KITTY env var
+KITTY_CONFIG_DIRECTORY="$HOME/.config/kitty/"
