@@ -79,6 +79,7 @@ alias gotoalias='nvim ~/.alias'
 
 ## OTHER MOVEMENTS
 alias zshrc='nvim ~/.zshrc'
+alias kittyrc='nvim ~/.config/kitty/kitty.conf'
 
 alias cpbranch='git branch --show-current | pbcopy && echo "✨ done copying branch:" && pbpaste'
 alias js='node'
