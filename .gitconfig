@@ -1,3 +1,5 @@
+[include]
+  path = ~/.gitconfig-os-specific
 
 [user]
   username = ggteixeira
@@ -8,8 +10,8 @@
 [gpg]
   format = ssh
 
-[gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+; [gpg "ssh"]
+;   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [commit]
   gpgsign = true
