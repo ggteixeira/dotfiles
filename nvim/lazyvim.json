@@ -1,8 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.lang.typescript",
-    "lazyvim.plugins.extras.linting.eslint",
-    "lazyvim.plugins.extras.ui.mini-animate"
+    "lazyvim.plugins.extras.linting.eslint"
   ],
   "news": {
     "NEWS.md": "2123"

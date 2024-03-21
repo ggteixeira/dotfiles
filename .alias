@@ -76,6 +76,7 @@ alias clean='git-lfs clean -- %f'
 
 ### MOVEMENT
 alias gotoalias='nvim ~/.alias'
+alias gotostarship='nvim ~/.config/starship.toml'
 
 ## OTHER MOVEMENTS
 alias zshrc='nvim ~/.zshrc'
