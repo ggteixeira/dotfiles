@@ -18,3 +18,18 @@ vim.keymap.set("n", "<C-S-Left>", ":vertical resize -2 <CR>", { silent = true })
 
 -- Enter Normal Mode quickly
 vim.keymap.set("i", "jk", "<escape>")
+
+-- Send the yanked text with 'x' to the Shadow Realm
+vim.keymap.set("n", "x", '"_x"')
+
+-- Select all lines
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
+-- Select line (like in VSCode)
+vim.keymap.set("n", "<C-l>", "v0o$")
+vim.keymap.set("i", "<C-l>", "<escape>v0o$i")
+
+-- Move lines using shift+up/down
+
+vim.keymap.set("n", "<C-S-Up>", "ddP")
+vim.keymap.set("n", "<C-S-Down>", "ddp")
