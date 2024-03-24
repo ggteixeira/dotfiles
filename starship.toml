@@ -1,3 +1,4 @@
+
 format = """
 $username\
 $hostname\
@@ -39,6 +40,8 @@ symbol = " "
 format = "[$symbol$branch]($style) "
 style = "bold bright-green"
 
+command_timeout = 1000
+
 [jobs]
 symbol = ""
 style = "bold red"
@@ -49,12 +52,18 @@ format = "[$symbol]($style)"
 format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "cyan"
 
+command_timeout = 1000
+
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
+command_timeout = 1000
+
 [git_metrics]
 disabled = false
+
+command_timeout = 1000
 
 [cmd_duration]
 format = "[$duration]($style)"
