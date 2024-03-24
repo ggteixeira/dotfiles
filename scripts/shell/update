@@ -1,0 +1,39 @@
+#!/bin/zsh
+
+# MACOS
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo -e "Brew update"
+  brew update
+
+  echo -e "Brew upgrade"
+  brew upgrade
+
+  echo -e "Brew cleanup"
+  brew cleanup
+
+  echo -e "Brew doctor"
+  brew doctor
+
+  echo -e "OMZ update"
+  $ZSH/tools/upgrade.sh
+
+# FEDORA
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  echo -e "Updating Fedora (DNF)"
+  sudo dnf update -y
+
+  echo -e "\nCleaning Fedora (DNF)"
+  sudo dnf autoremove -y
+
+  echo -e "\nUpdating Snap"
+  sudo snap refresh
+
+  echo -e "\nUpdating Flatpak"
+  sudo flatpak update
+
+  echo -e "\nUpdating Oh-My-ZSH"
+  $ZSH/tools/upgrade.sh
+
+  echo -e "\nUpdating Neovim"
+  nvim --headless "+Lazy! sync" +qa
+fi
