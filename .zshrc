@@ -73,6 +73,9 @@ COLORTERM="truecolor"
 ### Making firma's scripts available system-wide 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+### Add my local scripts folder to PATH
+export PATH="$HOME/Code/scripts/shell:$PATH"
+
 ### Pyenv settings
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
