@@ -9,3 +9,4 @@
 nvim/session/
 kitty/kitty-os-specific.conf
 .gitconfig-os-specific
+nvim/lazy-lock.json
