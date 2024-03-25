@@ -1,3 +1,5 @@
+command_timeout = 1000
+
 format = """
 $username\
 $hostname\
