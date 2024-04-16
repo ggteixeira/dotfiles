@@ -20,7 +20,7 @@ vim.keymap.set("n", "<C-S-Left>", ":vertical resize -2 <CR>", { silent = true })
 vim.keymap.set("i", "jk", "<escape>")
 
 -- Send the yanked text with 'x' to the Shadow Realm
-vim.keymap.set("n", "x", '"_x"')
+-- vim.keymap.set("n", "x", '"_x"')
 
 -- Select all lines
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
