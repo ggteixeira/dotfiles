@@ -23,7 +23,7 @@ vim.keymap.set("i", "jk", "<escape>")
 -- vim.keymap.set("n", "x", '"_x"')
 
 -- Select all lines
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+-- vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- -- Select line (like in VSCode)
 -- vim.keymap.set("n", "<C-S-l>", "v0o$")
