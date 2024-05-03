@@ -46,6 +46,9 @@ alias godmode='sudo su'
 alias dedoff='shutdown now'
 alias htop='btop'
 
+### Replacements
+alias neofetch='fastfetch'
+
 ### GIT
 alias g='git'
 alias st='status'
