@@ -19,8 +19,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 # FEDORA
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  echo -e "Updating Fedora (DNF)"
   sudo dnf update -y
+  echo -e "Updating Fedora (DNF)"
 
   echo -e "\nCleaning Fedora (DNF)"
   sudo dnf autoremove -y
