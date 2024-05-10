@@ -3,4 +3,4 @@
 -- Add any additional autocmds here
 
 -- It kinda works to hide the tildes when using Pomaindres theme:
-vim.opt.fillchars:append({ eob = " " })
+-- vim.opt.fillchars:append({ eob = " " })
