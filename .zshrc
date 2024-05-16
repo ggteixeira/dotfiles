@@ -26,6 +26,9 @@ export NVM_DIR="$HOME/.nvm"
 ### nvm lazy mode
 zstyle ':omz:plugins:nvm' lazy yes
 
+### makes completion case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 ### PLUGINS
 plugins=(
     nvm
