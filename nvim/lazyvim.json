@@ -1,0 +1,9 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.ui.mini-animate"
+  ],
+  "news": {
+    "NEWS.md": "4828"
+  },
+  "version": 3
+}
