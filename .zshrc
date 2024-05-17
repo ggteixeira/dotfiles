@@ -35,7 +35,6 @@ plugins=(
     zsh-autosuggestions
     zsh-vi-mode
     zsh-syntax-highlighting
-    z 
 )
 
 ### SOURCING OH MY ZSH
@@ -95,3 +94,6 @@ eval "$(starship init zsh)"
 
 ### KITTY env var
 KITTY_CONFIG_DIRECTORY="$HOME/.config/kitty/"
+
+### Zoxide
+eval "$(zoxide init zsh)"
