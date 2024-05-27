@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
+
 ### Loading Performance Tool
 # zmodload zsh/zprof
 #
@@ -106,7 +110,9 @@ eval "$(zoxide init zsh)"
 # eval "$(starship init zsh)"
 
 ### Powerlevel10k
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
