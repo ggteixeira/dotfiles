@@ -5,6 +5,7 @@ return {
   { "ellisonleao/gruvbox.nvim" },
   { "rose-pine/neovim", name = "rose-pine" },
   { "catppuccin/nvim", name = "catppuccin" },
+  { "Mofiqul/dracula.nvim" },
   {
     "olivercederborg/poimandres.nvim",
     lazy = false,
@@ -36,6 +37,7 @@ return {
       -- colorscheme = "rose-pine-dawn", -- light version
       -- colorscheme = "poimandres",
       colorscheme = "gruvbox",
+      -- colorscheme = "dracula",
       -- colorscheme = "everforest",
       -- colorscheme = "dracula",
       -- colorscheme = "onenord",
