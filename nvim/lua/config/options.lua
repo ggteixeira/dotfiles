@@ -6,4 +6,5 @@
 vim.opt.timeoutlen = 200
 vim.opt.swapfile = false
 vim.opt.linebreak = true -- Wrap lines at convenient points
-vim.opt.wrap = true -- Disable line wrap
+-- vim.opt.wrap = true -- Disable line wrap
+vim.g.autoformat = false -- Disables autoformatting on save (:w*)

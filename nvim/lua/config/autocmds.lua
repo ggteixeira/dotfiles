@@ -15,3 +15,11 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = false
   end,
 })
+
+-- -- Disable autoformat for certain files
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "js", "jsx", "vue", "ts" },
+--   callback = function()
+--     vim.b.autoformat = false
+--   end,
+-- })
