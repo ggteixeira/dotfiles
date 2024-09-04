@@ -5,7 +5,7 @@
   username = ggteixeira
 	name = "Guilherme Teixeira"
   email = 24235344+ggteixeira@users.noreply.github.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB892dK7h4zJLKpcXMTJ3QreOW2zOpZ/3xC5tXqU9Umt
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKnBhdzLmWhn2Gnm+9ANYw/yr3KWaQGxLcagA3aesrEE 
 
 [gpg]
   format = ssh
