@@ -6,6 +6,10 @@
 vim.keymap.set("n", ";", ":")
 vim.keymap.set("v", ";", ":")
 
+-- Do the opposite to achieve the repeat functionality?
+vim.keymap.set("n", ":", ";")
+vim.keymap.set("v", ":", ";")
+
 -- Use ctrl+n to toggle tree:
 vim.keymap.set("n", "<C-n>", ":Neotree toggle <CR>", { silent = true })
 
