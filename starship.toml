@@ -27,6 +27,7 @@ symbol = " "
 
 [directory]
 style = "bold blue"
+home_symbol = "~"
 read_only = " "
 truncation_length = 4
 truncate_to_repo = false
