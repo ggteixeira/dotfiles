@@ -84,6 +84,8 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 ### NVIM Color Settings
 COLORTERM="truecolor"
 
+export PATH=$HOME/.local/bin:$PATH
+
 ### Making firma's scripts available system-wide 
 export PATH="$HOME/.cargo/bin:$PATH"
 

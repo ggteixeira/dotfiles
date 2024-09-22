@@ -13,6 +13,14 @@ return {
     local keys = {
 
       {
+        "<leader>hr",
+        function()
+          require("harpoon"):list():clear()
+        end,
+        desc = "Prev harpoon",
+      },
+
+      {
         "<leader>hx",
         function()
           require("harpoon"):list():prev()
