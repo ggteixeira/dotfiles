@@ -3,7 +3,8 @@ return {
   { "sainnhe/everforest" },
   { "rose-pine/neovim", name = "rose-pine" },
   { "Mofiqul/dracula.nvim" },
-  { "catppuccin/nvim", lazy = true, name = "catppuccin" },
+  -- { "catppuccin/nvim", lazy = true, name = "catppuccin" },
+  { "catppuccin/nvim", lazy = false, name = "catppuccin" },
   {
     "ellisonleao/gruvbox.nvim",
     lazy = true,
