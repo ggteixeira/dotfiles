@@ -120,3 +120,11 @@ eval "$(zoxide init zsh)"
 
 ### Starship call
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/gui/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
