@@ -35,7 +35,7 @@ truncate_to_repo = false
 [character]
 success_symbol = "[λ](purple)"
 error_symbol = "[λ](red)"
-vicmd_symbol = "[λ](green)"
+vimcmd_symbol = "[λ](green)"
 
 [git_branch]
 symbol = " "
