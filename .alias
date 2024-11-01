@@ -5,6 +5,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias flushdnsmac='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
   alias night="nightlight"
   alias gotovault='cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/'
+  alias gotonvim='cd ~/.dotfiles/nvim && nvim'
 
   ### GIT
   alias gp='git branch --show-current | pbcopy && git push origin $(pbpaste)'
