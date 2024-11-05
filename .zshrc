@@ -46,6 +46,7 @@ plugins=(
     zsh-autosuggestions
     zsh-vi-mode
     zsh-syntax-highlighting
+    asdf
 )
 
 ### SOURCING OH MY ZSH
@@ -128,3 +129,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+
