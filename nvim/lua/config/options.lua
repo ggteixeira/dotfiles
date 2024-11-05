@@ -6,4 +6,4 @@ vim.opt.timeoutlen = 200 -- Timeout until the which key bar appear on <Leader> p
 vim.opt.swapfile = false
 vim.opt.linebreak = true -- Wrap lines at convenient points
 vim.opt.wrap = true -- Enable line wrap
-vim.g.autoformat = false -- Disables autoformatting on save (:w*)
+vim.g.autoformat = true -- Disables autoformatting on save (:w*)
