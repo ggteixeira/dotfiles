@@ -10,6 +10,7 @@
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.sql",
     "lazyvim.plugins.extras.lang.tailwind",
+    "lazyvim.plugins.extras.lang.tex",
     "lazyvim.plugins.extras.lang.toml",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.linting.eslint",
@@ -18,7 +19,7 @@
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
-    "NEWS.md": "6520"
+    "NEWS.md": "7107"
   },
   "version": 6
 }
