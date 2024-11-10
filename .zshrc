@@ -18,24 +18,16 @@ if [[ -f ~/.alias ]]; then
     source ~/.alias
 fi
 
-### New NVM 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-### nvm lazy mode
-zstyle ':omz:plugins:nvm' lazy yes
 
 ### makes completion case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 ### PLUGINS
 plugins=(
-    nvm
     zsh-autosuggestions
     zsh-vi-mode
     zsh-syntax-highlighting
-    asdf
 )
 
 ### SOURCING OH MY ZSH
@@ -49,10 +41,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
   bindkey '^H' backward-kill-word
 fi
-
-### Suggestions colors
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c6c6c,bold,underline"
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#cecacd,bold,underline"
 
 ### Accept suggestion with ctrl+space
 bindkey '^ ' autosuggest-accept 
@@ -104,12 +92,14 @@ eval "$(starship init zsh)"
 
 # pnpm
 export PNPM_HOME="/Users/gui/Library/pnpm"
+
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
 
+# Volta
+export PATH="$HOME/.volta/bin:$PATH"
 
 ## Calling Perfolrmance Tool
 # zprof
