@@ -99,15 +99,6 @@ KITTY_CONFIG_DIRECTORY="$HOME/.config/kitty/"
 ### Zoxide
 eval "$(zoxide init zsh)"
 
-# ### Powerlevel10k
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#   source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-# fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 ### Starship call
 eval "$(starship init zsh)"
 
