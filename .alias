@@ -43,6 +43,7 @@ alias lif="li -d */" # Lists only folders
 alias lf="ls -d */" # Lists only folders
 alias weather='curl http://wttr.in/'
 alias cleanautocomplete='rm -rf $HISTFILE'
+alias n='nvim'
 
 alias please='sudo'
 alias godmode='sudo su'
