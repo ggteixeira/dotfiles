@@ -27,7 +27,7 @@ return {
       invert_tabline = false,
       invert_intend_guides = false,
       inverse = true, -- invert background for search, diffs, statuslines and errors
-      contrast = "hard", -- can be "hard", "soft" or empty string
+      contrast = "soft", -- can be "hard", "soft" or empty string
       palette_overrides = {},
       overrides = {},
       dim_inactive = false,
@@ -37,6 +37,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
+      -- colorscheme = "tokyonight-moon",
       -- colorscheme = "catppuccin-mocha",
       -- colorscheme = "catppuccin-macchiato",
       -- colorscheme = "catppuccin-frappe",
@@ -47,7 +48,6 @@ return {
       colorscheme = "gruvbox",
       -- colorscheme = "dracula",
       -- colorscheme = "everforest",
-      -- colorscheme = "dracula",
       -- colorscheme = "onenord",
     },
   },
