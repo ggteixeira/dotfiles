@@ -1,6 +1,8 @@
 {
   "extras": [
-
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.linting.eslint"
   ],
   "install_version": 8,
   "news": {
