@@ -103,3 +103,11 @@ export PATH="$HOME/.volta/bin:$PATH"
 
 ## Calling Perfolrmance Tool
 # zprof
+
+# Netcore
+export PATH=$PATH:$HOME/.dotnet/tools
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT
+
+# dotnet
+export PATH="$HOME/.dotnet:$PATH"
