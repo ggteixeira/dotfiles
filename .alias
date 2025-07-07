@@ -53,6 +53,7 @@ alias htop='btop'
 ### Replacements
 alias neofetch='fastfetch'
 alias finder='open'
+alias nvm='volta'
 
 ### GIT
 alias g='git'
