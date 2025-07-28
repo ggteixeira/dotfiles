@@ -111,3 +111,7 @@ export PATH=$PATH:$DOTNET_ROOT
 
 # dotnet
 export PATH="$HOME/.dotnet:$PATH"
+
+# mysql
+export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
+export PATH=$PATH:/usr/local/mysql/bin
