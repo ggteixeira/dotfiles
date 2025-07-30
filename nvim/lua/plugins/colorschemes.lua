@@ -8,7 +8,12 @@ return {
   { "Mofiqul/dracula.nvim" },
 
   -- Configure LazyVim to load the chosen colorscheme
-  { "LazyVim/LazyVim", opts = {
-    colorscheme = "gruvbox",
-  } },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin-macchiato",
+      -- colorscheme = "catppuccin-frappe",
+      -- colorscheme = "catppuccin-mocha",
+    },
+  },
 }
