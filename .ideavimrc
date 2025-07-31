@@ -1,0 +1,43 @@
+set scrolloff=10
+set linenumber
+" set relativenumber
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+
+" Improve search
+
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+" Leader key
+let mapleader = " "
+
+" BUILTIN IDEAVIM PLUGINS
+
+" Highlighted Yank
+set highlightedyank
+
+" Which Key
+set which-key
+
+let g:WhichKeyDesc_display = "<leader>d Display options"
+let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
+let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
+let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
+
+" Keybindings
+map <S-h> <action>(PreviousTab)
+map <S-l> <action>(NextTab)
+
+map <C-h> <action>(PreviousSplitter)
+map <C-l> <action>(NextSplitter)
+
+map <Leader><S-\> <action>(SplitVertically)
+map <Leader><S--> <action>(SplitHorizontally)
+
+" Comment lines
+map gcc <action>(CommentByLineComment)
