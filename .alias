@@ -54,6 +54,7 @@ alias htop='btop'
 alias neofetch='fastfetch'
 alias finder='open'
 alias nvm='volta'
+alias tnode='node --experimental-transform-types'
 
 ### GIT
 alias g='git'
