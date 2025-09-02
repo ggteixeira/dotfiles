@@ -43,7 +43,6 @@ alias lif="li -d */" # Lists only folders
 alias lf="ls -d */" # Lists only folders
 alias weather='curl http://wttr.in/'
 alias cleanautocomplete='rm -rf $HISTFILE'
-alias n='nvim'
 
 alias please='sudo'
 alias godmode='sudo su'
@@ -53,7 +52,6 @@ alias htop='btop'
 ### Replacements
 alias neofetch='fastfetch'
 alias finder='open'
-alias nvm='volta'
 alias tnode='node --experimental-transform-types'
 
 ### GIT
