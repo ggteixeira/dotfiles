@@ -28,6 +28,7 @@ plugins=(
     zsh-autosuggestions
     zsh-vi-mode
     zsh-syntax-highlighting
+    asdf
 )
 
 ### SOURCING OH MY ZSH
@@ -115,3 +116,6 @@ export PATH="$HOME/.dotnet:$PATH"
 # mysql
 export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
 export PATH=$PATH:/usr/local/mysql/bin
+
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
