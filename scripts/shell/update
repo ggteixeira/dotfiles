@@ -17,6 +17,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo -e "OMZ update"
   $ZSH/tools/upgrade.sh
 
+  echo -e "PNPM update"
+  pnpm self-update
+
 # FEDORA
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   sudo dnf update -y
