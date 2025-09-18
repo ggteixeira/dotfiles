@@ -119,3 +119,13 @@ export PATH=$PATH:/usr/local/mysql/bin
 
 # asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+#### Ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Ruby (for compilers to find ruby)
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+
+# Ruby (for pkg-config to find ruby)
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
