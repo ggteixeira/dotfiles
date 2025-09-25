@@ -2,23 +2,35 @@
 
 # MACOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo -e "Brew update"
+  echo -e "Brew: update"
   brew update
 
-  echo -e "Brew upgrade"
+  echo -e "Brew: upgrade"
   brew upgrade
 
-  echo -e "Brew cleanup"
+  echo -e "Brew: cleanup"
   brew cleanup
 
-  echo -e "Brew doctor"
+  echo -e "Brew: Cleaning outdated cache files"
+  brew cleanup -s
+
+  echo -e "Brew: cleaning up old versions of packages"
+  brew cleanup --prune-prefix
+
+  echo -e "Brew: doctor"
   brew doctor
 
-  echo -e "OMZ update"
+  echo -e "OMZ: update"
   $ZSH/tools/upgrade.sh
 
-  echo -e "PNPM update"
+  echo -e "PNPM: update"
   pnpm self-update
+
+  echo -e "Yarn: cache clean"
+  yarn cache clean
+
+  # echo -e "NPM cache clean"
+  # npm cache clean --force
 
 # FEDORA
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
