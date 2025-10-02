@@ -1,11 +1,11 @@
-[include]
-  path = ~/.gitconfig-os-specific
-
 [user]
   username = ggteixeira
-	name = "Guilherme Teixeira"
+	name = Guilherme Teixeira
   email = 24235344+ggteixeira@users.noreply.github.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKnBhdzLmWhn2Gnm+9ANYw/yr3KWaQGxLcagA3aesrEE 
+  signingKey = ~/.ssh/personal
+
+[includeIf "gitdir:~/Work/"]
+  path = ~/.gitconfig-work
 
 [gpg]
   format = ssh
@@ -36,9 +36,3 @@
 	git = !git
   unstage = restore --staged
   adp = add -p
-
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
