@@ -54,6 +54,8 @@ alias htop='btop'
 alias neofetch='fastfetch'
 alias finder='open'
 alias tnode='node --experimental-transform-types'
+alias fzf="fzf --style minimal \
+    --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 
 ### GIT
 alias g='git'
