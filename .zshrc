@@ -91,9 +91,6 @@ export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 ### KITTY env var
 KITTY_CONFIG_DIRECTORY="$HOME/.config/kitty/"
 
-### Zoxide
-eval "$(zoxide init zsh)"
-
 ### Starship call
 eval "$(starship init zsh)"
 
@@ -135,3 +132,6 @@ export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 
 # Ruby (for pkg-config to find ruby)
 export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
+
+### Zoxide (its docs asks for it to be placed at the end of .zshrc)
+eval "$(zoxide init zsh)"
