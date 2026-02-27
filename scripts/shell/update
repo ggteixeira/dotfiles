@@ -1,54 +1,86 @@
 #!/bin/zsh
 
+BOLD='\033[1m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+RESET='\033[0m'
+
+step=0
+
+progress() {
+  step=$((step + 1))
+  local bar="" i=1
+  while (( i <= total )); do
+    (( i <= step )) && bar+="=" || bar+=" "
+    i=$((i + 1))
+  done
+  echo -e "\n${CYAN}[${bar}] ${step}/${total}${RESET}  ${BOLD}${1}${RESET}"
+}
+
 # MACOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo -e "Brew: update"
+  total=7
+
+  progress "Brew: update"
   brew update
 
-  echo -e "Brew: upgrade"
+  brew_outdated=$(brew outdated --verbose)
+
+  progress "Brew: upgrade"
   brew upgrade
 
-  echo -e "Brew: cleanup"
-  brew cleanup
+  if [[ -n "$brew_outdated" ]]; then
+    echo -e "\nBrew: updated packages"
+    echo "$brew_outdated"
+  else
+    echo -e "\nBrew: nothing to update"
+  fi
 
-  echo -e "Brew: Cleaning outdated cache files"
-  brew cleanup -s
+  progress "Brew: cleanup"
+  brew cleanup -s --prune-prefix
 
-  echo -e "Brew: cleaning up old versions of packages"
-  brew cleanup --prune-prefix
-
-  echo -e "Brew: doctor"
+  progress "Brew: doctor"
   brew doctor
 
-  echo -e "OMZ: update"
-  $ZSH/tools/upgrade.sh
+  progress "OMZ: update"
+  omz update
 
-  echo -e "PNPM: update"
+  progress "PNPM: update"
   pnpm self-update
 
-  echo -e "Yarn: cache clean"
+  progress "Yarn: cache clean"
   yarn cache clean
 
-  # echo -e "NPM cache clean"
-  # npm cache clean --force
+  echo -e "\n${GREEN}Done.${RESET}"
 
 # FEDORA
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  sudo dnf update -y
-  echo -e "Updating Fedora (DNF)"
+  total=6
 
-  echo -e "\nCleaning Fedora (DNF)"
+  dnf_updates=$(sudo dnf list updates 2>/dev/null)
+
+  progress "Updating Fedora (DNF)"
+  sudo dnf update -y
+
+  if [[ -n "$dnf_updates" ]]; then
+    echo -e "\nDNF: updated packages"
+    echo "$dnf_updates"
+  fi
+
+  progress "Cleaning Fedora (DNF)"
   sudo dnf autoremove -y
 
-  echo -e "\nUpdating Snap"
+  progress "Updating Snap"
   sudo snap refresh
 
-  echo -e "\nUpdating Flatpak"
-  sudo flatpak update
+  progress "Updating Flatpak"
+  sudo flatpak update -y
 
-  echo -e "\nUpdating Oh-My-ZSH"
-  $ZSH/tools/upgrade.sh
+  progress "Updating Oh-My-ZSH"
+  omz update
 
-  echo -e "\nUpdating Neovim"
+  progress "Updating Neovim"
   nvim --headless "+Lazy! sync" +qa
+
+  echo -e "\n${GREEN}Done.${RESET}"
 fi
