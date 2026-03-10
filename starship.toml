@@ -1,7 +1,10 @@
 command_timeout = 3000
 
+# format = "$all"
+
 format = """
 $username\
+$gituser\
 $hostname\
 $directory\
 $git_branch\
@@ -62,3 +65,9 @@ disabled = false
 [cmd_duration]
 format = "[$duration]($style)"
 style = "yellow"
+
+[custom.gituser]
+command = "git config user.name || git config --global user.name"
+when = "git rev-parse --is-inside-work-tree 2>/dev/null"
+format = "([$output]($style) )"
+style = "bold cyan"

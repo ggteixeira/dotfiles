@@ -1,6 +1,6 @@
 [user]
   username = ggteixeira
-	name = Guilherme Teixeira
+	name = Gui Teixeira
   email = 24235344+ggteixeira@users.noreply.github.com
   signingKey = ~/.ssh/personal
 
@@ -36,3 +36,8 @@
 	git = !git
   unstage = restore --staged
   adp = add -p
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
