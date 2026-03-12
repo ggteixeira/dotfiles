@@ -1,11 +1,3 @@
-## Loading Performance Tool
-# zmodload zsh/zprof
-#
-# timezsh() {
-#   shell=${1-$SHELL}
-#   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-# }
-
 # Export Oh my zsh
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -37,12 +29,6 @@ if [[ -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
     source ~/.oh-my-zsh/oh-my-zsh.sh
 fi
 
-### ZSH-AUTOSUGGESTIONS settings
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  # bindkey '^ ' autosuggest-accept # accept suggestion with ctrl+space
-  bindkey '^H' backward-kill-word
-fi
-
 ### Accept suggestion with ctrl+space
 bindkey '^ ' autosuggest-accept 
 
@@ -54,10 +40,6 @@ function zvm_after_init() {
 ### FZF settings
 source <(fzf --zsh)
 
-# enable fzf keybindings
-
-# enable fuzzy auto-completion
-
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files'
     export FZF_DEFAULT_OPTS='-m --height 50% --border'
@@ -67,11 +49,11 @@ fi
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
 
 ### NVIM Color Settings
-COLORTERM="truecolor"
+export COLORTERM="truecolor"
 
 export PATH=$HOME/.local/bin:$PATH
 
-### Making firma's scripts available system-wide 
+### Rust / Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
 ### Add my local scripts folder to PATH
@@ -89,7 +71,7 @@ source $HOME/.config/broot/launcher/bash/br
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 ### KITTY env var
-KITTY_CONFIG_DIRECTORY="$HOME/.config/kitty/"
+export KITTY_CONFIG_DIRECTORY="$HOME/.config/kitty/"
 
 ### Starship call
 eval "$(starship init zsh)"
@@ -105,16 +87,9 @@ esac
 # Volta
 export PATH="$HOME/.volta/bin:$PATH"
 
-## Calling Perfolrmance Tool
-# zprof
-
-# Netcore
-export PATH=$PATH:$HOME/.dotnet/tools
-export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:$DOTNET_ROOT
-
 # dotnet
-export PATH="$HOME/.dotnet:$PATH"
+export DOTNET_ROOT="$HOME/.dotnet"
+export PATH="$DOTNET_ROOT/tools:$DOTNET_ROOT:$PATH"
 
 # mysql
 export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
