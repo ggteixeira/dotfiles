@@ -19,7 +19,7 @@ progress() {
 
 # MACOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  total=7
+  total=6
 
   progress "Brew: update"
   brew update
@@ -47,9 +47,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   progress "PNPM: update"
   pnpm self-update
-
-  progress "Yarn: cache clean"
-  yarn cache clean
 
   echo -e "\n${GREEN}Done.${RESET}"
 
