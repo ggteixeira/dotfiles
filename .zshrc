@@ -38,7 +38,8 @@ function zvm_after_init() {
 }
 
 ### FZF settings
-source <(fzf --zsh)
+[[ -f ~/.fzf.zsh ]] || fzf --zsh > ~/.fzf.zsh
+source ~/.fzf.zsh
 
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files'
@@ -62,10 +63,18 @@ export PATH="$HOME/Scripts/shell:$PATH"
 ### Pyenv settings
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+
+pyenv() {
+    unfunction pyenv
+    eval "$(command pyenv init -)"
+    pyenv "$@"
+}
 
 ### Broot settings
-source $HOME/.config/broot/launcher/bash/br
+br() {
+    source "$HOME/.config/broot/launcher/bash/br"
+    br "$@"
+}
 
 ### set/gsed PATH:
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
