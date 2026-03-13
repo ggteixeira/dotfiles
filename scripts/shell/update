@@ -9,17 +9,21 @@ step=0
 
 progress() {
   step=$((step + 1))
-  local bar="" i=1
-  while (( i <= total )); do
-    (( i <= step )) && bar+="=" || bar+=" "
-    i=$((i + 1))
-  done
-  echo -e "\n${CYAN}[${bar}] ${step}/${total}${RESET}  ${BOLD}${1}${RESET}"
+  local filled=$((step * 20 / total))
+  local remainder=$((20 - filled))
+  printf -v BAR "%-${filled}s" ""
+  BAR="${BAR// /█}"
+  printf -v EMPTY "%-${remainder}s" ""
+  EMPTY="${EMPTY// /░}"
+  echo -e "\n${CYAN}[${BAR}${EMPTY}] $((step * 100 / total))%% (${step}/${total})${RESET}  ${BOLD}${1}${RESET}"
 }
 
 # MACOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  total=6
+  total=13
+
+  progress "Dotfiles: update"
+  git -C ~/.dotfiles pull
 
   progress "Brew: update"
   brew update
@@ -27,7 +31,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   brew_outdated=$(brew outdated --verbose)
 
   progress "Brew: upgrade"
-  brew upgrade
+  brew upgrade --greedy
 
   if [[ -n "$brew_outdated" ]]; then
     echo -e "\nBrew: updated packages"
@@ -39,14 +43,32 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   progress "Brew: cleanup"
   brew cleanup -s --prune-prefix
 
+  progress "Brew: autoremove"
+  brew autoremove
+
   progress "Brew: doctor"
   brew doctor
 
   progress "OMZ: update"
-  omz update
+  ZSH="$HOME/.oh-my-zsh" zsh "$HOME/.oh-my-zsh/tools/upgrade.sh"
 
-  progress "PNPM: update"
+  progress "PNPM: self-update"
   pnpm self-update
+
+  progress "PNPM: update global packages"
+  pnpm update -g
+
+  progress "Neovim: sync plugins"
+  nvim --headless "+Lazy! sync" +qa &>/dev/null
+
+  progress "gh: upgrade extensions"
+  gh extension upgrade --all
+
+  progress "mas: upgrade"
+  MAS_NO_AUTO_INDEX=1 mas upgrade
+
+  progress "tldr: update"
+  tldr --update
 
   echo -e "\n${GREEN}Done.${RESET}"
 
@@ -74,7 +96,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   sudo flatpak update -y
 
   progress "Updating Oh-My-ZSH"
-  omz update
+  ZSH="$HOME/.oh-my-zsh" zsh "$HOME/.oh-my-zsh/tools/upgrade.sh"
 
   progress "Updating Neovim"
   nvim --headless "+Lazy! sync" +qa
