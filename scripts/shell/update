@@ -71,35 +71,4 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   tldr --update
 
   echo -e "\n${GREEN}Done.${RESET}"
-
-# FEDORA
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  total=6
-
-  dnf_updates=$(sudo dnf list updates 2>/dev/null)
-
-  progress "Updating Fedora (DNF)"
-  sudo dnf update -y
-
-  if [[ -n "$dnf_updates" ]]; then
-    echo -e "\nDNF: updated packages"
-    echo "$dnf_updates"
-  fi
-
-  progress "Cleaning Fedora (DNF)"
-  sudo dnf autoremove -y
-
-  progress "Updating Snap"
-  sudo snap refresh
-
-  progress "Updating Flatpak"
-  sudo flatpak update -y
-
-  progress "Updating Oh-My-ZSH"
-  ZSH="$HOME/.oh-my-zsh" zsh "$HOME/.oh-my-zsh/tools/upgrade.sh"
-
-  progress "Updating Neovim"
-  nvim --headless "+Lazy! sync" +qa
-
-  echo -e "\n${GREEN}Done.${RESET}"
 fi
