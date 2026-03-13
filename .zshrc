@@ -85,14 +85,6 @@ export KITTY_CONFIG_DIRECTORY="$HOME/.config/kitty/"
 ### Starship call
 eval "$(starship init zsh)"
 
-# pnpm
-export PNPM_HOME="/Users/gui/Library/pnpm"
-
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
 # Volta
 export PATH="$HOME/.volta/bin:$PATH"
 
