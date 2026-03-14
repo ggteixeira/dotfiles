@@ -17,7 +17,7 @@ REPOS=$(
   gh repo list ggteixeira --limit 200 --json nameWithOwner -q '.[].nameWithOwner'
   gh repo list divertimentos --limit 200 --json nameWithOwner -q '.[].nameWithOwner'
 )
-mapfile -t REPO_ARRAY <<<"$REPOS"
+IFS=$'\n' read -r -d '' -a REPO_ARRAY <<<"$REPOS" || true
 TOTAL=${#REPO_ARRAY[@]}
 echo "Found $TOTAL repos. Scanning for open Dependabot PRs..."
 IDX=0
