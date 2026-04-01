@@ -78,7 +78,7 @@ alias glgm='git log --graph --max-count=10'
 alias glog='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
 
 alias gpom='git push origin main'
-alias gpoma='git push origin master'
+# alias gpoma='git push origin master'
 # alias grmc='git rm --cached'
 # alias gst='git status'
 # alias sttt='status'

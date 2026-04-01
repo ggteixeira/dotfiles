@@ -111,3 +111,4 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
 
 ### Zoxide (its docs asks for it to be placed at the end of .zshrc)
 eval "$(zoxide init zsh)"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
