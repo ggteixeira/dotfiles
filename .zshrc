@@ -112,3 +112,7 @@ export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
 ### Zoxide (its docs asks for it to be placed at the end of .zshrc)
 eval "$(zoxide init zsh)"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
