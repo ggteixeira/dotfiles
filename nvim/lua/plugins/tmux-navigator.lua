@@ -1,24 +1,24 @@
 return {
   {
     "christoomey/vim-tmux-navigator",
+    lazy = false,
     init = function()
-      -- LazyVim registers its own <C-hjkl> window-nav keymaps on VeryLazy,
-      -- which would overwrite this plugin's mappings. Delete them first so
-      -- the keys spec below wins.
-      vim.api.nvim_create_autocmd("VimEnter", {
+      vim.g.tmux_navigator_no_mappings = 1
+    end,
+    config = function()
+      -- Set after VeryLazy so we overwrite any LazyVim default window-nav maps.
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "VeryLazy",
+        once = true,
         callback = function()
-          for _, key in ipairs({ "<C-h>", "<C-j>", "<C-k>", "<C-l>" }) do
-            pcall(vim.keymap.del, "n", key)
-          end
+          vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>",     { silent = true })
+          vim.keymap.set("n", "<BS>",  "<cmd>TmuxNavigateLeft<cr>",     { silent = true })
+          vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>",     { silent = true })
+          vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>",       { silent = true })
+          vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>",    { silent = true })
+          vim.keymap.set("n", "<C-\\>","<cmd>TmuxNavigatePrevious<cr>", { silent = true })
         end,
       })
     end,
-    keys = {
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
   },
 }
