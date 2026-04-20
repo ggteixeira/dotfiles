@@ -75,12 +75,12 @@ tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 tmux_conf_theme_window_status_fg="$tmux_conf_theme_colour_3"
 tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_1"
 tmux_conf_theme_window_status_attr="none"
-tmux_conf_theme_window_status_format="#I #W#{?window_zoomed_flag, Z,}#{?window_bell_flag, !,}"
+tmux_conf_theme_window_status_format=" #I #W#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,} "
 
-tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_1"
-tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_4"
+tmux_conf_theme_window_status_current_fg="#282828"
+tmux_conf_theme_window_status_current_bg="#8ec07c"
 tmux_conf_theme_window_status_current_attr="bold"
-tmux_conf_theme_window_status_current_format="#I #W#{?window_zoomed_flag, Z,}#{?window_bell_flag, !,}"
+tmux_conf_theme_window_status_current_format=" #I #W#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,} "
 
 tmux_conf_theme_window_status_activity_fg="default"
 tmux_conf_theme_window_status_activity_bg="default"
@@ -90,21 +90,21 @@ tmux_conf_theme_window_status_bell_fg="$tmux_conf_theme_colour_5"
 tmux_conf_theme_window_status_bell_bg="default"
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
-tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_4"
-tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_2"
+tmux_conf_theme_window_status_last_fg="#d5c4a1"
+tmux_conf_theme_window_status_last_bg="#3c3836"
 tmux_conf_theme_window_status_last_attr="none"
 
 # -- separators ----------------------------------------------------------------
 
 tmux_conf_theme_left_separator_main=""
-tmux_conf_theme_left_separator_sub="|"
+tmux_conf_theme_left_separator_sub=""
 tmux_conf_theme_right_separator_main=""
-tmux_conf_theme_right_separator_sub="|"
+tmux_conf_theme_right_separator_sub=""
 
 # -- status left/right ---------------------------------------------------------
 
-tmux_conf_theme_status_left=" ❐ #S"
-tmux_conf_theme_status_right="#{?client_prefix,#[bg=#fb4934 fg=#282828 bold]        ⌨        ,}"
+tmux_conf_theme_status_left="  #S "
+tmux_conf_theme_status_right="#{?client_prefix,#[bg=#fb4934 fg=#282828 bold] 󰌌 PREFIX ,}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—') "
 
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
@@ -147,11 +147,19 @@ tmux_conf_copy_to_os_clipboard=true
 
 # -- overrides -----------------------------------------------------------------
 
-set -g status-position top
+set -g status-position bottom
+set -g status-justify centre
 set -g history-limit 50000
 set -g mouse on
 set -g status on
 set -g status-interval 5
+
+# synchronized output — batches screen updates into single frames, prevents
+# visible scroll-flash in TUI apps (Claude/Ink) during full re-renders
+set -as terminal-features 'xterm-256color:sync'
+
+# allow DCS passthrough so apps can send escape sequences directly to iTerm2
+set -g allow-passthrough on
 
 # auto-exit copy mode when switching back to a pane — prevents stale scrollback
 # views in TUI apps (like Claude) that don't use the alternate screen buffer
@@ -163,7 +171,158 @@ set-hook -g after-select-pane 'if-shell -F "#{pane_in_mode}" "send-keys -X cance
 #   prefix: red #fb4934 badge / red #fb4934 active tab
 
 bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
+bind = select-layout -E \; display 'layout: rebalanced'
+
+# -- which-key menus -----------------------------------------------------------
+# show-wk-menu: command alias that wraps display-menu with consistent positioning
+set -ga command-alias 'show-wk-menu=display-menu -x R -y P -T "#[align=centre,bold]"'
+
+# root menu (prefix + Space)
+set -g @wk_menu_root '\
+  Run        "space" command-prompt \
+  "Last win"   "tab" last-window \
+  "Last pane"  "`"   last-pane \
+  Copy         "c"   "show-wk-menu #{@wk_menu_copy}" \
+  "" \
+  +Windows     "w"   "show-wk-menu #{@wk_menu_windows}" \
+  +Panes       "p"   "show-wk-menu #{@wk_menu_panes}" \
+  +Buffers     "b"   "show-wk-menu #{@wk_menu_buffers}" \
+  +Sessions    "s"   "show-wk-menu #{@wk_menu_sessions}" \
+  +Client      "C"   "show-wk-menu #{@wk_menu_client}" \
+  "" \
+  "Toggle mouse" "m" "run \"cut -c3- '"'"'#{TMUX_CONF}'"'"' | sh -s _toggle_mouse\"" \
+  "Edit config"  "e" "neww -n config \"${EDITOR:-vim} $TMUX_CONF_LOCAL\"" \
+  "Reload config" "r" "source #{TMUX_CONF} ; display \"config reloaded\"" \
+  Time         "T"   clock-mode \
+  "Show messages" "~" show-messages \
+  +Keys        "?"   "list-keys -N"'
+
+bind Space display-menu -x R -y P \
+  -T "#[align=centre,bold]#[fg=green,align=centre,bold]tmux#[align=centre,bold]" \
+  #{@wk_menu_root}
+
+# windows submenu
+set -g @wk_menu_windows '\
+  "Last win"       "tab" last-window \
+  Choose           "w"   "choose-tree -Zw" \
+  Previous         "p"   previous-window \
+  Next             "n"   next-window \
+  New              "c"   "neww -c #{pane_current_path}" \
+  "" \
+  +Layout          "l"   "show-wk-menu #{@wk_menu_layout}" \
+  "Split horiz"    "/"   "splitw -h -c #{pane_current_path}" \
+  "Split vert"     "-"   "splitw -v -c #{pane_current_path}" \
+  Rotate           "o"   "rotatew ; show-wk-menu #{@wk_menu_windows}" \
+  "Rotate reverse" "O"   "rotatew -D ; show-wk-menu #{@wk_menu_windows}" \
+  "" \
+  "Prev window (C-h)"   "C-h" previous-window \
+  "Next window (C-l)"   "C-l" next-window \
+  "Swap left (C-S-H)"   "C-S-H" "swapw -t -1 ; selectw -t -1" \
+  "Swap right (C-S-L)"  "C-S-L" "swapw -t +1 ; selectw -t +1" \
+  "" \
+  Rename           "R"   "command-prompt -I \"#W\" \"renamew -- \\\"%%\\\"\"" \
+  Kill             "X"   "confirm -p \"Kill window #W? (y/n)\" killw"'
+
+# layout submenu
+set -g @wk_menu_layout '\
+  "Next layout"      "l" "nextl ; show-wk-menu #{@wk_menu_layout}" \
+  Tiled              "t" "selectl tiled" \
+  "Even horizontal"  "h" "selectl even-horizontal" \
+  "Even vertical"    "v" "selectl even-vertical" \
+  "Main horizontal"  "H" "selectl main-horizontal" \
+  "Main vertical"    "V" "selectl main-vertical" \
+  "" \
+  "Rebalance (=)"    "=" "selectl -E"'
+
+# panes submenu
+set -g @wk_menu_panes '\
+  Last             "tab" lastp \
+  Choose           "p"   "displayp -d 0" \
+  "" \
+  Left             "h"   "selectp -L" \
+  Down             "j"   "selectp -D" \
+  Up               "k"   "selectp -U" \
+  Right            "l"   "selectp -R" \
+  "" \
+  Zoom             "z"   "resizep -Z" \
+  "Maximize (+)"   "+"   "run \"cut -c3- '"'"'#{TMUX_CONF}'"'"' | sh -s _maximize_pane '"'"'#{session_name}'"'"' '"'"'#D'"'"'\"" \
+  "Rebalance (=)"  "="   "selectl -E" \
+  +Resize          "r"   "show-wk-menu #{@wk_menu_resize}" \
+  "" \
+  "Swap left"      "H"   "swapp -t \"{left-of}\"" \
+  "Swap down"      "J"   "swapp -t \"{down-of}\"" \
+  "Swap up"        "K"   "swapp -t \"{up-of}\"" \
+  "Swap right"     "L"   "swapp -t \"{right-of}\"" \
+  "Swap prev (<)"  "<"   "swapp -U" \
+  "Swap next (>)"  ">"   "swapp -D" \
+  Break            "!"   break-pane \
+  "" \
+  Mark             "m"   "selectp -m" \
+  Unmark           "M"   "selectp -M" \
+  Capture          "C"   capture-pane \
+  "Respawn pane"   "R"   restart-pane \
+  Kill             "X"   "confirm -p \"Kill pane #P? (y/n)\" killp"'
+
+# resize submenu (re-opens itself for repeated resizing)
+set -g @wk_menu_resize '\
+  Left             "h" "resizep -L ; show-wk-menu #{@wk_menu_resize}" \
+  Down             "j" "resizep -D ; show-wk-menu #{@wk_menu_resize}" \
+  Up               "k" "resizep -U ; show-wk-menu #{@wk_menu_resize}" \
+  Right            "l" "resizep -R ; show-wk-menu #{@wk_menu_resize}" \
+  "Left x10"       "H" "resizep -L 10 ; show-wk-menu #{@wk_menu_resize}" \
+  "Down x10"       "J" "resizep -D 10 ; show-wk-menu #{@wk_menu_resize}" \
+  "Up x10"         "K" "resizep -U 10 ; show-wk-menu #{@wk_menu_resize}" \
+  "Right x10"      "L" "resizep -R 10 ; show-wk-menu #{@wk_menu_resize}"'
+
+# copy submenu
+set -g @wk_menu_copy '\
+  "Enter copy mode" "c" copy-mode \
+  "Copy to clipboard" "y" "run -b \"tmux save-buffer - | pbcopy\"" \
+  "List buffers"   "#"   list-buffers'
+
+# buffers submenu
+set -g @wk_menu_buffers '\
+  Choose           "b" "choose-buffer -Z" \
+  List             "l" lsb \
+  Paste            "p" pasteb \
+  "Choose paste"   "P" "choose-buffer"'
+
+# sessions submenu
+set -g @wk_menu_sessions '\
+  Choose           "s" "choose-tree -Zs" \
+  New              "N" new \
+  "Find (C-f)"    "C-f" "command-prompt -p find-session \"switchc -t %%\"" \
+  "Last (BTab)"   "BTab" "switchc -l" \
+  Rename           "r" rename'
+
+# client submenu
+set -g @wk_menu_client '\
+  Choose           "c" "choose-client -Z" \
+  Last             "l" "switchc -l" \
+  Previous         "p" "switchc -p" \
+  Next             "n" "switchc -n" \
+  "" \
+  Refresh          "R" refresh \
+  +Plugins         "P" "show-wk-menu #{@wk_menu_plugins}" \
+  Detach           "D" detach \
+  Suspend          "Z" suspendc \
+  "" \
+  "Reload config"  "r" reload-config \
+  Customize        "," "customize-mode -Z"'
+
+# plugins submenu
+set -g @wk_menu_plugins '\
+  Install          "i" "run-shell $TMUX_PLUGIN_MANAGER_PATH/tpm/bindings/install_plugins" \
+  Update           "u" "run-shell $TMUX_PLUGIN_MANAGER_PATH/tpm/bindings/update_plugins" \
+  Clean            "c" "run-shell $TMUX_PLUGIN_MANAGER_PATH/tpm/bindings/clean_plugins"'
+
+# drift check: warn on reload if bindings are missing from which-key menus
+run-shell 'bash ~/.dotfiles/tmux/wk-drift-check.sh &'
 
 # -- plugins -------------------------------------------------------------------
+
+# disable vim-tmux-navigator's auto-bind of prefix+C-l to clear-screen
+# so our C-l / C-h next/previous-window bindings survive plugin load
+set -g @vim_navigator_prefix_mapping_clear_screen ''
 
 set -g @plugin 'christoomey/vim-tmux-navigator'

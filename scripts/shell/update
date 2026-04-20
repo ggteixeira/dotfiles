@@ -3,9 +3,11 @@
 BOLD='\033[1m'
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
+RED='\033[0;31m'
 RESET='\033[0m'
 
 step=0
+failures=()
 
 progress() {
   step=$((step + 1))
@@ -15,23 +17,33 @@ progress() {
   BAR="${BAR// /█}"
   printf -v EMPTY "%-${remainder}s" ""
   EMPTY="${EMPTY// /░}"
-  echo -e "\n${CYAN}[${BAR}${EMPTY}] $((step * 100 / total))%% (${step}/${total})${RESET}  ${BOLD}${1}${RESET}"
+  echo -e "\n${CYAN}[${BAR}${EMPTY}] $((step * 100 / total))% (${step}/${total})${RESET}  ${BOLD}${1}${RESET}"
 }
 
 # MACOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  total=13
+  total=7
+
+  if command -v pnpm &>/dev/null; then
+    total=$((total + 2))
+  elif command -v npm &>/dev/null; then
+    total=$((total + 1))
+  fi
+  command -v nvim &>/dev/null && total=$((total + 1))
+  command -v gh &>/dev/null && total=$((total + 1))
+  command -v mas &>/dev/null && total=$((total + 1))
+  command -v tldr &>/dev/null && total=$((total + 1))
 
   progress "Dotfiles: update"
-  git -C ~/.dotfiles pull
+  git -C ~/.dotfiles pull --ff-only || failures+=("Dotfiles: update")
 
   progress "Brew: update"
-  brew update
+  brew update || failures+=("Brew: update")
 
   brew_outdated=$(brew outdated --verbose)
 
   progress "Brew: upgrade"
-  brew upgrade --greedy
+  brew upgrade --greedy || failures+=("Brew: upgrade")
 
   if [[ -n "$brew_outdated" ]]; then
     echo -e "\nBrew: updated packages"
@@ -41,34 +53,64 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 
   progress "Brew: cleanup"
-  brew cleanup -s --prune-prefix
+  brew cleanup -s --prune-prefix || failures+=("Brew: cleanup")
 
   progress "Brew: autoremove"
-  brew autoremove
-
-  progress "Brew: doctor"
-  brew doctor
+  brew autoremove || failures+=("Brew: autoremove")
 
   progress "OMZ: update"
-  ZSH="$HOME/.oh-my-zsh" zsh "$HOME/.oh-my-zsh/tools/upgrade.sh"
+  ZSH="$HOME/.oh-my-zsh" zsh "$HOME/.oh-my-zsh/tools/upgrade.sh" || failures+=("OMZ: update")
 
-  progress "PNPM: self-update"
-  pnpm self-update
+  if command -v pnpm &>/dev/null; then
+    progress "PNPM: self-update"
+    pnpm self-update || failures+=("PNPM: self-update")
 
-  progress "PNPM: update global packages"
-  pnpm update -g
+    progress "PNPM: update global packages"
+    pnpm update -g || failures+=("PNPM: update global packages")
+  elif command -v npm &>/dev/null; then
+    progress "NPM: update global packages"
+    npm update -g || failures+=("NPM: update global packages")
+  fi
 
-  progress "Neovim: sync plugins"
-  nvim --headless "+Lazy! sync" +qa &>/dev/null
+  if command -v nvim &>/dev/null; then
+    progress "Neovim: sync plugins"
+    nvim --headless "+Lazy! sync" +qa >/dev/null || failures+=("Neovim: sync plugins")
+  fi
 
-  progress "gh: upgrade extensions"
-  gh extension upgrade --all
+  if command -v gh &>/dev/null; then
+    progress "gh: upgrade extensions"
+    gh extension upgrade --all || failures+=("gh: upgrade extensions")
+  fi
 
-  progress "mas: upgrade"
-  MAS_NO_AUTO_INDEX=1 mas upgrade
+  if command -v mas &>/dev/null; then
+    progress "mas: upgrade"
+    MAS_NO_AUTO_INDEX=1 mas upgrade || failures+=("mas: upgrade")
+  fi
 
-  progress "tldr: update"
-  tldr --update
+  if command -v tldr &>/dev/null; then
+    progress "tldr: update"
+    tldr --update || failures+=("tldr: update")
+  fi
 
-  echo -e "\n${GREEN}Done.${RESET}"
+  progress "Brew: doctor"
+  brew_doctor=$(brew doctor 2>&1) || failures+=("Brew: doctor")
+
+  echo -e "\n${CYAN}─────────────────────────────────────────────────${RESET}"
+  echo -e "${BOLD}Summary${RESET}"
+  echo -e "${CYAN}─────────────────────────────────────────────────${RESET}"
+
+  if [[ -n "$brew_doctor" ]]; then
+    echo -e "\n${BOLD}Brew doctor:${RESET}"
+    echo "$brew_doctor"
+  fi
+
+  if [[ ${#failures[@]} -gt 0 ]]; then
+    echo -e "\n${RED}${BOLD}Failed:${RESET}"
+    for f in "${failures[@]}"; do
+      echo -e "  ${RED}✗${RESET} $f"
+    done
+    echo -e "\n${RED}Done with errors.${RESET}"
+  else
+    echo -e "\n${GREEN}Done.${RESET}"
+  fi
 fi
