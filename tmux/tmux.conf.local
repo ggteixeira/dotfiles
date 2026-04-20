@@ -21,27 +21,27 @@ tmux_conf_new_pane_reconnect_ssh=false
 
 tmux_conf_24b_colour=auto
 
-# -- theming: catppuccin mocha -------------------------------------------------
+# -- theming: gruvbox dark -----------------------------------------------------
 
 tmux_conf_theme=enabled
 
-tmux_conf_theme_colour_1="#1e1e2e"    # base
-tmux_conf_theme_colour_2="#313244"    # surface0
-tmux_conf_theme_colour_3="#6c7086"    # overlay0
-tmux_conf_theme_colour_4="#89b4fa"    # blue
-tmux_conf_theme_colour_5="#f9e2af"    # yellow
-tmux_conf_theme_colour_6="#1e1e2e"    # base — status-left S1 fg (dark on peach)
-tmux_conf_theme_colour_7="#cdd6f4"    # text  — status-left S2 fg
-tmux_conf_theme_colour_8="#6c7086"    # overlay0 — status-left S3 fg
-tmux_conf_theme_colour_9="#fab387"    # peach  — status-left S1 bg
-tmux_conf_theme_colour_10="#313244"   # surface — status-left S2 bg
-tmux_conf_theme_colour_11="#1e1e2e"   # base   — status-left S3 bg
-tmux_conf_theme_colour_12="#6c7086"   # overlay0 — status-right S1 fg
-tmux_conf_theme_colour_13="#cdd6f4"   # text    — status-right S2 fg
-tmux_conf_theme_colour_14="#1e1e2e"   # base    — status-right S3 fg
-tmux_conf_theme_colour_15="#1e1e2e"   # base    — status-right S1 bg
-tmux_conf_theme_colour_16="#313244"   # surface — status-right S2 bg
-tmux_conf_theme_colour_17="#89b4fa"   # blue    — status-right S3 bg
+tmux_conf_theme_colour_1="#282828"    # bg (dark0)
+tmux_conf_theme_colour_2="#3c3836"    # bg1 (borders, inactive bg)
+tmux_conf_theme_colour_3="#a89984"    # fg4 (muted text)
+tmux_conf_theme_colour_4="#83a598"    # bright blue (accent)
+tmux_conf_theme_colour_5="#fabd2f"    # bright yellow (messages, mode)
+tmux_conf_theme_colour_6="#282828"    # bg — status-left S1 fg (dark on orange)
+tmux_conf_theme_colour_7="#ebdbb2"    # fg1 — status-left S2 fg
+tmux_conf_theme_colour_8="#a89984"    # fg4 — status-left S3 fg
+tmux_conf_theme_colour_9="#fe8019"    # bright orange — status-left S1 bg
+tmux_conf_theme_colour_10="#3c3836"   # bg1 — status-left S2 bg
+tmux_conf_theme_colour_11="#282828"   # bg — status-left S3 bg
+tmux_conf_theme_colour_12="#a89984"   # fg4 — status-right S1 fg
+tmux_conf_theme_colour_13="#ebdbb2"   # fg1 — status-right S2 fg
+tmux_conf_theme_colour_14="#282828"   # bg — status-right S3 fg
+tmux_conf_theme_colour_15="#282828"   # bg — status-right S1 bg
+tmux_conf_theme_colour_16="#3c3836"   # bg1 — status-right S2 bg
+tmux_conf_theme_colour_17="#83a598"   # bright blue — status-right S3 bg
 
 # -- pane borders --------------------------------------------------------------
 
@@ -104,7 +104,7 @@ tmux_conf_theme_right_separator_sub="|"
 # -- status left/right ---------------------------------------------------------
 
 tmux_conf_theme_status_left=" ❐ #S"
-tmux_conf_theme_status_right="#{?client_prefix,#[bg=#f38ba8 fg=#1e1e2e bold]        ⌨        ,}"
+tmux_conf_theme_status_right="#{?client_prefix,#[bg=#fb4934 fg=#282828 bold]        ⌨        ,}"
 
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
@@ -153,10 +153,14 @@ set -g mouse on
 set -g status on
 set -g status-interval 5
 
-# prefix-active: session badge and active window tab shift to mauve
+# auto-exit copy mode when switching back to a pane — prevents stale scrollback
+# views in TUI apps (like Claude) that don't use the alternate screen buffer
+set-hook -g after-select-pane 'if-shell -F "#{pane_in_mode}" "send-keys -X cancel"'
+
+# prefix-active: session badge and active window tab shift to bright red
 # uses #{?client_prefix} inline in status-left and window-status-current-format
-#   idle:   peach #fab387 badge / blue #89b4fa active tab
-#   prefix: mauve #cba6f7 badge / mauve #cba6f7 active tab
+#   idle:   orange #fe8019 badge / blue #83a598 active tab
+#   prefix: red #fb4934 badge / red #fb4934 active tab
 
 bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
 

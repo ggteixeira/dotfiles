@@ -3,11 +3,11 @@
 -- Add any additional keymaps here
 
 -- Resizing windows (ctrl+shift+arrows)
-vim.keymap.set("n", "<C-S-Up>", ":horizontal resize +1 <CR>", { silent = true })
-vim.keymap.set("n", "<C-S-Down>", ":horizontal resize -1 <CR>", { silent = true })
+vim.keymap.set("n", "<C-S-Up>", "<cmd>horizontal resize +1<cr>", { silent = true })
+vim.keymap.set("n", "<C-S-Down>", "<cmd>horizontal resize -1<cr>", { silent = true })
 
-vim.keymap.set("n", "<C-S-Right>", ":vertical resize +2 <CR>", { silent = true })
-vim.keymap.set("n", "<C-S-Left>", ":vertical resize -2 <CR>", { silent = true })
+vim.keymap.set("n", "<C-S-Right>", "<cmd>vertical resize +2<cr>", { silent = true })
+vim.keymap.set("n", "<C-S-Left>", "<cmd>vertical resize -2<cr>", { silent = true })
 
 -- Use ; to access command mode:
 vim.keymap.set("n", ";", ":")
