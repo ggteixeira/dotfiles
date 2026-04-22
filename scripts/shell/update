@@ -62,8 +62,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   ZSH="$HOME/.oh-my-zsh" zsh "$HOME/.oh-my-zsh/tools/upgrade.sh" || failures+=("OMZ: update")
 
   if command -v pnpm &>/dev/null; then
-    progress "PNPM: self-update"
-    pnpm self-update || failures+=("PNPM: self-update")
+    progress "PNPM: update via Corepack"
+    corepack prepare pnpm@latest --activate || failures+=("PNPM: update via corepack")
 
     progress "PNPM: update global packages"
     pnpm update -g || failures+=("PNPM: update global packages")
