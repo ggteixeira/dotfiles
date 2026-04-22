@@ -21,37 +21,56 @@ tmux_conf_new_pane_reconnect_ssh=false
 
 tmux_conf_24b_colour=auto
 
+# -- palette: gruvbox dark -----------------------------------------------------
+
+_gb_bg0="#282828"        # dark0      — main background
+_gb_bg0s="#32302f"       # dark0_soft — inactive pane dimming
+_gb_bg1="#3c3836"        # dark1      — borders, secondary backgrounds
+_gb_fg1="#ebdbb2"        # fg1        — light foreground
+_gb_fg2="#d5c4a1"        # fg2        — last-window tab foreground
+_gb_fg4="#a89984"        # fg4        — muted foreground
+_gb_blue="#83a598"       # blue       — accent
+_gb_yellow="#fabd2f"     # yellow     — messages, mode indicator
+_gb_orange="#fe8019"     # orange     — session badge
+_gb_green="#8ec07c"      # green      — active window tab
+_gb_red="#fb4934"        # red        — prefix indicator
+
 # -- theming: gruvbox dark -----------------------------------------------------
 
 tmux_conf_theme=enabled
 
-tmux_conf_theme_colour_1="#282828"    # bg (dark0)
-tmux_conf_theme_colour_2="#3c3836"    # bg1 (borders, inactive bg)
-tmux_conf_theme_colour_3="#a89984"    # fg4 (muted text)
-tmux_conf_theme_colour_4="#83a598"    # bright blue (accent)
-tmux_conf_theme_colour_5="#fabd2f"    # bright yellow (messages, mode)
-tmux_conf_theme_colour_6="#282828"    # bg — status-left S1 fg (dark on orange)
-tmux_conf_theme_colour_7="#ebdbb2"    # fg1 — status-left S2 fg
-tmux_conf_theme_colour_8="#a89984"    # fg4 — status-left S3 fg
-tmux_conf_theme_colour_9="#fe8019"    # bright orange — status-left S1 bg
-tmux_conf_theme_colour_10="#3c3836"   # bg1 — status-left S2 bg
-tmux_conf_theme_colour_11="#282828"   # bg — status-left S3 bg
-tmux_conf_theme_colour_12="#a89984"   # fg4 — status-right S1 fg
-tmux_conf_theme_colour_13="#ebdbb2"   # fg1 — status-right S2 fg
-tmux_conf_theme_colour_14="#282828"   # bg — status-right S3 fg
-tmux_conf_theme_colour_15="#282828"   # bg — status-right S1 bg
-tmux_conf_theme_colour_16="#3c3836"   # bg1 — status-right S2 bg
-tmux_conf_theme_colour_17="#83a598"   # bright blue — status-right S3 bg
+tmux_conf_theme_colour_1="$_gb_bg0"    # bg (dark0)
+tmux_conf_theme_colour_2="$_gb_bg1"    # bg1 (borders, inactive bg)
+tmux_conf_theme_colour_3="$_gb_fg4"    # fg4 (muted text)
+tmux_conf_theme_colour_4="$_gb_blue"   # bright blue (accent)
+tmux_conf_theme_colour_5="$_gb_yellow" # bright yellow (messages, mode)
+tmux_conf_theme_colour_6="$_gb_bg0"    # bg — status-left S1 fg (dark on orange)
+tmux_conf_theme_colour_7="$_gb_fg1"    # fg1 — status-left S2 fg
+tmux_conf_theme_colour_8="$_gb_fg4"    # fg4 — status-left S3 fg
+tmux_conf_theme_colour_9="$_gb_orange" # bright orange — status-left S1 bg
+tmux_conf_theme_colour_10="$_gb_bg1"   # bg1 — status-left S2 bg
+tmux_conf_theme_colour_11="$_gb_bg0"   # bg — status-left S3 bg
+tmux_conf_theme_colour_12="$_gb_fg4"   # fg4 — status-right S1 fg
+tmux_conf_theme_colour_13="$_gb_fg1"   # fg1 — status-right S2 fg
+tmux_conf_theme_colour_14="$_gb_bg0"   # bg — status-right S3 fg
+tmux_conf_theme_colour_15="$_gb_bg0"   # bg — status-right S1 bg
+tmux_conf_theme_colour_16="$_gb_bg1"   # bg1 — status-right S2 bg
+tmux_conf_theme_colour_17="$_gb_blue"  # bright blue — status-right S3 bg
+
+# inactive panes dimmed; active pane restores true background
+tmux_conf_theme_window_bg="$_gb_bg0s"
+tmux_conf_theme_highlight_focused_pane=true
+tmux_conf_theme_focused_pane_bg="$_gb_bg0"
 
 # -- pane borders --------------------------------------------------------------
 
-tmux_conf_theme_pane_border="$tmux_conf_theme_colour_2"
-tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_4"
+tmux_conf_theme_pane_border="$_gb_bg1"
+tmux_conf_theme_pane_active_border="$_gb_blue"
 %if #{>=:#{version},3.2}
-tmux_conf_theme_pane_active_border="#{?pane_in_mode,$tmux_conf_theme_colour_9,#{?synchronize-panes,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_4}}"
+tmux_conf_theme_pane_active_border="#{?pane_in_mode,${_gb_orange},#{?synchronize-panes,${_gb_bg1},${_gb_blue}}}"
 %endif
-tmux_conf_theme_pane_indicator="$tmux_conf_theme_colour_4"
-tmux_conf_theme_pane_active_indicator="$tmux_conf_theme_colour_4"
+tmux_conf_theme_pane_indicator="$_gb_blue"
+tmux_conf_theme_pane_active_indicator="$_gb_blue"
 
 # -- status line ---------------------------------------------------------------
 
@@ -77,8 +96,8 @@ tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_1"
 tmux_conf_theme_window_status_attr="none"
 tmux_conf_theme_window_status_format=" #I #W#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,} "
 
-tmux_conf_theme_window_status_current_fg="#282828"
-tmux_conf_theme_window_status_current_bg="#8ec07c"
+tmux_conf_theme_window_status_current_fg="$_gb_bg0"
+tmux_conf_theme_window_status_current_bg="$_gb_green"
 tmux_conf_theme_window_status_current_attr="bold"
 tmux_conf_theme_window_status_current_format=" #I #W#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,} "
 
@@ -90,8 +109,8 @@ tmux_conf_theme_window_status_bell_fg="$tmux_conf_theme_colour_5"
 tmux_conf_theme_window_status_bell_bg="default"
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
-tmux_conf_theme_window_status_last_fg="#d5c4a1"
-tmux_conf_theme_window_status_last_bg="#3c3836"
+tmux_conf_theme_window_status_last_fg="$_gb_fg2"
+tmux_conf_theme_window_status_last_bg="$_gb_bg1"
 tmux_conf_theme_window_status_last_attr="none"
 
 # -- separators ----------------------------------------------------------------
@@ -101,10 +120,10 @@ tmux_conf_theme_left_separator_sub=""
 tmux_conf_theme_right_separator_main=""
 tmux_conf_theme_right_separator_sub=""
 
-# -- status left/right ---------------------------------------------------------
+# -- status bar ----------------------------------------------------------------
 
 tmux_conf_theme_status_left="  #S "
-tmux_conf_theme_status_right="#{?client_prefix,#[bg=#fb4934 fg=#282828 bold] 󰌌 PREFIX ,}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—') "
+tmux_conf_theme_status_right="#{?client_prefix,#[bg=${_gb_red} fg=${_gb_bg0} bold] 󰌌 PREFIX ,}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—') "
 
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
@@ -167,8 +186,8 @@ set-hook -g after-select-pane 'if-shell -F "#{pane_in_mode}" "send-keys -X cance
 
 # prefix-active: session badge and active window tab shift to bright red
 # uses #{?client_prefix} inline in status-left and window-status-current-format
-#   idle:   orange #fe8019 badge / blue #83a598 active tab
-#   prefix: red #fb4934 badge / red #fb4934 active tab
+#   idle:   $_gb_orange badge / $_gb_blue active tab
+#   prefix: $_gb_red badge / $_gb_red active tab
 
 bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
 bind = select-layout -E \; display 'layout: rebalanced'
@@ -193,6 +212,8 @@ set -g @wk_menu_root '\
   "Toggle mouse" "m" "run \"cut -c3- '"'"'#{TMUX_CONF}'"'"' | sh -s _toggle_mouse\"" \
   "Edit config"  "e" "neww -n config \"${EDITOR:-vim} $TMUX_CONF_LOCAL\"" \
   "Reload config" "r" "source #{TMUX_CONF} ; display \"config reloaded\"" \
+  "Fpp (F)"    "F"   "run \"cut -c3- '"'"'#{TMUX_CONF}'"'"' | sh -s _fpp '"'"'#{pane_id}'"'"' '"'"'#{pane_current_path}'"'"'\"" \
+  Detach       "d"   detach \
   Time         "T"   clock-mode \
   "Show messages" "~" show-messages \
   +Keys        "?"   "list-keys -N"'
@@ -220,6 +241,8 @@ set -g @wk_menu_windows '\
   "Swap left (C-S-H)"   "C-S-H" "swapw -t -1 ; selectw -t -1" \
   "Swap right (C-S-L)"  "C-S-L" "swapw -t +1 ; selectw -t +1" \
   "" \
+  "Find (f)"       "f"   "command-prompt \"find-window -Z %%\"" \
+  "Move (.)"       "."   "command-prompt -T target \"move-window -t %%\"" \
   Rename           "R"   "command-prompt -I \"#W\" \"renamew -- \\\"%%\\\"\"" \
   Kill             "X"   "confirm -p \"Kill window #W? (y/n)\" killw"'
 
@@ -260,6 +283,7 @@ set -g @wk_menu_panes '\
   Mark             "m"   "selectp -m" \
   Unmark           "M"   "selectp -M" \
   Capture          "C"   capture-pane \
+  "Display (#)"    "q"   "displayp -d 0" \
   "Respawn pane"   "R"   restart-pane \
   Kill             "X"   "confirm -p \"Kill pane #P? (y/n)\" killp"'
 
@@ -291,6 +315,7 @@ set -g @wk_menu_buffers '\
 set -g @wk_menu_sessions '\
   Choose           "s" "choose-tree -Zs" \
   New              "N" new \
+  "New (C-c)"      "C-c" new-session \
   "Find (C-f)"    "C-f" "command-prompt -p find-session \"switchc -t %%\"" \
   "Last (BTab)"   "BTab" "switchc -l" \
   Rename           "r" rename'
