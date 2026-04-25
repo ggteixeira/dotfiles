@@ -7,19 +7,19 @@ tmux_conf_preserve_stock_bindings=false
 
 # -- session creation ----------------------------------------------------------
 
-tmux_conf_new_session_prompt=false
+tmux_conf_new_session_prompt=true
 tmux_conf_new_session_retain_current_path=false
 
 # -- windows & pane creation ---------------------------------------------------
 
-tmux_conf_new_window_retain_current_path=false
-tmux_conf_new_window_reconnect_ssh=false
+tmux_conf_new_window_retain_current_path=true
+tmux_conf_new_window_reconnect_ssh=true
 tmux_conf_new_pane_retain_current_path=true
-tmux_conf_new_pane_reconnect_ssh=false
+tmux_conf_new_pane_reconnect_ssh=true
 
 # -- display -------------------------------------------------------------------
 
-tmux_conf_24b_colour=auto
+tmux_conf_24b_colour=true
 
 # -- palette: gruvbox dark -----------------------------------------------------
 
@@ -64,6 +64,7 @@ tmux_conf_theme_focused_pane_bg="$_gb_bg0"
 
 # -- pane borders --------------------------------------------------------------
 
+tmux_conf_theme_pane_border_style=thin
 tmux_conf_theme_pane_border="$_gb_bg1"
 tmux_conf_theme_pane_active_border="$_gb_blue"
 %if #{>=:#{version},3.2}
@@ -123,7 +124,7 @@ tmux_conf_theme_right_separator_sub=""
 # -- status bar ----------------------------------------------------------------
 
 tmux_conf_theme_status_left="  #S "
-tmux_conf_theme_status_right="#{?client_prefix,#[bg=${_gb_red} fg=${_gb_bg0} bold] 󰌌 PREFIX ,}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—') "
+tmux_conf_theme_status_right="#{?client_prefix,#[bg=${_gb_red} fg=${_gb_bg0} bold] 󰌌 PREFIX ,}#{synchronized}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—') "
 
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
@@ -173,15 +174,20 @@ set -g mouse on
 set -g status on
 set -g status-interval 5
 
-# synchronized output — batches screen updates into single frames, prevents
-# visible scroll-flash in TUI apps (Claude/Ink) during full re-renders
-set -as terminal-features 'xterm-256color:sync'
+# NOTE: synchronized output (terminal-features sync) was removed — it caused
+# iTerm2 to snap the viewport to the cursor position on every sync-end sequence,
+# producing the "quick scroll down" during Claude/Ink re-renders. The original
+# scroll-flash issue it was meant to fix is less disruptive than the snap.
 
 # allow DCS passthrough so apps can send escape sequences directly to iTerm2
 set -g allow-passthrough on
 
-# auto-exit copy mode when switching back to a pane — prevents stale scrollback
-# views in TUI apps (like Claude) that don't use the alternate screen buffer
+# prevent viewport from snapping to bottom when output arrives while scrolled
+# (default is off but made explicit to survive oh-my-tmux option resets)
+set -g scroll-on-output off
+
+# auto-exit copy mode when switching to a different pane — prevents stale
+# scrollback views in TUI apps (like Claude) that don't use the alternate screen buffer
 set-hook -g after-select-pane 'if-shell -F "#{pane_in_mode}" "send-keys -X cancel"'
 
 # prefix-active: session badge and active window tab shift to bright red
@@ -351,3 +357,9 @@ run-shell 'bash ~/.dotfiles/tmux/wk-drift-check.sh &'
 set -g @vim_navigator_prefix_mapping_clear_screen ''
 
 set -g @plugin 'christoomey/vim-tmux-navigator'
+
+# oh-my-tmux has 'bind -n C-l' (clear-screen) as a direct command in tmux.conf:57.
+# That direct command re-fires on every reload, outlasting the plugin because __apply_plugins
+# only runs install/update/clean — never source_plugins — so vim-tmux-navigator.tmux is not
+# re-sourced. #!important fires via _apply_important after __apply_plugins, reclaiming C-l.
+bind -n C-l if-shell "ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\S+/)?g?\\.?(view|l?n?vim?x?|fzf)(diff)?(-wrapped)?$'" "send-keys 'C-l'" "select-pane -R" #!important
