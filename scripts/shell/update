@@ -33,6 +33,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   command -v gh &>/dev/null && total=$((total + 1))
   command -v mas &>/dev/null && total=$((total + 1))
   command -v tldr &>/dev/null && total=$((total + 1))
+  command -v tmux &>/dev/null && tmux list-sessions &>/dev/null 2>&1 && total=$((total + 1))
 
   progress "Dotfiles: update"
   git -C ~/.dotfiles pull --ff-only || failures+=("Dotfiles: update")
@@ -75,6 +76,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   if command -v nvim &>/dev/null; then
     progress "Neovim: sync plugins"
     nvim --headless "+Lazy! sync" +qa >/dev/null || failures+=("Neovim: sync plugins")
+  fi
+
+  if command -v tmux &>/dev/null && tmux list-sessions &>/dev/null 2>&1; then
+    progress "TPM: update plugins"
+    "${TMUX_PLUGIN_MANAGER_PATH:-$HOME/.tmux/plugins}/tpm/bin/update_plugins" all || failures+=("TPM: update plugins")
   fi
 
   if command -v gh &>/dev/null; then
