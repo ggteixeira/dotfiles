@@ -124,7 +124,7 @@ tmux_conf_theme_right_separator_sub=""
 # -- status bar ----------------------------------------------------------------
 
 tmux_conf_theme_status_left="  #S "
-tmux_conf_theme_status_right="#{?client_prefix,#[bg=${_gb_red} fg=${_gb_bg0} bold] 󰌌 PREFIX ,}#{synchronized}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—') "
+tmux_conf_theme_status_right="#{?client_prefix,#[bg=${_gb_red} fg=${_gb_bg0} bold] 󰌌 PREFIX ,}#{synchronized}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—') #(~/.config/tmux/plugins/tmux-immortal/scripts/periodic-save.sh)"
 
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
