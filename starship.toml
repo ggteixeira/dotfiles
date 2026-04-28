@@ -10,7 +10,6 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
-$git_metrics\
 $fill\
 $nodejs\
 ${custom.readme} ${custom.home} $cmd_duration $jobs $time\
