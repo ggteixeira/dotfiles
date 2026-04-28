@@ -196,6 +196,11 @@ set -g scroll-on-output off
 # scrollback views in TUI apps (like Claude) that don't use the alternate screen buffer
 set-hook -g after-select-pane 'if-shell -F "#{pane_in_mode}" "send-keys -X cancel"'
 
+# oh-my-tmux hardcodes C-s/C-r → tmux-resurrect (not installed).
+# #!important pins these to tmux-immortal's scripts, surviving reloads.
+bind C-s run-shell "~/.config/tmux/plugins/tmux-immortal/scripts/save.sh --notify" #!important
+bind C-r run-shell "~/.config/tmux/plugins/tmux-immortal/scripts/restore.sh" #!important
+
 # prefix-active: session badge and active window tab shift to bright red
 # uses #{?client_prefix} inline in status-left and window-status-current-format
 #   idle:   $_gb_orange badge / $_gb_blue active tab
@@ -373,3 +378,12 @@ bind | split-window -h -c "#{pane_current_path}"
 # only runs install/update/clean — never source_plugins — so vim-tmux-navigator.tmux is not
 # re-sourced. #!important fires via _apply_important after __apply_plugins, reclaiming C-l.
 bind -n C-l if-shell "ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\S+/)?g?\\.?(view|l?n?vim?x?|fzf)(diff)?(-wrapped)?$'" "send-keys 'C-l'" "select-pane -R" #!important
+
+# Terminal
+
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+
+# Fix shift+enter
+set -s extended-keys on
+set -as terminal-features 'xterm*:extkeys'
