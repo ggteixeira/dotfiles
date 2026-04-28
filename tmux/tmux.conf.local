@@ -1,6 +1,12 @@
 # Oh my tmux! local configuration
 # https://github.com/gpakosz/.tmux
 
+# Ensure Homebrew binaries are available to run-shell commands and oh-my-tmux's
+# TPM path check. Without this, tmux started by a LaunchAgent (or any
+# minimal-environment process) gets PATH=/usr/bin:/bin:/usr/sbin:/sbin, which
+# breaks `command tmux` (TPM check) and resolves `env bash` to system bash 3.2.
+set-environment -g PATH "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # -- bindings ------------------------------------------------------------------
 
 tmux_conf_preserve_stock_bindings=false
@@ -124,7 +130,7 @@ tmux_conf_theme_right_separator_sub=""
 # -- status bar ----------------------------------------------------------------
 
 tmux_conf_theme_status_left="  #S "
-tmux_conf_theme_status_right="#{?client_prefix,#[bg=${_gb_red} fg=${_gb_bg0} bold] 󰌌 PREFIX ,}#{synchronized}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—') #(~/.config/tmux/plugins/tmux-immortal/scripts/periodic-save.sh)"
+tmux_conf_theme_status_right="#{?client_prefix,#[bg=${_gb_red} fg=${_gb_bg0} bold] 󰌌 PREFIX ,}#{synchronized}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—')"
 
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
@@ -359,6 +365,8 @@ set -g @vim_navigator_prefix_mapping_clear_screen ''
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
 set -g @plugin 'ggteixeira/tmux-immortal'
+
+bind | split-window -h -c "#{pane_current_path}"
 
 # oh-my-tmux has 'bind -n C-l' (clear-screen) as a direct command in tmux.conf:57.
 # That direct command re-fires on every reload, outlasting the plugin because __apply_plugins
