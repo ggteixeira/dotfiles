@@ -27,57 +27,57 @@ tmux_conf_new_pane_reconnect_ssh=true
 
 tmux_conf_24b_colour=true
 
-# -- palette: gruvbox dark -----------------------------------------------------
+# -- palette: catppuccin mocha -------------------------------------------------
 
-_gb_bg0="#282828"        # dark0      — main background
-_gb_bg0s="#32302f"       # dark0_soft — inactive pane dimming
-_gb_bg1="#3c3836"        # dark1      — borders, secondary backgrounds
-_gb_fg1="#ebdbb2"        # fg1        — light foreground
-_gb_fg2="#d5c4a1"        # fg2        — last-window tab foreground
-_gb_fg4="#a89984"        # fg4        — muted foreground
-_gb_blue="#83a598"       # blue       — accent
-_gb_yellow="#fabd2f"     # yellow     — messages, mode indicator
-_gb_orange="#fe8019"     # orange     — session badge
-_gb_green="#8ec07c"      # green      — active window tab
-_gb_red="#fb4934"        # red        — prefix indicator
+_cp_bg0="#1e1e2e"        # base       — main background
+_cp_bg0s="#181825"       # mantle     — inactive pane dimming
+_cp_bg1="#313244"        # surface0   — borders, secondary backgrounds
+_cp_fg1="#cdd6f4"        # text       — light foreground
+_cp_fg2="#bac2de"        # subtext1   — last-window tab foreground
+_cp_fg4="#7f849c"        # overlay1   — muted foreground
+_cp_blue="#89b4fa"       # blue       — accent
+_cp_yellow="#f9e2af"     # yellow     — messages, mode indicator
+_cp_orange="#fab387"     # peach      — session badge
+_cp_green="#a6e3a1"      # green      — active window tab
+_cp_red="#f38ba8"        # red        — prefix indicator
 
-# -- theming: gruvbox dark -----------------------------------------------------
+# -- theming: catppuccin mocha -------------------------------------------------
 
 tmux_conf_theme=enabled
 
-tmux_conf_theme_colour_1="$_gb_bg0"    # bg (dark0)
-tmux_conf_theme_colour_2="$_gb_bg1"    # bg1 (borders, inactive bg)
-tmux_conf_theme_colour_3="$_gb_fg4"    # fg4 (muted text)
-tmux_conf_theme_colour_4="$_gb_blue"   # bright blue (accent)
-tmux_conf_theme_colour_5="$_gb_yellow" # bright yellow (messages, mode)
-tmux_conf_theme_colour_6="$_gb_bg0"    # bg — status-left S1 fg (dark on orange)
-tmux_conf_theme_colour_7="$_gb_fg1"    # fg1 — status-left S2 fg
-tmux_conf_theme_colour_8="$_gb_fg4"    # fg4 — status-left S3 fg
-tmux_conf_theme_colour_9="$_gb_orange" # bright orange — status-left S1 bg
-tmux_conf_theme_colour_10="$_gb_bg1"   # bg1 — status-left S2 bg
-tmux_conf_theme_colour_11="$_gb_bg0"   # bg — status-left S3 bg
-tmux_conf_theme_colour_12="$_gb_fg4"   # fg4 — status-right S1 fg
-tmux_conf_theme_colour_13="$_gb_fg1"   # fg1 — status-right S2 fg
-tmux_conf_theme_colour_14="$_gb_bg0"   # bg — status-right S3 fg
-tmux_conf_theme_colour_15="$_gb_bg0"   # bg — status-right S1 bg
-tmux_conf_theme_colour_16="$_gb_bg1"   # bg1 — status-right S2 bg
-tmux_conf_theme_colour_17="$_gb_blue"  # bright blue — status-right S3 bg
+tmux_conf_theme_colour_1="$_cp_bg0"    # bg (dark0)
+tmux_conf_theme_colour_2="$_cp_bg1"    # bg1 (borders, inactive bg)
+tmux_conf_theme_colour_3="$_cp_fg4"    # fg4 (muted text)
+tmux_conf_theme_colour_4="$_cp_blue"   # bright blue (accent)
+tmux_conf_theme_colour_5="$_cp_yellow" # bright yellow (messages, mode)
+tmux_conf_theme_colour_6="$_cp_bg0"    # bg — status-left S1 fg (dark on orange)
+tmux_conf_theme_colour_7="$_cp_fg1"    # fg1 — status-left S2 fg
+tmux_conf_theme_colour_8="$_cp_fg4"    # fg4 — status-left S3 fg
+tmux_conf_theme_colour_9="$_cp_orange" # bright orange — status-left S1 bg
+tmux_conf_theme_colour_10="$_cp_bg1"   # bg1 — status-left S2 bg
+tmux_conf_theme_colour_11="$_cp_bg0"   # bg — status-left S3 bg
+tmux_conf_theme_colour_12="$_cp_fg4"   # fg4 — status-right S1 fg
+tmux_conf_theme_colour_13="$_cp_fg1"   # fg1 — status-right S2 fg
+tmux_conf_theme_colour_14="$_cp_bg0"   # bg — status-right S3 fg
+tmux_conf_theme_colour_15="$_cp_bg0"   # bg — status-right S1 bg
+tmux_conf_theme_colour_16="$_cp_bg1"   # bg1 — status-right S2 bg
+tmux_conf_theme_colour_17="$_cp_blue"  # bright blue — status-right S3 bg
 
 # inactive panes dimmed; active pane restores true background
-tmux_conf_theme_window_bg="$_gb_bg0s"
+tmux_conf_theme_window_bg="$_cp_bg0s"
 tmux_conf_theme_highlight_focused_pane=true
-tmux_conf_theme_focused_pane_bg="$_gb_bg0"
+tmux_conf_theme_focused_pane_bg="$_cp_bg0"
 
 # -- pane borders --------------------------------------------------------------
 
-tmux_conf_theme_pane_border_style=thin
-tmux_conf_theme_pane_border="$_gb_bg1"
-tmux_conf_theme_pane_active_border="$_gb_blue"
+tmux_conf_theme_pane_border_style=fat
+tmux_conf_theme_pane_border="$_cp_bg1"
+tmux_conf_theme_pane_active_border="$_cp_blue"
 %if #{>=:#{version},3.2}
-tmux_conf_theme_pane_active_border="#{?pane_in_mode,${_gb_orange},#{?synchronize-panes,${_gb_bg1},${_gb_blue}}}"
+tmux_conf_theme_pane_active_border="#{?pane_in_mode,${_cp_orange},#{?synchronize-panes,${_cp_bg1},${_cp_blue}}}"
 %endif
-tmux_conf_theme_pane_indicator="$_gb_blue"
-tmux_conf_theme_pane_active_indicator="$_gb_blue"
+tmux_conf_theme_pane_indicator="$_cp_blue"
+tmux_conf_theme_pane_active_indicator="$_cp_blue"
 
 # -- status line ---------------------------------------------------------------
 
@@ -103,8 +103,8 @@ tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_1"
 tmux_conf_theme_window_status_attr="none"
 tmux_conf_theme_window_status_format=" #I #W#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,} "
 
-tmux_conf_theme_window_status_current_fg="$_gb_bg0"
-tmux_conf_theme_window_status_current_bg="$_gb_green"
+tmux_conf_theme_window_status_current_fg="$_cp_bg0"
+tmux_conf_theme_window_status_current_bg="$_cp_green"
 tmux_conf_theme_window_status_current_attr="bold"
 tmux_conf_theme_window_status_current_format=" #I #W#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,} "
 
@@ -116,21 +116,21 @@ tmux_conf_theme_window_status_bell_fg="$tmux_conf_theme_colour_5"
 tmux_conf_theme_window_status_bell_bg="default"
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
-tmux_conf_theme_window_status_last_fg="$_gb_fg2"
-tmux_conf_theme_window_status_last_bg="$_gb_bg1"
+tmux_conf_theme_window_status_last_fg="$_cp_fg2"
+tmux_conf_theme_window_status_last_bg="$_cp_bg1"
 tmux_conf_theme_window_status_last_attr="none"
 
 # -- separators ----------------------------------------------------------------
 
-tmux_conf_theme_left_separator_main=""
-tmux_conf_theme_left_separator_sub=""
-tmux_conf_theme_right_separator_main=""
-tmux_conf_theme_right_separator_sub=""
+tmux_conf_theme_left_separator_main=""
+tmux_conf_theme_left_separator_sub=""
+tmux_conf_theme_right_separator_main=""
+tmux_conf_theme_right_separator_sub=""
 
 # -- status bar ----------------------------------------------------------------
 
-tmux_conf_theme_status_left="  #S "
-tmux_conf_theme_status_right="#{?client_prefix,#[bg=${_gb_red} fg=${_gb_bg0} bold] 󰌌 PREFIX ,}#{synchronized}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—')"
+tmux_conf_theme_status_left="  #S #[align=absolute-centre]#{?client_prefix,#[bg=${_cp_red} fg=${_cp_bg0} bold] 󰌌 PREFIX ,}#[align=left]"
+tmux_conf_theme_status_right="#{synchronized}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—')"
 
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
@@ -174,7 +174,7 @@ tmux_conf_copy_to_os_clipboard=true
 # -- overrides -----------------------------------------------------------------
 
 set -g status-position bottom
-set -g status-justify centre
+set -g status-justify left
 set -g history-limit 50000
 set -g mouse on
 set -g status on
@@ -203,8 +203,8 @@ bind C-r run-shell "~/.config/tmux/plugins/tmux-immortal/scripts/restore.sh" #!i
 
 # prefix-active: session badge and active window tab shift to bright red
 # uses #{?client_prefix} inline in status-left and window-status-current-format
-#   idle:   $_gb_orange badge / $_gb_blue active tab
-#   prefix: $_gb_red badge / $_gb_red active tab
+#   idle:   $_cp_orange badge / $_cp_blue active tab
+#   prefix: $_cp_red badge / $_cp_red active tab
 
 bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
 bind = select-layout -E \; display 'layout: rebalanced'
