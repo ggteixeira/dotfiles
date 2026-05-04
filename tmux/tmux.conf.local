@@ -31,7 +31,8 @@ tmux_conf_24b_colour=true
 
 _cp_bg0="#1e1e2e"        # base       — main background
 _cp_bg0s="#181825"       # mantle     — inactive pane dimming
-_cp_bg1="#313244"        # surface0   — borders, secondary backgrounds
+_cp_bg1="#313244"        # surface0   — inactive window cells, borders
+_cp_bg2="#45475a"        # surface1   — last (recently-active) window cell
 _cp_fg1="#cdd6f4"        # text       — light foreground
 _cp_fg2="#bac2de"        # subtext1   — last-window tab foreground
 _cp_fg4="#7f849c"        # overlay1   — muted foreground
@@ -70,7 +71,7 @@ tmux_conf_theme_focused_pane_bg="$_cp_bg0"
 
 # -- pane borders --------------------------------------------------------------
 
-tmux_conf_theme_pane_border_style=fat
+tmux_conf_theme_pane_border_style=thin
 tmux_conf_theme_pane_border="$_cp_bg1"
 tmux_conf_theme_pane_active_border="$_cp_blue"
 %if #{>=:#{version},3.2}
@@ -98,26 +99,28 @@ tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 
 # -- window tabs ---------------------------------------------------------------
 
+_tab_core="#I #{p13:#{window_name}}#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,}"
+
 tmux_conf_theme_window_status_fg="$tmux_conf_theme_colour_3"
-tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_1"
+tmux_conf_theme_window_status_bg="$_cp_bg1"
 tmux_conf_theme_window_status_attr="none"
-tmux_conf_theme_window_status_format=" #I #W#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,} "
+tmux_conf_theme_window_status_format=" ${_tab_core}#{?window_activity_flag,  #[fg=$_cp_yellow]·,} "
 
 tmux_conf_theme_window_status_current_fg="$_cp_bg0"
-tmux_conf_theme_window_status_current_bg="$_cp_green"
+tmux_conf_theme_window_status_current_bg="#{?client_prefix,$_cp_red,$_cp_green}"
 tmux_conf_theme_window_status_current_attr="bold"
-tmux_conf_theme_window_status_current_format=" #I #W#{?window_zoomed_flag, 󰁌,}#{?window_bell_flag, 󰂞,} "
+tmux_conf_theme_window_status_current_format="#{?client_prefix, #{p15:#{l:󰌌 PREFIX}} , ${_tab_core} }"
 
 tmux_conf_theme_window_status_activity_fg="default"
 tmux_conf_theme_window_status_activity_bg="default"
-tmux_conf_theme_window_status_activity_attr="underscore"
+tmux_conf_theme_window_status_activity_attr="none"
 
 tmux_conf_theme_window_status_bell_fg="$tmux_conf_theme_colour_5"
 tmux_conf_theme_window_status_bell_bg="default"
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
 tmux_conf_theme_window_status_last_fg="$_cp_fg2"
-tmux_conf_theme_window_status_last_bg="$_cp_bg1"
+tmux_conf_theme_window_status_last_bg="$_cp_bg2"
 tmux_conf_theme_window_status_last_attr="none"
 
 # -- separators ----------------------------------------------------------------
@@ -129,7 +132,7 @@ tmux_conf_theme_right_separator_sub=""
 
 # -- status bar ----------------------------------------------------------------
 
-tmux_conf_theme_status_left="  #S #[align=absolute-centre]#{?client_prefix,#[bg=${_cp_red} fg=${_cp_bg0} bold] 󰌌 PREFIX ,}#[align=left]"
+tmux_conf_theme_status_left="  #S "
 tmux_conf_theme_status_right="#{synchronized}  #{b:pane_current_path} |  #(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo '—')"
 
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -201,10 +204,8 @@ set-hook -g after-select-pane 'if-shell -F "#{pane_in_mode}" "send-keys -X cance
 bind C-s run-shell "~/.config/tmux/plugins/tmux-immortal/scripts/save.sh --notify" #!important
 bind C-r run-shell "~/.config/tmux/plugins/tmux-immortal/scripts/restore.sh" #!important
 
-# prefix-active: session badge and active window tab shift to bright red
-# uses #{?client_prefix} inline in status-left and window-status-current-format
-#   idle:   $_cp_orange badge / $_cp_blue active tab
-#   prefix: $_cp_red badge / $_cp_red active tab
+# prefix-active: active window tab flips bg from $_cp_green to $_cp_red and
+# its label changes to "󰌌 PREFIX" — handled inline in window_status_current_*
 
 bind m run "cut -c3- '#{TMUX_CONF}' | sh -s _toggle_mouse" \; display 'mouse #{?#{mouse},on,off}'
 bind = select-layout -E \; display 'layout: rebalanced'
