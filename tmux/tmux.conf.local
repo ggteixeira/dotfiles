@@ -29,9 +29,8 @@ tmux_conf_24b_colour=true
 
 # -- palette: catppuccin mocha -------------------------------------------------
 
-_cp_bg0="#1e1e2e"        # base       — main background
-_cp_bg0s="#181825"       # mantle     — inactive pane dimming
-_cp_bg1="#313244"        # surface0   — inactive window cells, borders
+_cp_bg0="#1e1e2e"        # base       — main background, active pane
+_cp_bg1="#313244"        # surface0   — inactive window cells, borders, inactive pane lift
 _cp_bg2="#45475a"        # surface1   — last (recently-active) window cell
 _cp_fg1="#cdd6f4"        # text       — light foreground
 _cp_fg2="#bac2de"        # subtext1   — last-window tab foreground
@@ -64,8 +63,8 @@ tmux_conf_theme_colour_15="$_cp_bg0"   # bg — status-right S1 bg
 tmux_conf_theme_colour_16="$_cp_bg1"   # bg1 — status-right S2 bg
 tmux_conf_theme_colour_17="$_cp_blue"  # bright blue — status-right S3 bg
 
-# inactive panes dimmed; active pane restores true background
-tmux_conf_theme_window_bg="$_cp_bg0s"
+# iTerm2-style: inactive panes lift to surface0; active pane keeps base canvas
+tmux_conf_theme_window_bg="$_cp_bg1"
 tmux_conf_theme_highlight_focused_pane=true
 tmux_conf_theme_focused_pane_bg="$_cp_bg0"
 
