@@ -41,10 +41,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   progress "Brew: update"
   brew update || failures+=("Brew: update")
 
-  brew_outdated=$(brew outdated --verbose)
+  brew_outdated=$(brew outdated --greedy --verbose)
 
   progress "Brew: upgrade"
-  brew upgrade --greedy || failures+=("Brew: upgrade")
+  HOMEBREW_NO_ASK=1 brew upgrade --greedy || failures+=("Brew: upgrade")
 
   if [[ -n "$brew_outdated" ]]; then
     echo -e "\nBrew: updated packages"

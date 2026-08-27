@@ -7,6 +7,10 @@
 # breaks `command tmux` (TPM check) and resolves `env bash` to system bash 3.2.
 set-environment -g PATH "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+# Keep TMUX_PROGRAM pointing at the current Homebrew binary so that prefix+r
+# survives `brew upgrade tmux` without requiring a full server restart.
+set-environment -g TMUX_PROGRAM "/opt/homebrew/bin/tmux"
+
 # -- bindings ------------------------------------------------------------------
 
 tmux_conf_preserve_stock_bindings=false
@@ -371,7 +375,8 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 
 set -g @plugin 'ggteixeira/tmux-immortal'
 
-bind | split-window -h -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}" #!important
+bind - split-window -v -c "#{pane_current_path}" #!important
 
 # oh-my-tmux has 'bind -n C-l' (clear-screen) as a direct command in tmux.conf:57.
 # That direct command re-fires on every reload, outlasting the plugin because __apply_plugins
